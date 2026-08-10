@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d4b34" />
+  <title>Cabana Rota do Vinho</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="app" aria-live="polite"></main>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal__backdrop" data-close-modal></div>
+    <section class="modal__panel" role="dialog" aria-modal="true" aria-label="Conteúdo">
+      <button class="modal__close" type="button" data-close-modal aria-label="Fechar">×</button>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
