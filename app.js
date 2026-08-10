@@ -159,13 +159,43 @@ const actions = {
 
 function currentScreen(){ const id=(location.hash||'#home').slice(1)||'home'; return screens[id]?id:'home'; }
 function render(){
-  const id=currentScreen(); const s=screens[id];
-  const section=document.createElement('section'); section.className='screen'; section.dataset.screen=id;
-  const img=document.createElement('img'); img.src=s.img; img.alt=`Tela ${id}`; section.appendChild(img);
+  const id=currentScreen();
+  const s=screens[id];
+
+  const section=document.createElement('section');
+  section.className='screen';
+  section.dataset.screen=id;
+
+  // Camada responsiva isolada: imagem e hotspots escalam juntos em qualquer tela.
+  const stage=document.createElement('div');
+  stage.className='screen__stage';
+  stage.style.aspectRatio=`${s.ratio[0]} / ${s.ratio[1]}`;
+
+  const img=document.createElement('img');
+  img.src=s.img;
+  img.alt=`Tela ${id}`;
+  img.width=s.ratio[0];
+  img.height=s.ratio[1];
+  stage.appendChild(img);
+
   (actions[id]||[]).forEach(h=>{
-    const b=document.createElement('button'); b.type='button'; b.className='hotspot'; b.setAttribute('aria-label',h.label); Object.assign(b.style,h.box); if(h.hidden)b.hidden=true; if(h.visibleLabel){ b.classList.add('visible-action'); b.textContent=h.visibleLabel; } b.addEventListener('click',h.action); section.appendChild(b);
+    const b=document.createElement('button');
+    b.type='button';
+    b.className='hotspot';
+    b.setAttribute('aria-label',h.label);
+    Object.assign(b.style,h.box);
+    if(h.hidden)b.hidden=true;
+    if(h.visibleLabel){
+      b.classList.add('visible-action');
+      b.textContent=h.visibleLabel;
+    }
+    b.addEventListener('click',h.action);
+    stage.appendChild(b);
   });
-  app.replaceChildren(section); window.scrollTo({top:0,behavior:'instant'});
+
+  section.appendChild(stage);
+  app.replaceChildren(section);
+  window.scrollTo({top:0,behavior:'instant'});
 }
 function copyWifi(){ navigator.clipboard?.writeText(C.wifi.password).then(()=>showToast('Senha copiada: '+C.wifi.password)).catch(()=>showToast('Senha: '+C.wifi.password)); }
 function showToast(msg){ toast.textContent=msg; toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),2600); }
