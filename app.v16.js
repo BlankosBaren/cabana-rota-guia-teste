@@ -1,4 +1,4 @@
-const BUILD_VERSION='16';
+const BUILD_VERSION='17';
 const C = window.GUIDE_CONFIG;
 const app = document.getElementById('app');
 const modal = document.getElementById('modal');
@@ -19,6 +19,12 @@ const screens = {
   delivery: {img:'assets/screens/delivery.png', ratio:[864,1821]},
   casaAzul: {img:'assets/screens/casa-azul.png', ratio:[941,1672]},
   checkout: {img:'assets/screens/checkout.png', ratio:[941,1672]}
+};
+
+const mobileScale = {
+  home:'116%', checkin:'120%', wifi:'120%', cafe:'120%', hidro:'122%',
+  calefator:'122%', ar:'122%', tv:'122%', regras:'130%', rota:'124%',
+  delivery:'134%', casaAzul:'124%', checkout:'130%'
 };
 
 const go = id => { location.hash = id === 'home' ? '' : id; };
@@ -139,9 +145,9 @@ const actions = {
   ],
   delivery: [
     hotspot('Voltar',pct(2,1,10,6),()=>go('home')),
-    hotspot('Born In Smoke',pct(55,28,36,5),()=>openExternal(C.external.bornWhatsapp)),
-    hotspot('Itacolomy',pct(55,47,36,5),()=>openExternal(C.external.itacolomyWhatsapp)),
-    hotspot('Di Pomodoro',pct(55,65,36,5),()=>openExternal(C.external.diPomodoroWhatsapp)),
+    hotspot('Born In Smoke',pct(73.0,29.1,20.0,3.8),()=>openExternal(C.external.bornWhatsapp)),
+    hotspot('Itacolomy',pct(73.0,48.1,20.0,3.8),()=>openExternal(C.external.itacolomyWhatsapp)),
+    hotspot('Di Pomodoro',pct(73.0,66.3,20.0,3.8),()=>openExternal(C.external.diPomodoroWhatsapp)),
     hotspot('iFood',pct(65.0,79.1,29.0,4.3),()=>openExternal(C.external.ifood)),
     hotspot('Voltar para o menu',pct(22,94,58,4.5),()=>go('home'))
   ],
@@ -180,6 +186,7 @@ function render(){
   const section=document.createElement('section');
   section.className='screen';
   section.dataset.screen=id;
+  section.style.setProperty('--mobile-scale', mobileScale[id] || '118%');
 
   const stage=document.createElement('div');
   stage.className='screen__stage';
@@ -237,6 +244,13 @@ function render(){
   section.appendChild(stage);
   app.replaceChildren(section);
   window.scrollTo(0,0);
+  requestAnimationFrame(()=>{
+    if(window.matchMedia('(max-width:600px)').matches){
+      section.scrollLeft=Math.max(0,(section.scrollWidth-section.clientWidth)/2);
+    } else {
+      section.scrollLeft=0;
+    }
+  });
 }
 function copyWifi(){ navigator.clipboard?.writeText(C.wifi.password).then(()=>showToast('Senha copiada: '+C.wifi.password)).catch(()=>showToast('Senha: '+C.wifi.password)); }
 function showToast(msg){ toast.textContent=msg; toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),2600); }

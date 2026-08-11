@@ -1,1 +1,1 @@
-V16 mobile: imagem em fluxo normal + overlay SVG responsivo; links externos via location.href; modo debug com ?debug=1; fundo sem min-height extra.
+V17 Leitura Mobile: telas ampliadas no celular, Home ampliada, hotspots acompanham a arte e Delivery recalibrado. A tela permite leve rolagem horizontal para preservar legibilidade sem redesenhar as artes aprovadas.

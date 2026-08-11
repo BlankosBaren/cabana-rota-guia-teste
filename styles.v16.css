@@ -30,11 +30,18 @@ body{
   margin:0 auto;
   background:var(--cream)!important;
   box-shadow:var(--shadow);
-  overflow:hidden;
+  overflow-x:auto;
+  overflow-y:hidden;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+  overscroll-behavior-x:contain;
+  -webkit-overflow-scrolling:touch;
 }
+.screen::-webkit-scrollbar{display:none}
 .screen__stage{
   position:relative;
   width:100%;
+  min-width:100%;
   background:var(--cream);
   overflow:hidden;
   line-height:0;
@@ -126,10 +133,15 @@ body{
 .modal-home-btn:active{transform:scale(.99)}
 
 @media(max-width:600px){
-  .screen{box-shadow:none}
+  .screen{box-shadow:none;width:100%;max-width:none}
+  .screen__stage{width:var(--mobile-scale,118%);max-width:none}
+  .screen__stage>img{width:100%;max-width:none}
   .modal__panel{inset:1.5vh 2vw;padding-top:50px;border-radius:18px}
   .modal__close{top:12px;right:12px}
   .gallery .caption{font-size:16px}
+}
+@media(max-width:390px){
+  .screen__stage{width:calc(var(--mobile-scale,118%) + 4%)}
 }
 @media(prefers-color-scheme:dark){
   html,body,#app,.screen,.screen__stage{background:var(--cream)!important;color-scheme:light only}
