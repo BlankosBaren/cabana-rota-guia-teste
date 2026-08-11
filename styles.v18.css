@@ -1,0 +1,148 @@
+:root{
+  --green:#0d4b34;
+  --cream:#fbf6ed;
+  --shadow:0 16px 50px rgba(0,0,0,.18);
+  color-scheme:light only;
+}
+*{box-sizing:border-box}
+html{
+  margin:0;
+  background:var(--cream)!important;
+  color-scheme:light only;
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+body{
+  margin:0;
+  background:var(--cream)!important;
+  font-family:Arial,sans-serif;
+  color:#173b2e;
+  color-scheme:light only;
+}
+#app{
+  width:100%;
+  margin:0;
+  padding:0;
+  background:var(--cream)!important;
+}
+.screen{
+  width:min(100%,941px);
+  margin:0 auto;
+  background:var(--cream)!important;
+  box-shadow:var(--shadow);
+  overflow-x:auto;
+  overflow-y:hidden;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+  overscroll-behavior-x:contain;
+  -webkit-overflow-scrolling:touch;
+}
+.screen::-webkit-scrollbar{display:none}
+.screen__stage{
+  position:relative;
+  width:100%;
+  min-width:100%;
+  background:var(--cream);
+  overflow:hidden;
+  line-height:0;
+}
+.screen__stage>img{
+  position:relative;
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:100%;
+  user-select:none;
+  -webkit-user-drag:none;
+  pointer-events:none;
+}
+.hotspot-layer{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:3;
+  pointer-events:none;
+  overflow:visible;
+}
+.hotspot-svg{
+  fill:rgba(0,0,0,0.001);
+  stroke:none;
+  pointer-events:all;
+  cursor:pointer;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+}
+.hotspot-svg.debug{
+  fill:rgba(255,0,0,.22);
+  stroke:#ff0000;
+  stroke-width:3;
+}
+.hotspot{
+  position:absolute;
+  z-index:2;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  border-radius:18px;
+  outline:none;
+  padding:0;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+}
+.hotspot:focus-visible{
+  box-shadow:0 0 0 4px rgba(255,153,0,.85) inset;
+  background:rgba(255,255,255,.06);
+}
+.hotspot[hidden]{display:none!important}
+.modal{position:fixed;inset:0;z-index:50}
+.modal__backdrop{position:absolute;inset:0;background:rgba(0,0,0,.72)}
+.modal__panel{
+  position:absolute;inset:4vh 3vw;max-width:1100px;margin:auto;background:#111;
+  border-radius:22px;overflow:auto;box-shadow:var(--shadow);display:flex;
+  align-items:flex-start;justify-content:center;padding:54px 14px 18px
+}
+.modal__close{
+  position:fixed;right:22px;top:22px;z-index:2;width:46px;height:46px;border:0;
+  border-radius:50%;background:#fff;color:#173b2e;font-size:32px;line-height:1;
+  box-shadow:0 4px 14px rgba(0,0,0,.3)
+}
+.modal img{max-width:100%;height:auto;display:block;margin:auto;border-radius:12px}
+.gallery{display:grid;gap:14px}
+.gallery .caption{
+  background:#fff;color:#173b2e;border-radius:14px;padding:18px;font-size:18px;line-height:1.45
+}
+.toast{
+  position:fixed;left:50%;bottom:calc(28px + env(safe-area-inset-bottom));
+  transform:translate(-50%,20px);z-index:100;background:#0d4b34;color:white;
+  padding:12px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:.2s;
+  box-shadow:var(--shadow);max-width:90vw;text-align:center
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.hotspot.visible-action{
+  background:#eef3e6;border:1px solid #c9d6bd;color:#0d4b34;font-weight:700;
+  font-size:clamp(10px,1.7vw,16px);box-shadow:0 2px 7px rgba(13,75,52,.12);
+  display:flex;align-items:center;justify-content:center;padding:0 8px;white-space:nowrap
+}
+.hotspot.visible-action:active{transform:scale(.98)}
+.modal-home-btn{
+  width:100%;border:0;border-radius:16px;background:#0d4b34;color:#fff;
+  font-size:clamp(17px,2.2vw,24px);font-weight:700;padding:16px 22px;cursor:pointer;
+  box-shadow:0 5px 16px rgba(0,0,0,.22)
+}
+.modal-home-btn:active{transform:scale(.99)}
+
+@media(max-width:600px){
+  .screen{box-shadow:none;width:100%;max-width:none}
+  .screen__stage{width:var(--mobile-scale,118%);max-width:none}
+  .screen__stage>img{width:100%;max-width:none}
+  .modal__panel{inset:1.5vh 2vw;padding-top:50px;border-radius:18px}
+  .modal__close{top:12px;right:12px}
+  .gallery .caption{font-size:16px}
+}
+@media(max-width:390px){
+  .screen__stage{width:calc(var(--mobile-scale,118%) + 4%)}
+}
+@media(prefers-color-scheme:dark){
+  html,body,#app,.screen,.screen__stage{background:var(--cream)!important;color-scheme:light only}
+}

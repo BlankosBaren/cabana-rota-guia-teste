@@ -1,1 +1,3 @@
-V17 Leitura Mobile: telas ampliadas no celular, Home ampliada, hotspots acompanham a arte e Delivery recalibrado. A tela permite leve rolagem horizontal para preservar legibilidade sem redesenhar as artes aprovadas.
+Cabana Rota do Vinho — V18 Calibração Mobile
+Base: V17 aprovada para leitura.
+Alterações: somente calibração fina de hotspots com base nos 9 prints em modo debug; escala e artes preservadas.
