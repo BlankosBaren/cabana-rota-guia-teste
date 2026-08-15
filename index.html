@@ -122,6 +122,48 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
   .delivery-card{grid-template-columns:105px minmax(0,1fr)}
 }
 
+
+/* V22 — Wi Fi reproduzindo o layout aprovado */
+.wifi-approved{max-width:720px;padding:18px 22px 0;background:#fbf6ed}
+.wifi-head{display:grid;grid-template-columns:58px 1fr 58px;align-items:start;gap:8px}
+.wifi-back{width:50px;height:50px;color:#0b4f39;display:flex;align-items:center;justify-content:center}
+.wifi-back svg{width:42px;height:42px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.wifi-title-wrap{text-align:center}
+.wifi-title-wrap h1{margin:2px 0;color:#0b4f39;font-family:Georgia,serif;font-size:54px;line-height:1;font-weight:700}
+.wifi-title-wrap p{margin:10px 0 0;color:#123f31;font-size:20px;line-height:1.3}
+.wifi-leaf{color:#0b4f39;font-size:44px;text-align:center;transform:rotate(-20deg);line-height:1;padding-top:6px}
+.wifi-symbol{width:320px;height:270px;margin:18px auto;display:flex;align-items:center;justify-content:center;color:#0b4f39;border-radius:50%;background:radial-gradient(circle at center,rgba(225,215,195,.55),rgba(251,246,237,0) 68%)}
+.wifi-symbol svg{width:225px;height:225px;fill:none;stroke:currentColor;stroke-width:5.8;stroke-linecap:round}
+.wifi-card-approved{background:rgba(255,255,255,.78);border:1px solid #f1e7d8;border-radius:28px;padding:34px 36px 30px;box-shadow:0 12px 28px rgba(35,55,42,.08)}
+.wifi-label{color:#163f32;font-family:Georgia,serif;font-size:28px;font-weight:700;margin-bottom:8px}
+.wifi-main-value{color:#0a4a36;font-family:Georgia,serif;font-size:46px;font-weight:700;line-height:1.1}
+.wifi-divider{height:1px;background:#e8dcc9;margin:28px 0}
+.wifi-copy-btn{width:100%;margin-top:30px;min-height:82px;border:0;border-radius:22px;background:#f6efe5;color:#164635;display:flex;align-items:center;justify-content:center;gap:18px;font-family:Georgia,serif;font-size:28px;cursor:pointer}
+.wifi-copy-icon{width:38px;height:38px;display:inline-flex}
+.wifi-copy-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.wifi-info-approved{margin:38px 0 34px;display:grid;grid-template-columns:92px 1fr;gap:18px;align-items:start}
+.wifi-question{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#f1eadf;color:#0b4f39;font-size:48px;font-weight:700}
+.wifi-info-copy h2{margin:4px 0 14px;color:#163f32;font-family:Georgia,serif;font-size:30px}
+.wifi-info-copy p{margin:0;color:#111;font-size:24px;line-height:1.45}
+.wifi-menu-btn{width:100%;min-height:96px;border-radius:22px;background:linear-gradient(90deg,#0b4f39,#063d2d);color:#fff;text-decoration:none;display:grid;grid-template-columns:54px 1fr 54px;align-items:center;padding:0 26px;font-family:Georgia,serif;font-size:29px;font-weight:700;margin-bottom:16px}
+.wifi-menu-home,.wifi-menu-arrow{display:flex;align-items:center;justify-content:center}
+.wifi-menu-home svg,.wifi-menu-arrow svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.wifi-approved .footer-actions{margin:0 -22px;border-radius:0;padding:10px 14px 12px}
+@media(max-width:600px){
+  .wifi-approved{padding:12px 14px 0}
+  .wifi-head{grid-template-columns:44px 1fr 44px}
+  .wifi-back{width:42px;height:42px}.wifi-back svg{width:34px;height:34px}
+  .wifi-title-wrap h1{font-size:40px}.wifi-title-wrap p{font-size:15px;margin-top:7px}.wifi-leaf{font-size:32px}
+  .wifi-symbol{width:240px;height:205px;margin:8px auto 12px}.wifi-symbol svg{width:175px;height:175px}
+  .wifi-card-approved{padding:26px 24px 24px;border-radius:24px}
+  .wifi-label{font-size:22px}.wifi-main-value{font-size:34px}
+  .wifi-copy-btn{min-height:68px;font-size:22px;border-radius:19px;margin-top:24px}.wifi-copy-icon{width:30px;height:30px}
+  .wifi-info-approved{grid-template-columns:70px 1fr;gap:14px;margin:30px 0 28px}
+  .wifi-question{width:58px;height:58px;font-size:38px}.wifi-info-copy h2{font-size:24px}.wifi-info-copy p{font-size:18px}
+  .wifi-menu-btn{min-height:78px;font-size:23px;border-radius:18px;padding:0 18px;grid-template-columns:44px 1fr 44px}
+  .wifi-approved .footer-actions{margin:0 -14px}
+}
+
 </style></head>
 <body><section class="screen" id="home">
 <div class="topbar"><div></div><div class="brand"><img src="assets/crops/logo.jpg" alt="Logo"><div><h1>Cabana</h1><small>Rota do Vinho</small></div></div><div></div></div>
@@ -145,15 +187,53 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
 <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
 <a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
 </div></section>
-<section class="screen" id="wifi"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
-    <div class="brand"><div><h1 class="page-title">Wi Fi</h1></div></div><div></div></div>
-<div class="card wifi-box"><h2>Rede</h2><div class="wifi-value">Cabana Rota do Vinho</div><h2>Senha</h2><div class="wifi-value" id="wifiPassword">Sagui2024@@</div>
-<button class="btn" type="button" onclick="navigator.clipboard&&navigator.clipboard.writeText('Sagui2024@@');this.textContent='Senha copiada ✓'">⧉ Copiar senha</button></div>
-<div class="notice"><strong>Informações adicionais</strong><p>Temos Wi Fi na portaria.<br>Rede Viva Natural, não possui senha.</p></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+
+<section class="screen wifi-approved" id="wifi">
+  <div class="wifi-head">
+    <a class="wifi-back" href="#home" aria-label="Voltar"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7M8 12h12"/></svg></a>
+    <div class="wifi-title-wrap">
+      <h1>Wi Fi</h1>
+      <p>❧ Rede e senha para você se conectar ❧</p>
+    </div>
+    <div class="wifi-leaf">❧</div>
+  </div>
+
+  <div class="wifi-symbol"><svg viewBox="0 0 64 64"><path d="M8 24c13-13 35-13 48 0"/><path d="M16 33c9-9 23-9 32 0"/><path d="M24 42c5-5 11-5 16 0"/><circle cx="32" cy="51" r="3.8" fill="currentColor" stroke="none"/></svg></div>
+
+  <div class="wifi-card-approved">
+    <div class="wifi-label">Rede</div>
+    <div class="wifi-main-value">Cabana Rota do Vinho</div>
+    <div class="wifi-divider"></div>
+    <div class="wifi-label">Senha</div>
+    <div class="wifi-main-value">Sagui2024@@</div>
+    <button class="wifi-copy-btn" type="button"
+      onclick="navigator.clipboard&&navigator.clipboard.writeText('Sagui2024@@');this.querySelector('.copy-text').textContent='Senha copiada ✓'">
+      <span class="wifi-copy-icon"><svg viewBox="0 0 24 24"><rect x="8" y="8" width="10" height="12" rx="2"/><path d="M6 16H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span>
+      <span class="copy-text">Copiar senha</span>
+    </button>
+  </div>
+
+  <div class="wifi-info-approved">
+    <div class="wifi-question">?</div>
+    <div class="wifi-info-copy">
+      <h2>Informações adicionais</h2>
+      <p>Temos Wi Fi na portaria.<br>Rede viva natural, não possui senha.</p>
+    </div>
+  </div>
+
+  <a class="wifi-menu-btn" href="#home">
+    <span class="wifi-menu-home"><svg viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"/></svg></span>
+    <span>Voltar para o menu</span>
+    <span class="wifi-menu-arrow"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span>
+  </a>
+
+  <div class="footer-actions">
 <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
 <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
 <a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
-</div></section>
+</div>
+</section>
+
 <section class="screen" id="cafe"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
     <div class="brand"><div><h1 class="page-title">Café da manhã</h1></div></div><div></div></div>
 <div class="card"><h2>Horário de entrega</h2><div class="wifi-value">8h30</div><h3>Onde retirar</h3><p>Na casinha vermelha, no pé da escada.</p>
