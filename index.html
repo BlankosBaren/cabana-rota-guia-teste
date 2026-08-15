@@ -79,6 +79,49 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
 .footer-actions{align-items:center}
 .static-note{font-size:14px;color:var(--muted)}
 @media(max-width:420px){.screen{padding:10px 9px 20px}.top-back{width:38px;height:38px;font-size:30px}}
+
+/* V21 — refino visual e navegação */
+.footer-actions{
+  padding:8px 10px;
+  border-radius:18px;
+  gap:4px;
+}
+.footer-actions a{
+  min-height:54px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  color:#fff;
+  font-weight:700;
+  font-size:14px;
+  border-radius:12px;
+}
+.footer-actions a:hover{background:rgba(255,255,255,.08)}
+.footer-ico{width:24px;height:24px;display:inline-flex;flex:none}
+.footer-ico svg,.btn-svg svg{
+  width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;
+}
+.btn-svg{width:22px;height:22px;display:inline-flex}
+.back-menu{gap:10px;font-size:16px}
+.feature-image{object-fit:cover;max-height:390px}
+.partner img{height:170px;object-fit:cover}
+.delivery-card{grid-template-columns:180px minmax(0,1fr);min-height:170px}
+.delivery-card img{min-height:170px}
+.delivery-card .body{display:flex;flex-direction:column;justify-content:center}
+.delivery-card .btn{margin-top:auto}
+@media(max-width:600px){
+  .footer-actions a{font-size:12px;gap:5px;flex-direction:column;min-height:58px}
+  .footer-ico{width:22px;height:22px}
+  .delivery-card{grid-template-columns:120px minmax(0,1fr)}
+  .partner img{height:155px}
+}
+@media(max-width:390px){
+  .footer-actions{padding:6px}
+  .footer-actions a{font-size:11px}
+  .delivery-card{grid-template-columns:105px minmax(0,1fr)}
+}
+
 </style></head>
 <body><section class="screen" id="home">
 <div class="topbar"><div></div><div class="brand"><img src="assets/crops/logo.jpg" alt="Logo"><div><h1>Cabana</h1><small>Rota do Vinho</small></div></div><div></div></div>
@@ -86,9 +129,10 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
 <h2 class="section-title">Sua estadia</h2><div class="home-grid"><a class="home-card navlink" href="#checkin"><img src="assets/crops/checkin-icon.jpg" alt=""><strong>Check in</strong><span>Informações para sua chegada</span></a><a class="home-card navlink" href="#wifi"><img src="assets/crops/wifi-icon.jpg" alt=""><strong>Wi Fi</strong><span>Rede e senha para você se conectar</span></a><a class="home-card navlink" href="#cafe"><img src="assets/crops/cafe-icon.jpg" alt=""><strong>Café da manhã</strong><span>Horário e informações sobre o delivery</span></a><a class="home-card navlink" href="#hidro"><img src="assets/crops/hidro-icon.jpg" alt=""><strong>Hidromassagem</strong><span>Dicas para aproveitar sua banheira</span></a><a class="home-card navlink" href="#calefator"><img src="assets/crops/calefator-icon.jpg" alt=""><strong>Calefator</strong><span>Como usar com segurança</span></a><a class="home-card navlink" href="#ar"><img src="assets/crops/ar-icon.jpg" alt=""><strong>Ar condicionado</strong><span>Dicas para usar da melhor forma</span></a><a class="home-card navlink" href="#tv"><img src="assets/crops/tv-icon.jpg" alt=""><strong>TV</strong><span>Canais e instruções de uso</span></a><a class="home-card navlink" href="#regras"><img src="assets/crops/regras-icon.jpg" alt=""><strong>Regras da cabana</strong><span>Regras importantes para sua estadia</span></a><a class="home-card navlink" href="#rota"><img src="assets/crops/rota-icon.jpg" alt=""><strong>Rota do Vinho</strong><span>Vinícolas, passeios e experiências</span></a><a class="home-card navlink" href="#delivery"><img src="assets/crops/delivery-icon.jpg" alt=""><strong>Delivery na Cabana</strong><span>Restaurantes parceiros que entregam</span></a><a class="home-card navlink" href="#casaAzul"><img src="assets/crops/casa-icon.jpg" alt=""><strong>Casa Azul</strong><span>Ateliê & Conveniência</span></a><a class="home-card navlink" href="#checkout"><img src="assets/crops/checkout-icon.jpg" alt=""><strong>Check out</strong><span>Informações para sua saída</span></a></div>
 <div class="help-card"><div class="help-icon">♡</div><div><strong>Precisa de ajuda?</strong><p>Fale conosco sempre que precisar.</p></div><a class="btn" href="https://wa.me/5511973053777" target="_blank">WhatsApp</a></div>
 <div class="footer-actions">
-    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener">◎ Instagram</a>
-    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener">◉ Site</a>
-    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener">? Outras dúvidas</a></div></section>
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
 <section class="screen" id="checkin"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
     <div class="brand"><div><h1 class="page-title">Check in</h1></div></div><div></div></div>
 <img class="feature-image" src="assets/crops/checkin-hero.jpg" alt="Área externa da cabana"><div class="list">
@@ -96,54 +140,61 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
 <div class="step"><div class="ico">📍</div><div><h3>Como chegar</h3><p>Abra a localização da cabana no Google Maps.</p><div style="margin-top:10px"><a class="btn-outline" href="https://www.google.com/maps/search/Estrada+Velha+do+Carmo+2100+Canguera+São+Roque+São+Paulo" target="_blank">Abrir localização</a></div></div></div>
 <div class="step"><div class="ico">🚗</div><div><h3>Ao chegar à propriedade</h3><p>Veja como funciona a entrada, onde estacionar e o caminho até sua cabana.</p><div style="margin-top:10px"><a class="btn-outline" href="https://drive.google.com/file/d/1t73j4HniVZpLaHsH1f2_Ayz7i-VtMaQ-/view" target="_blank">Ver foto ou vídeo</a></div></div></div>
 <div class="step"><div class="ico">🔑</div><div><h3>Acesso à cabana</h3><p>Veja onde encontrar a chave e como acessar sua cabana.</p><div style="margin-top:10px"><a class="btn-outline" href="https://drive.google.com/file/d/1t73j4HniVZpLaHsH1f2_Ayz7i-VtMaQ-/view" target="_blank">Ver vídeo ou fotos</a></div></div></div>
-<div class="step"><div class="ico">🔐</div><div><h3>Chaves e controles</h3><p>Dentro da cabana, no local indicado.</p></div></div></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a><div class="footer-actions">
-    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener">◎ Instagram</a>
-    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener">◉ Site</a>
-    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener">? Outras dúvidas</a></div></section>
+<div class="step"><div class="ico">🔐</div><div><h3>Chaves e controles</h3><p>Dentro da cabana, no local indicado.</p></div></div></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
 <section class="screen" id="wifi"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
     <div class="brand"><div><h1 class="page-title">Wi Fi</h1></div></div><div></div></div>
 <div class="card wifi-box"><h2>Rede</h2><div class="wifi-value">Cabana Rota do Vinho</div><h2>Senha</h2><div class="wifi-value" id="wifiPassword">Sagui2024@@</div>
 <button class="btn" type="button" onclick="navigator.clipboard&&navigator.clipboard.writeText('Sagui2024@@');this.textContent='Senha copiada ✓'">⧉ Copiar senha</button></div>
-<div class="notice"><strong>Informações adicionais</strong><p>Temos Wi Fi na portaria.<br>Rede Viva Natural, não possui senha.</p></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a><div class="footer-actions">
-    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener">◎ Instagram</a>
-    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener">◉ Site</a>
-    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener">? Outras dúvidas</a></div></section>
+<div class="notice"><strong>Informações adicionais</strong><p>Temos Wi Fi na portaria.<br>Rede Viva Natural, não possui senha.</p></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
 <section class="screen" id="cafe"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
     <div class="brand"><div><h1 class="page-title">Café da manhã</h1></div></div><div></div></div>
 <div class="card"><h2>Horário de entrega</h2><div class="wifi-value">8h30</div><h3>Onde retirar</h3><p>Na casinha vermelha, no pé da escada.</p>
-<a class="btn-outline" href="assets/extras/casinha-vermelha.png" target="_blank">📍 Ver onde retirar</a></div>
-<div class="notice"><strong>Importante</strong><p>Os comércios só abrem após as 8h. Por este motivo, não conseguimos alterar o horário do café da manhã.</p></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a><div class="footer-actions">
-    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener">◎ Instagram</a>
-    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener">◉ Site</a>
-    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener">? Outras dúvidas</a></div></section>
+<a class="btn-outline" href="assets/extras/casinha-vermelha.png" target="_blank">Ver onde retirar</a></div>
+<div class="notice"><strong>Importante</strong><p>Os comércios só abrem após as 8h. Por este motivo, não conseguimos alterar o horário do café da manhã.</p></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
 <section class="screen" id="hidro"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
     <div class="brand"><div><h1 class="page-title">Hidromassagem</h1><small>Conforto e relaxamento</small></div></div><div></div></div><img class="feature-image" src="assets/crops/hidro-hero.jpg" alt="Hidromassagem">
     <div class="list"><div class="step"><div class="ico">1</div><div><h3>Encha a banheira</h3><p>Encha com água até cobrir os jatos antes de ligar a hidromassagem.</p></div></div><div class="step"><div class="ico">2</div><div><h3>Ligue a hidromassagem</h3><p>Use os comandos da própria banheira.</p></div></div><div class="step"><div class="ico">3</div><div><h3>Temperatura</h3><p>Utilize a água em temperatura confortável, no máximo 36 °C.</p></div></div><div class="step"><div class="ico">4</div><div><h3>Cuidados</h3><p>Não utilize ervas, pétalas ou qualquer material que possa entupir a banheira.</p></div></div></div>
-    <div class="notice"><strong>Vídeo</strong><p>Vídeo da hidromassagem será disponibilizado em breve.</p></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a><div class="footer-actions">
-    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener">◎ Instagram</a>
-    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener">◉ Site</a>
-    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener">? Outras dúvidas</a></div></section>
+    <div class="notice"><strong>Vídeo</strong><p>Vídeo da hidromassagem será disponibilizado em breve.</p></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
 <section class="screen" id="calefator"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
     <div class="brand"><div><h1 class="page-title">Calefator</h1><small>Conforto com segurança</small></div></div><div></div></div><img class="feature-image" src="assets/crops/calefator-hero.jpg" alt="Calefator">
     <div class="list"><div class="step"><div class="ico">1</div><div><h3>Antes de usar</h3><p>Mantenha cortinas e objetos longe do calefator.</p></div></div><div class="step"><div class="ico">2</div><div><h3>Porta sempre fechada</h3><p>É obrigatório manter a porta do calefator fechada durante todo o uso.</p></div></div><div class="step"><div class="ico">3</div><div><h3>Cuidado com as brasas</h3><p>Tenha cuidado para não deixar brasas caírem no chão.</p></div></div><div class="step"><div class="ico">4</div><div><h3>Não coloque alimentos</h3><p>Não coloque nenhum tipo de alimento no calefator, inclusive queijos ou marshmallows.</p></div></div></div>
-    <div class="notice"><strong>Vídeo</strong><p>Vídeo do calefator será disponibilizado em breve.</p></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a><div class="footer-actions">
-    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener">◎ Instagram</a>
-    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener">◉ Site</a>
-    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener">? Outras dúvidas</a></div></section>
+    <div class="notice"><strong>Vídeo</strong><p>Vídeo do calefator será disponibilizado em breve.</p></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
 <section class="screen" id="ar"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
     <div class="brand"><div><h1 class="page-title">Ar condicionado</h1><small>Conforto e bem estar</small></div></div><div></div></div><img class="feature-image" src="assets/crops/ar-hero.jpg" alt="Ar condicionado">
     <div class="list"><div class="step"><div class="ico">1</div><div><h3>Onde fica o controle</h3><p>O controle do ar condicionado fica na parede ao lado da escada.</p></div></div><div class="step"><div class="ico">2</div><div><h3>Somente frio</h3><p>O aparelho possui apenas a função de resfriamento. Não possui função quente.</p></div></div><div class="step"><div class="ico">3</div><div><h3>Portas e janelas</h3><p>Mantenha portas e janelas fechadas enquanto o aparelho estiver ligado.</p></div></div><div class="step"><div class="ico">4</div><div><h3>Ao sair da cabana</h3><p>Desligue o ar condicionado.</p></div></div></div>
-    <div class="notice"><strong>Vídeo</strong><p>Vídeo do ar condicionado será disponibilizado em breve.</p></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a><div class="footer-actions">
-    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener">◎ Instagram</a>
-    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener">◉ Site</a>
-    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener">? Outras dúvidas</a></div></section>
+    <div class="notice"><strong>Vídeo</strong><p>Vídeo do ar condicionado será disponibilizado em breve.</p></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
 <section class="screen" id="tv"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
     <div class="brand"><div><h1 class="page-title">TV</h1><small>Entretenimento para relaxar</small></div></div><div></div></div><img class="feature-image" src="assets/crops/tv-hero.jpg" alt="TV">
     <div class="list"><div class="step"><div class="ico">1</div><div><h3>Controle da TV</h3><p>O controle da TV fica dentro da cestinha em frente ao microondas.</p></div></div><div class="step"><div class="ico">2</div><div><h3>Canais e aplicativos</h3><p>A TV possui acesso a Netflix, YouTube, Prime Video, Disney+ e Globoplay. Use sua própria conta.</p></div></div><div class="step"><div class="ico">3</div><div><h3>Para assistir</h3><p>Ligue a TV, escolha o aplicativo desejado e faça login com sua conta.</p></div></div><div class="step"><div class="ico">4</div><div><h3>Ao sair da cabana</h3><p>Desligue a TV e desconecte sua conta dos aplicativos.</p></div></div></div>
-    <div class="notice"><strong>Vídeo</strong><p>Vídeo da TV será disponibilizado em breve.</p></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a><div class="footer-actions">
-    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener">◎ Instagram</a>
-    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener">◉ Site</a>
-    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener">? Outras dúvidas</a></div></section>
+    <div class="notice"><strong>Vídeo</strong><p>Vídeo da TV será disponibilizado em breve.</p></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
 <section class="screen" id="regras"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
     <div class="brand"><div><h1 class="page-title">Regras da cabana</h1><small>Para uma estadia tranquila e especial</small></div></div><div></div></div>
 <div class="list">
@@ -153,10 +204,11 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
 <div class="step"><div class="ico">🧺</div><div><h3>Enxoval</h3><p>Itens com manchas permanentes serão descartados e cobrados pelo valor de reposição.</p></div></div>
 <div class="step"><div class="ico">🏠</div><div><h3>Itens da cabana</h3><p>Itens ausentes após o checkout serão cobrados pelo valor de reposição.</p></div></div></div>
 <div class="notice"><strong>Regras completas</strong><p>Consulte os Termos da Hospedagem completos.</p>
-<a class="btn rule-link" href="assets/extras/regras-completas.png" target="_blank">Ver regras completas</a></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a><div class="footer-actions">
-    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener">◎ Instagram</a>
-    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener">◉ Site</a>
-    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener">? Outras dúvidas</a></div></section>
+<a class="btn rule-link" href="assets/extras/regras-completas.png" target="_blank">Ver regras completas</a></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
 <section class="screen" id="rota"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
     <div class="brand"><div><h1 class="page-title">Rota do Vinho</h1><small>Descubra São Roque</small></div></div><div></div></div>
 <img class="feature-image" src="assets/crops/rota-hero.jpg" alt="Rota do Vinho">
@@ -165,13 +217,21 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
 <div class="partner"><img src="assets/crops/hockenheim.jpg"><div class="body"><h3>Choperia Hockenheim</h3><p>Parceiro Cabana Rota do Vinho</p><div class="actions"><span class="btn-small">Benefício em breve</span><a class="btn-small" href="https://maps.app.goo.gl/RYzwLAWStjWCSCwy5" target="_blank">Como chegar</a></div></div></div>
 <div class="partner"><img src="assets/crops/dreamcar.jpg"><div class="body"><h3>Dream Car Museum</h3><p>Parceiro Cabana Rota do Vinho</p><div class="actions"><a class="btn-small" href="assets/extras/dream-car-beneficio.png" target="_blank">Benefício</a><a class="btn-small" href="https://maps.app.goo.gl/72qbr9jjbKpXwU26A" target="_blank">Como chegar</a></div></div></div>
 </div>
-<h2 class="section-title">Explore São Roque</h2><div class="card"><div class="info-row"><a class="btn" href="https://maps.app.goo.gl/GU4ZuEZ3PqC5dJuc6" target="_blank">🗺 Abrir Rota no mapa</a><a class="btn-outline" href="assets/extras/mapa-roteiro.png" target="_blank">Mapa do Roteiro do Vinho</a></div></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a></section>
+<h2 class="section-title">Explore São Roque</h2><div class="card"><div class="info-row"><a class="btn" href="https://maps.app.goo.gl/GU4ZuEZ3PqC5dJuc6" target="_blank">Abrir Rota no mapa</a><a class="btn-outline" href="assets/extras/mapa-roteiro.png" target="_blank">Mapa do Roteiro do Vinho</a></div></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
 <section class="screen" id="delivery"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
     <div class="brand"><div><h1 class="page-title">Delivery na Cabana</h1><small>Opções que costumam entregar até a propriedade</small></div></div><div></div></div>
 <div class="notice"><strong>Mais comodidade para você!</strong><p>Selecionamos algumas opções que costumam entregar até a cabana.</p></div>
 <div class="delivery-list"><div class="delivery-card"><img src="assets/crops/born.jpg" alt="Born In Smoke"><div class="body"><h3>Born In Smoke</h3><p>Carnes e opções defumadas</p><a class="btn" href="https://wa.me/5511970621424" target="_blank">WhatsApp • Fazer pedido</a></div></div><div class="delivery-card"><img src="assets/crops/itacolomy.jpg" alt="Restaurante Itacolomy"><div class="body"><h3>Restaurante Itacolomy</h3><p>Pizzas e comidas</p><a class="btn" href="https://wa.me/5515997140192" target="_blank">WhatsApp • Fazer pedido</a></div></div><div class="delivery-card"><img src="assets/crops/dipomodoro.jpg" alt="Pizzaria Di Pomodoro"><div class="body"><h3>Pizzaria Di Pomodoro</h3><p>Pizzas</p><a class="btn" href="https://wa.me/5511937769975" target="_blank">WhatsApp • Fazer pedido</a></div></div></div>
 <div class="card"><h2>iFood</h2><p>Confira no aplicativo quais estabelecimentos estão entregando na região no momento.</p><a class="btn" href="https://www.ifood.com.br/" target="_blank">Abrir iFood</a></div>
-<div class="notice"><strong>Importante</strong><p>O tempo de entrega pode variar conforme o trânsito e a disponibilidade dos estabelecimentos.</p></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a></section>
+<div class="notice"><strong>Importante</strong><p>O tempo de entrega pode variar conforme o trânsito e a disponibilidade dos estabelecimentos.</p></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
 <section class="screen" id="casaAzul"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
     <div class="brand"><div><h1 class="page-title">Casa Azul</h1><small>Ateliê & Conveniência</small></div></div><div></div></div>
 <img class="feature-image" src="assets/crops/casa-hero.jpg" alt="Casa Azul">
@@ -182,7 +242,11 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
 <div class="home-card"><strong>Lenha</strong><span>Para fogueira e lareira.</span></div>
 <div class="home-card"><strong>Artesanatos e Presentes</strong><span>Peças artesanais e lembranças.</span></div>
 </div>
-<div class="card" style="margin-top:14px"><a class="btn" href="assets/extras/casa-azul-fachada.png" target="_blank">📍 Como chegar</a><p class="static-note">Olhando do portão da cabana, esta é a Casa Azul. Para chegar, suba a rua à esquerda. Senha da porta: 2381. Feche a porta ao sair.</p></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a></section>
+<div class="card" style="margin-top:14px"><a class="btn" href="assets/extras/casa-azul-fachada.png" target="_blank">Como chegar</a><p class="static-note">Olhando do portão da cabana, esta é a Casa Azul. Para chegar, suba a rua à esquerda. Senha da porta: 2381. Feche a porta ao sair.</p></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
 <section class="screen" id="checkout"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
     <div class="brand"><div><h1 class="page-title">Check out</h1><small>Sua saída tranquila</small></div></div><div></div></div>
 <div class="card"><h2>Esperamos que você tenha aproveitado sua estadia!</h2><p>Para que tudo fique perfeito até o final, siga as orientações abaixo.</p></div>
@@ -196,4 +260,21 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
 <div class="step"><div class="ico">7</div><div><h3>Para sair da cabana</h3><p>Há teclados ao lado esquerdo dos portões. Para abrir, use a mesma senha de entrada.</p><div style="margin-top:10px"><span class='btn-outline'>Foto será adicionada em breve</span></div></div></div>
 <div class="step"><div class="ico">8</div><div><h3>Portões</h3><p>Certifique se de que os portões estejam fechados ao sair.</p></div></div></div>
 <div class="notice"><strong>Obrigado pela estadia!</strong><p>Boa viagem e volte sempre!</p></div>
-<a class="btn back-menu" href="assets/extras/avaliacao-pos-checkout.png" target="_blank">✓ Finalizei meu check out</a><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a></section></body></html>
+<a class="btn back-menu" href="assets/extras/avaliacao-pos-checkout.png" target="_blank">Finalizei meu check out</a><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
+<script>
+(function(){
+  function goTop(){ requestAnimationFrame(function(){ window.scrollTo({top:0,left:0,behavior:"auto"}); }); }
+  window.addEventListener("hashchange", goTop);
+  window.addEventListener("load", goTop);
+  document.addEventListener("click", function(e){
+    var a=e.target.closest('a[href^="#"]');
+    if(a) setTimeout(goTop,0);
+  });
+})();
+</script>
+
+</body></html>
