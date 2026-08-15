@@ -1,12 +1,7 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#fbf6ed">
-<meta name="color-scheme" content="light only">
-<title>Cabana Rota do Vinho</title>
-<style>
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fbf6ed"><meta name="color-scheme" content="light only">
+<title>Cabana Rota do Vinho</title><style>
 :root{
   --cream:#fbf6ed; --cream2:#f2eadc; --green:#0b4a33; --green2:#2f674d;
   --gold:#b97a2d; --ink:#173b2e; --muted:#5f6f64; --line:#ded4c3;
@@ -67,138 +62,138 @@ button{cursor:pointer}
 }
 @media(prefers-color-scheme:dark){html,body,#app,.page{background:var(--cream)!important;color-scheme:light only}}
 
-</style>
-</head>
-<body>
-<main id="app"></main>
-<div id="modal" class="modal" hidden>
-  <div class="modal-backdrop" data-close></div>
-  <div class="modal-panel">
-    <button class="modal-close" data-close>×</button>
-    <div id="modalContent"></div>
-  </div>
+
+
+/* V20: núcleo de navegação sem JavaScript */
+body{min-height:100dvh}
+.screen{display:none;width:min(100%,720px);margin:0 auto;padding:16px 14px 26px;background:var(--cream);min-height:100dvh}
+#home{display:block}
+.screen:target{display:block}
+body:has(.screen:target) #home{display:none}
+#home:target{display:block!important}
+.navlink{text-decoration:none;color:inherit}
+.home-card{appearance:none}
+a.btn,a.btn-outline,a.btn-small{cursor:pointer}
+.top-back{font-size:34px;color:var(--green);text-decoration:none;display:grid;place-items:center;width:44px;height:44px}
+.footer-actions a{color:#fff;text-decoration:none;text-align:center;font-size:13px;padding:9px 4px}
+.footer-actions{align-items:center}
+.static-note{font-size:14px;color:var(--muted)}
+@media(max-width:420px){.screen{padding:10px 9px 20px}.top-back{width:38px;height:38px;font-size:30px}}
+</style></head>
+<body><section class="screen" id="home">
+<div class="topbar"><div></div><div class="brand"><img src="assets/crops/logo.jpg" alt="Logo"><div><h1>Cabana</h1><small>Rota do Vinho</small></div></div><div></div></div>
+<div class="hero"><img src="assets/crops/home-hero.jpg" alt="Cabana Rota do Vinho"></div>
+<h2 class="section-title">Sua estadia</h2><div class="home-grid"><a class="home-card navlink" href="#checkin"><img src="assets/crops/checkin-icon.jpg" alt=""><strong>Check in</strong><span>Informações para sua chegada</span></a><a class="home-card navlink" href="#wifi"><img src="assets/crops/wifi-icon.jpg" alt=""><strong>Wi Fi</strong><span>Rede e senha para você se conectar</span></a><a class="home-card navlink" href="#cafe"><img src="assets/crops/cafe-icon.jpg" alt=""><strong>Café da manhã</strong><span>Horário e informações sobre o delivery</span></a><a class="home-card navlink" href="#hidro"><img src="assets/crops/hidro-icon.jpg" alt=""><strong>Hidromassagem</strong><span>Dicas para aproveitar sua banheira</span></a><a class="home-card navlink" href="#calefator"><img src="assets/crops/calefator-icon.jpg" alt=""><strong>Calefator</strong><span>Como usar com segurança</span></a><a class="home-card navlink" href="#ar"><img src="assets/crops/ar-icon.jpg" alt=""><strong>Ar condicionado</strong><span>Dicas para usar da melhor forma</span></a><a class="home-card navlink" href="#tv"><img src="assets/crops/tv-icon.jpg" alt=""><strong>TV</strong><span>Canais e instruções de uso</span></a><a class="home-card navlink" href="#regras"><img src="assets/crops/regras-icon.jpg" alt=""><strong>Regras da cabana</strong><span>Regras importantes para sua estadia</span></a><a class="home-card navlink" href="#rota"><img src="assets/crops/rota-icon.jpg" alt=""><strong>Rota do Vinho</strong><span>Vinícolas, passeios e experiências</span></a><a class="home-card navlink" href="#delivery"><img src="assets/crops/delivery-icon.jpg" alt=""><strong>Delivery na Cabana</strong><span>Restaurantes parceiros que entregam</span></a><a class="home-card navlink" href="#casaAzul"><img src="assets/crops/casa-icon.jpg" alt=""><strong>Casa Azul</strong><span>Ateliê & Conveniência</span></a><a class="home-card navlink" href="#checkout"><img src="assets/crops/checkout-icon.jpg" alt=""><strong>Check out</strong><span>Informações para sua saída</span></a></div>
+<div class="help-card"><div class="help-icon">♡</div><div><strong>Precisa de ajuda?</strong><p>Fale conosco sempre que precisar.</p></div><a class="btn" href="https://wa.me/5511973053777" target="_blank">WhatsApp</a></div>
+<div class="footer-actions">
+    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener">◎ Instagram</a>
+    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener">◉ Site</a>
+    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener">? Outras dúvidas</a></div></section>
+<section class="screen" id="checkin"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
+    <div class="brand"><div><h1 class="page-title">Check in</h1></div></div><div></div></div>
+<img class="feature-image" src="assets/crops/checkin-hero.jpg" alt="Área externa da cabana"><div class="list">
+<div class="step"><div class="ico">🕒</div><div><h3>Horário de entrada</h3><p>A partir das 15h.</p></div></div>
+<div class="step"><div class="ico">📍</div><div><h3>Como chegar</h3><p>Abra a localização da cabana no Google Maps.</p><div style="margin-top:10px"><a class="btn-outline" href="https://www.google.com/maps/search/Estrada+Velha+do+Carmo+2100+Canguera+São+Roque+São+Paulo" target="_blank">Abrir localização</a></div></div></div>
+<div class="step"><div class="ico">🚗</div><div><h3>Ao chegar à propriedade</h3><p>Veja como funciona a entrada, onde estacionar e o caminho até sua cabana.</p><div style="margin-top:10px"><a class="btn-outline" href="https://drive.google.com/file/d/1t73j4HniVZpLaHsH1f2_Ayz7i-VtMaQ-/view" target="_blank">Ver foto ou vídeo</a></div></div></div>
+<div class="step"><div class="ico">🔑</div><div><h3>Acesso à cabana</h3><p>Veja onde encontrar a chave e como acessar sua cabana.</p><div style="margin-top:10px"><a class="btn-outline" href="https://drive.google.com/file/d/1t73j4HniVZpLaHsH1f2_Ayz7i-VtMaQ-/view" target="_blank">Ver vídeo ou fotos</a></div></div></div>
+<div class="step"><div class="ico">🔐</div><div><h3>Chaves e controles</h3><p>Dentro da cabana, no local indicado.</p></div></div></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a><div class="footer-actions">
+    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener">◎ Instagram</a>
+    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener">◉ Site</a>
+    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener">? Outras dúvidas</a></div></section>
+<section class="screen" id="wifi"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
+    <div class="brand"><div><h1 class="page-title">Wi Fi</h1></div></div><div></div></div>
+<div class="card wifi-box"><h2>Rede</h2><div class="wifi-value">Cabana Rota do Vinho</div><h2>Senha</h2><div class="wifi-value" id="wifiPassword">Sagui2024@@</div>
+<button class="btn" type="button" onclick="navigator.clipboard&&navigator.clipboard.writeText('Sagui2024@@');this.textContent='Senha copiada ✓'">⧉ Copiar senha</button></div>
+<div class="notice"><strong>Informações adicionais</strong><p>Temos Wi Fi na portaria.<br>Rede Viva Natural, não possui senha.</p></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a><div class="footer-actions">
+    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener">◎ Instagram</a>
+    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener">◉ Site</a>
+    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener">? Outras dúvidas</a></div></section>
+<section class="screen" id="cafe"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
+    <div class="brand"><div><h1 class="page-title">Café da manhã</h1></div></div><div></div></div>
+<div class="card"><h2>Horário de entrega</h2><div class="wifi-value">8h30</div><h3>Onde retirar</h3><p>Na casinha vermelha, no pé da escada.</p>
+<a class="btn-outline" href="assets/extras/casinha-vermelha.png" target="_blank">📍 Ver onde retirar</a></div>
+<div class="notice"><strong>Importante</strong><p>Os comércios só abrem após as 8h. Por este motivo, não conseguimos alterar o horário do café da manhã.</p></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a><div class="footer-actions">
+    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener">◎ Instagram</a>
+    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener">◉ Site</a>
+    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener">? Outras dúvidas</a></div></section>
+<section class="screen" id="hidro"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
+    <div class="brand"><div><h1 class="page-title">Hidromassagem</h1><small>Conforto e relaxamento</small></div></div><div></div></div><img class="feature-image" src="assets/crops/hidro-hero.jpg" alt="Hidromassagem">
+    <div class="list"><div class="step"><div class="ico">1</div><div><h3>Encha a banheira</h3><p>Encha com água até cobrir os jatos antes de ligar a hidromassagem.</p></div></div><div class="step"><div class="ico">2</div><div><h3>Ligue a hidromassagem</h3><p>Use os comandos da própria banheira.</p></div></div><div class="step"><div class="ico">3</div><div><h3>Temperatura</h3><p>Utilize a água em temperatura confortável, no máximo 36 °C.</p></div></div><div class="step"><div class="ico">4</div><div><h3>Cuidados</h3><p>Não utilize ervas, pétalas ou qualquer material que possa entupir a banheira.</p></div></div></div>
+    <div class="notice"><strong>Vídeo</strong><p>Vídeo da hidromassagem será disponibilizado em breve.</p></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a><div class="footer-actions">
+    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener">◎ Instagram</a>
+    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener">◉ Site</a>
+    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener">? Outras dúvidas</a></div></section>
+<section class="screen" id="calefator"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
+    <div class="brand"><div><h1 class="page-title">Calefator</h1><small>Conforto com segurança</small></div></div><div></div></div><img class="feature-image" src="assets/crops/calefator-hero.jpg" alt="Calefator">
+    <div class="list"><div class="step"><div class="ico">1</div><div><h3>Antes de usar</h3><p>Mantenha cortinas e objetos longe do calefator.</p></div></div><div class="step"><div class="ico">2</div><div><h3>Porta sempre fechada</h3><p>É obrigatório manter a porta do calefator fechada durante todo o uso.</p></div></div><div class="step"><div class="ico">3</div><div><h3>Cuidado com as brasas</h3><p>Tenha cuidado para não deixar brasas caírem no chão.</p></div></div><div class="step"><div class="ico">4</div><div><h3>Não coloque alimentos</h3><p>Não coloque nenhum tipo de alimento no calefator, inclusive queijos ou marshmallows.</p></div></div></div>
+    <div class="notice"><strong>Vídeo</strong><p>Vídeo do calefator será disponibilizado em breve.</p></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a><div class="footer-actions">
+    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener">◎ Instagram</a>
+    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener">◉ Site</a>
+    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener">? Outras dúvidas</a></div></section>
+<section class="screen" id="ar"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
+    <div class="brand"><div><h1 class="page-title">Ar condicionado</h1><small>Conforto e bem estar</small></div></div><div></div></div><img class="feature-image" src="assets/crops/ar-hero.jpg" alt="Ar condicionado">
+    <div class="list"><div class="step"><div class="ico">1</div><div><h3>Onde fica o controle</h3><p>O controle do ar condicionado fica na parede ao lado da escada.</p></div></div><div class="step"><div class="ico">2</div><div><h3>Somente frio</h3><p>O aparelho possui apenas a função de resfriamento. Não possui função quente.</p></div></div><div class="step"><div class="ico">3</div><div><h3>Portas e janelas</h3><p>Mantenha portas e janelas fechadas enquanto o aparelho estiver ligado.</p></div></div><div class="step"><div class="ico">4</div><div><h3>Ao sair da cabana</h3><p>Desligue o ar condicionado.</p></div></div></div>
+    <div class="notice"><strong>Vídeo</strong><p>Vídeo do ar condicionado será disponibilizado em breve.</p></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a><div class="footer-actions">
+    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener">◎ Instagram</a>
+    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener">◉ Site</a>
+    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener">? Outras dúvidas</a></div></section>
+<section class="screen" id="tv"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
+    <div class="brand"><div><h1 class="page-title">TV</h1><small>Entretenimento para relaxar</small></div></div><div></div></div><img class="feature-image" src="assets/crops/tv-hero.jpg" alt="TV">
+    <div class="list"><div class="step"><div class="ico">1</div><div><h3>Controle da TV</h3><p>O controle da TV fica dentro da cestinha em frente ao microondas.</p></div></div><div class="step"><div class="ico">2</div><div><h3>Canais e aplicativos</h3><p>A TV possui acesso a Netflix, YouTube, Prime Video, Disney+ e Globoplay. Use sua própria conta.</p></div></div><div class="step"><div class="ico">3</div><div><h3>Para assistir</h3><p>Ligue a TV, escolha o aplicativo desejado e faça login com sua conta.</p></div></div><div class="step"><div class="ico">4</div><div><h3>Ao sair da cabana</h3><p>Desligue a TV e desconecte sua conta dos aplicativos.</p></div></div></div>
+    <div class="notice"><strong>Vídeo</strong><p>Vídeo da TV será disponibilizado em breve.</p></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a><div class="footer-actions">
+    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener">◎ Instagram</a>
+    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener">◉ Site</a>
+    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener">? Outras dúvidas</a></div></section>
+<section class="screen" id="regras"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
+    <div class="brand"><div><h1 class="page-title">Regras da cabana</h1><small>Para uma estadia tranquila e especial</small></div></div><div></div></div>
+<div class="list">
+<div class="step"><div class="ico">🚭</div><div><h3>Dentro da cabana</h3><p>Não é permitido fumar dentro da cabana.</p></div></div>
+<div class="step"><div class="ico">🍳</div><div><h3>Alimentos</h3><p>Não é permitido fazer frituras ou preparações gordurosas dentro da cabana.</p></div></div>
+<div class="step"><div class="ico">🔥</div><div><h3>Calefator</h3><p>Não coloque alimentos no calefator. Mantenha a porta fechada durante todo o uso.</p></div></div>
+<div class="step"><div class="ico">🧺</div><div><h3>Enxoval</h3><p>Itens com manchas permanentes serão descartados e cobrados pelo valor de reposição.</p></div></div>
+<div class="step"><div class="ico">🏠</div><div><h3>Itens da cabana</h3><p>Itens ausentes após o checkout serão cobrados pelo valor de reposição.</p></div></div></div>
+<div class="notice"><strong>Regras completas</strong><p>Consulte os Termos da Hospedagem completos.</p>
+<a class="btn rule-link" href="assets/extras/regras-completas.png" target="_blank">Ver regras completas</a></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a><div class="footer-actions">
+    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener">◎ Instagram</a>
+    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener">◉ Site</a>
+    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener">? Outras dúvidas</a></div></section>
+<section class="screen" id="rota"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
+    <div class="brand"><div><h1 class="page-title">Rota do Vinho</h1><small>Descubra São Roque</small></div></div><div></div></div>
+<img class="feature-image" src="assets/crops/rota-hero.jpg" alt="Rota do Vinho">
+<div class="card"><h2>Parceiros da Cabana</h2><p>Aproveite benefícios exclusivos com nossos parceiros.</p></div>
+<div class="partner-grid">
+<div class="partner"><img src="assets/crops/hockenheim.jpg"><div class="body"><h3>Choperia Hockenheim</h3><p>Parceiro Cabana Rota do Vinho</p><div class="actions"><span class="btn-small">Benefício em breve</span><a class="btn-small" href="https://maps.app.goo.gl/RYzwLAWStjWCSCwy5" target="_blank">Como chegar</a></div></div></div>
+<div class="partner"><img src="assets/crops/dreamcar.jpg"><div class="body"><h3>Dream Car Museum</h3><p>Parceiro Cabana Rota do Vinho</p><div class="actions"><a class="btn-small" href="assets/extras/dream-car-beneficio.png" target="_blank">Benefício</a><a class="btn-small" href="https://maps.app.goo.gl/72qbr9jjbKpXwU26A" target="_blank">Como chegar</a></div></div></div>
 </div>
-<div id="toast" class="toast"></div>
-<script>
-
-window.addEventListener('error', function(e){
-  const a=document.getElementById('app');
-  if(a && !a.innerHTML.trim()){
-    a.innerHTML='<div style="max-width:720px;margin:40px auto;padding:24px;font-family:Arial;background:#fffaf3;border-radius:20px;color:#0b4a33"><h2>Não foi possível carregar o guia.</h2><p>Atualize a página. Se o problema continuar, entre em contato com a Cabana Rota do Vinho.</p></div>';
-  }
-});
-
-window.GUIDE_CONFIG = {
-  external: {
-    instagram: 'https://www.instagram.com/cabanarotadovinho/',
-    site: 'https://www.cabananaserra.com.br/',
-    whatsapp: 'https://wa.me/5511973053777',
-    mapsCabana: 'https://www.google.com/maps/search/Estrada+Velha+do+Carmo+2100+Canguera+São+Roque+São+Paulo',
-    checkinVideo: 'https://drive.google.com/file/d/1t73j4HniVZpLaHsH1f2_Ayz7i-VtMaQ-/view',
-    rotaMaps: 'https://maps.app.goo.gl/GU4ZuEZ3PqC5dJuc6',
-    dreamCarMaps: 'https://maps.app.goo.gl/72qbr9jjbKpXwU26A',
-    hockenheimMaps: 'https://maps.app.goo.gl/RYzwLAWStjWCSCwy5',
-    dreamCarPurchase: 'https://kommo.cc/K/VIWIBT/VGJ01P',
-    bornWhatsapp: 'https://wa.me/5511970621424?text=Ol%C3%A1%21%20Estou%20hospedado%20na%20Cabana%20Rota%20do%20Vinho%20e%20gostaria%20de%20fazer%20um%20pedido%20para%20entrega.',
-    itacolomyWhatsapp: 'https://wa.me/5515997140192?text=Ol%C3%A1%21%20Estou%20hospedado%20na%20Cabana%20Rota%20do%20Vinho%20e%20gostaria%20de%20fazer%20um%20pedido%20para%20entrega.',
-    diPomodoroWhatsapp: 'https://wa.me/5511937769975?text=Ol%C3%A1%21%20Estou%20hospedado%20na%20Cabana%20Rota%20do%20Vinho%20e%20gostaria%20de%20fazer%20um%20pedido%20para%20entrega.',
-    ifood: 'https://www.ifood.com.br/'
-  },
-  wifi: { password: 'Sagui2024@@' },
-  pending: {
-    hidroVideo: '',
-    calefatorVideo: '',
-    arVideo: '',
-    tvVideo: '',
-    hockenheimBenefit: '',
-    checkoutGatePhoto: ''
-  }
-};
-
-const C=window.GUIDE_CONFIG||{external:{},wifi:{password:''},pending:{}},app=document.getElementById('app'),modal=document.getElementById('modal'),mc=document.getElementById('modalContent'),toast=document.getElementById('toast');
-const A='assets/crops/';
-const nav=[
- ['checkin','checkin-icon.jpg','Check in','Informações para sua chegada'],['wifi','wifi-icon.jpg','Wi Fi','Rede e senha para você se conectar'],['cafe','cafe-icon.jpg','Café da manhã','Horário e informações sobre o delivery'],['hidro','hidro-icon.jpg','Hidromassagem','Dicas para aproveitar sua banheira'],
- ['calefator','calefator-icon.jpg','Calefator','Como usar com segurança'],['ar','ar-icon.jpg','Ar condicionado','Dicas para usar da melhor forma'],['tv','tv-icon.jpg','TV','Canais e instruções de uso'],['regras','regras-icon.jpg','Regras da cabana','Regras importantes para sua estadia'],
- ['rota','rota-icon.jpg','Rota do Vinho','Vinícolas, passeios e experiências'],['delivery','delivery-icon.jpg','Delivery na Cabana','Restaurantes parceiros que entregam'],['casaAzul','casa-icon.jpg','Casa Azul','Ateliê & Conveniência'],['checkout','checkout-icon.jpg','Check out','Informações para sua saída']
-];
-const go=id=>{location.hash=id==='home'?'':id}; const ext=u=>u&&(location.href=u);
-function toastMsg(m){toast.textContent=m;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2200)}
-function openModal(html){mc.innerHTML=html;modal.hidden=false;document.body.style.overflow='hidden'} function closeModal(){modal.hidden=true;mc.innerHTML='';document.body.style.overflow=''}
-function imgModal(src,alt,cap=''){openModal(`<img src="${src}" alt="${alt}">${cap?`<div class="modal-caption">${cap}</div>`:''}`)}
-function top(title,sub=''){return `<div class="topbar"><button class="icon-btn" data-go="home" aria-label="Voltar">←</button><div class="brand"><div><h1 class="page-title">${title}</h1>${sub?`<small>${sub}</small>`:''}</div></div><div></div></div>`}
-function footer(){return `<button class="btn back-menu" data-go="home">⌂ Voltar para o menu</button>`}
-function globalFooter(){return `<div class="footer-actions"><button data-ext="instagram">◎ Instagram</button><button data-ext="site">◉ Site</button><button data-ext="whatsapp">? Outras dúvidas</button></div>`}
-function home(){
- const cards=nav.map(([id,ic,t,d])=>`<button class="home-card" data-go="${id}"><img src="${A}${ic}" alt=""><strong>${t}</strong><span>${d}</span></button>`).join('');
- return `<div class="page"><div class="topbar"><div></div><div class="brand"><img src="${A}logo.jpg" alt="Logo"><div><h1>Cabana</h1><small>Rota do Vinho</small></div></div><div></div></div><div class="hero"><img src="${A}home-hero.jpg" alt="Cabana Rota do Vinho"></div>
- <h2 class="section-title">Sua estadia</h2><div class="home-grid">${cards.slice(0, cards.length)}</div>
- <div class="help-card"><div class="help-icon">♡</div><div><strong>Precisa de ajuda?</strong><p>Fale conosco sempre que precisar.</p></div><button class="btn" data-ext="whatsapp">WhatsApp</button></div>${globalFooter()}</div>`
-}
-function checkin(){return `<div class="page">${top('Check in')}<img class="feature-image" src="${A}checkin-hero.jpg" alt="Área externa da cabana"><div class="list">
- ${step('🕒','Horário de entrada','A partir das 15h.')}
- ${step('📍','Como chegar','Abra a localização da cabana no Google Maps.','<button class="btn-outline" data-ext="mapsCabana">Abrir localização</button>')}
- ${step('🚗','Ao chegar à propriedade','Veja como funciona a entrada, onde estacionar e o caminho até sua cabana.','<button class="btn-outline" data-ext="checkinVideo">Ver foto ou vídeo</button>')}
- ${step('🔑','Acesso à cabana','Veja onde encontrar a chave e como acessar sua cabana.','<button class="btn-outline" data-ext="checkinVideo">Ver vídeo ou fotos</button>')}
- ${step('🔐','Chaves e controles','Dentro da cabana, no local indicado.')}
- </div>${footer()}${globalFooter()}</div>`}
-function wifi(){return `<div class="page">${top('Wi Fi')}<div class="card wifi-box"><h2>Rede</h2><div class="wifi-value">Cabana Rota do Vinho</div><h2>Senha</h2><div class="wifi-value">${C.wifi.password}</div><button class="btn" id="copyWifi">⧉ Copiar senha</button></div><div class="notice"><strong>Informações adicionais</strong><p>Temos Wi Fi na portaria.<br>Rede Viva Natural, não possui senha.</p></div>${footer()}${globalFooter()}</div>`}
-function cafe(){return `<div class="page">${top('Café da manhã')}<div class="card"><h2>Horário de entrega</h2><div class="wifi-value">8h30</div><h3>Onde retirar</h3><p>Na casinha vermelha, no pé da escada.</p><button class="btn-outline" id="breakfastPhoto">📍 Ver onde retirar</button></div><div class="notice"><strong>Importante</strong><p>Os comércios só abrem após as 8h. Por este motivo, não conseguimos alterar o horário do café da manhã.</p></div>${footer()}${globalFooter()}</div>`}
-function hidro(){return infoPage('Hidromassagem','Conforto e relaxamento','hidro-hero.jpg',[
- ['1','Encha a banheira','Encha com água até cobrir os jatos antes de ligar a hidromassagem.'],['2','Ligue a hidromassagem','Use os comandos da própria banheira.'],['3','Temperatura','Utilize a água em temperatura confortável, no máximo 36 °C.'],['4','Cuidados','Não utilize ervas, pétalas ou qualquer material que possa entupir a banheira.']
- ],'hidroVideo','Vídeo da hidromassagem será disponibilizado em breve.');}
-function calefator(){return infoPage('Calefator','Conforto com segurança','calefator-hero.jpg',[
- ['1','Antes de usar','Mantenha cortinas e objetos longe do calefator.'],['2','Porta sempre fechada','É obrigatório manter a porta do calefator fechada durante todo o uso.'],['3','Cuidado com as brasas','Tenha cuidado para não deixar brasas caírem no chão.'],['4','Não coloque alimentos','Não coloque nenhum tipo de alimento no calefator, inclusive queijos ou marshmallows.']
- ],'calefatorVideo','Vídeo do calefator será disponibilizado em breve.','A utilização com a porta aberta apresenta risco de incêndio.');}
-function ar(){return infoPage('Ar condicionado','Conforto e bem estar','ar-hero.jpg',[
- ['1','Onde fica o controle','O controle do ar condicionado fica na parede ao lado da escada.'],['2','Somente frio','O aparelho possui apenas a função de resfriamento. Não possui função quente.'],['3','Portas e janelas','Mantenha portas e janelas fechadas enquanto o aparelho estiver ligado.'],['4','Ao sair da cabana','Desligue o ar condicionado.']
- ],'arVideo','Vídeo do ar condicionado será disponibilizado em breve.');}
-function tv(){return infoPage('TV','Entretenimento para relaxar','tv-hero.jpg',[
- ['1','Controle da TV','O controle da TV fica dentro da cestinha em frente ao microondas.'],['2','Canais e aplicativos','A TV possui acesso a Netflix, YouTube, Prime Video, Disney+ e Globoplay. Use sua própria conta.'],['3','Para assistir','Ligue a TV, escolha o aplicativo desejado e faça login com sua conta.'],['4','Ao sair da cabana','Desligue a TV e desconecte sua conta dos aplicativos.']
- ],'tvVideo','Vídeo da TV será disponibilizado em breve.');}
-function regras(){return `<div class="page">${top('Regras da cabana','Para uma estadia tranquila e especial')}<div class="list">
- ${step('🚭','Dentro da cabana','Não é permitido fumar dentro da cabana. O cheiro impregna nas cortinas e demais tecidos.')}
- ${step('🍳','Alimentos','Não é permitido fazer frituras, churrasco ou preparações gordurosas dentro da cabana.')}
- ${step('🔥','Calefator','Não coloque alimentos no calefator. Mantenha a porta fechada durante todo o uso.')}
- ${step('🧺','Enxoval','Não utilize toalhas ou roupas de cama para remover maquiagem. Itens com manchas permanentes serão descartados e cobrados pelo valor de reposição.')}
- ${step('🏠','Itens da cabana','Utensílios, equipamentos e objetos pertencem à cabana. Itens ausentes após o checkout serão cobrados pelo valor de reposição.')}
- </div><div class="notice"><strong>Regras completas</strong><p>Consulte os Termos da Hospedagem completos.</p><button class="btn rule-link" id="fullRules">Ver regras completas</button></div>${footer()}${globalFooter()}</div>`}
-function rota(){return `<div class="page">${top('Rota do Vinho','Descubra São Roque')}<img class="feature-image" src="${A}rota-hero.jpg" alt="Rota do Vinho"><div class="card"><h2>Parceiros da Cabana</h2><p>Aproveite benefícios exclusivos com nossos parceiros.</p></div><div class="partner-grid">
- ${partner('hockenheim.jpg','Choperia Hockenheim','Parceiro Cabana Rota do Vinho','hockenheimMaps','hockenheim')}
- ${partner('dreamcar.jpg','Dream Car Museum','Parceiro Cabana Rota do Vinho','dreamCarMaps','dream')}
- </div><h2 class="section-title">Explore São Roque</h2><div class="card"><div class="info-row"><button class="btn" data-ext="rotaMaps">🗺 Abrir Rota no mapa</button><button class="btn-outline" id="routeMapImage">Mapa do Roteiro do Vinho</button></div></div>${footer()}</div>`}
-function delivery(){return `<div class="page">${top('Delivery na Cabana','Opções que costumam entregar até a propriedade')}<div class="notice"><strong>Mais comodidade para você!</strong><p>Selecionamos algumas opções que costumam entregar até a cabana.</p></div><div class="delivery-list">
- ${deliveryCard('born.jpg','Born In Smoke','Carnes e opções defumadas','bornWhatsapp')}
- ${deliveryCard('itacolomy.jpg','Restaurante Itacolomy','Pizzas e comidas','itacolomyWhatsapp')}
- ${deliveryCard('dipomodoro.jpg','Pizzaria Di Pomodoro','Pizzas','diPomodoroWhatsapp')}
- </div><div class="card"><h2>iFood</h2><p>Alguns hóspedes também conseguem fazer pedidos pelo iFood. Confira no aplicativo quais estabelecimentos estão entregando na região no momento.</p><button class="btn" data-ext="ifood">Abrir iFood</button></div><div class="notice"><strong>Importante</strong><p>O tempo de entrega pode variar conforme o trânsito e a disponibilidade dos estabelecimentos.</p></div>${footer()}</div>`}
-function casaAzul(){return `<div class="page">${top('Casa Azul','Ateliê & Conveniência')}<img class="feature-image" src="${A}casa-hero.jpg" alt="Casa Azul"><div class="card"><h2>Aqui você compra lembranças da viagem e ainda consegue apreciar a linda vista da nossa varanda!</h2><p>Produtos selecionados para sua comodidade e momentos especiais.</p></div><h2 class="section-title">O que você encontra</h2><div class="home-grid">
- ${mini('❄️','Bebidas Geladas','Cervejas, vinhos, refrigerantes, águas e muito mais.')}${mini('🥨','Salgadinhos','Salgadinhos para sua comodidade.')}${mini('🔥','Lenha','Para fogueira e lareira.')}${mini('🎁','Artesanatos e Presentes','Peças artesanais e lembranças.')}
- </div><div class="card" style="margin-top:14px"><button class="btn" id="casaDirections">📍 Como chegar</button></div>${footer()}</div>`}
-function checkout(){return `<div class="page">${top('Check out','Sua saída tranquila')}<div class="card"><h2>Esperamos que você tenha aproveitado sua estadia!</h2><p>Para que tudo fique perfeito até o final, siga as orientações abaixo.</p></div><div class="list">
- ${step('1','Horário de saída','Check out até 11h.')}${step('2','Louças e organização','Deixar as louças utilizadas lavadas e a cabana minimamente organizada.')}${step('3','Lixo','Separar o lixo e deixar na lixeira ao lado da caixa d’água.')}${step('4','Chaves e controles','Deixar as chaves e controles nos mesmos locais onde foram encontrados.')}${step('5','Antes de sair','Desligar TV, ar condicionado e demais equipamentos elétricos.')}${step('6','Portas e janelas','Verificar se estão fechadas antes de deixar a cabana.')}${step('7','Para sair da cabana','Há teclados ao lado esquerdo dos portões. Para abrir, use a mesma senha de entrada.','<button class="btn-outline" id="gatePhoto">Ver foto</button>')}${step('8','Portões','Certifique se de que os portões estejam fechados ao sair.')}
- </div><div class="notice"><strong>Obrigado pela estadia!</strong><p>Esperamos que tenha vivido momentos especiais na Cabana Rota do Vinho. Boa viagem e volte sempre!</p></div><div class="checkout-actions"><button class="btn" id="finishCheckout">✓ Finalizei meu check out</button>${footer()}</div></div>`}
-function infoPage(title,sub,img,items,pendingKey,pendingMsg,notice=''){return `<div class="page">${top(title,sub)}<img class="feature-image" src="${A}${img}" alt="${title}"><div class="list">${items.map(([i,t,d])=>step(i,t,d)).join('')}</div>${notice?`<div class="notice"><strong>Importante</strong><p>${notice}</p></div>`:''}<button class="btn back-menu" data-video="${pendingKey}" data-msg="${pendingMsg}">▶ Ver como utilizar</button>${footer()}${globalFooter()}</div>`}
-function step(i,t,d,extra=''){return `<div class="step"><div class="ico">${i}</div><div><h3>${t}</h3><p>${d}</p>${extra?`<div style="margin-top:10px">${extra}</div>`:''}</div></div>`}
-function partner(img,t,d,mapKey,type){return `<div class="partner"><img src="${A}${img}" alt="${t}"><div class="body"><h3>${t}</h3><p>${d}</p><div class="actions">${type==='dream'?'<button class="btn-small" id="dreamBenefit">Benefício</button>':'<button class="btn-small" id="hockBenefit">Benefício</button>'}<button class="btn-small" data-ext="${mapKey}">Como chegar</button></div></div></div>`}
-function deliveryCard(img,t,d,key){return `<div class="delivery-card"><img src="${A}${img}" alt="${t}"><div class="body"><h3>${t}</h3><p>${d}</p><button class="btn" data-ext="${key}">WhatsApp • Fazer pedido</button></div></div>`}
-function mini(ic,t,d){return `<div class="home-card"><div style="font-size:38px;margin-bottom:8px">${ic}</div><strong>${t}</strong><span>${d}</span></div>`}
-const pages={home,checkin,wifi,cafe,hidro,calefator,ar,tv,regras,rota,delivery,casaAzul,checkout};
-function render(){const id=(location.hash||'#home').slice(1)||'home';app.innerHTML=(pages[id]||home)();window.scrollTo(0,0);bind()}
-function bind(){document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));document.querySelectorAll('[data-ext]').forEach(b=>b.onclick=()=>ext(C.external[b.dataset.ext]));
- const cp=document.getElementById('copyWifi');if(cp)cp.onclick=()=>navigator.clipboard?.writeText(C.wifi.password).then(()=>toastMsg('Senha copiada')).catch(()=>toastMsg(C.wifi.password));
- const bp=document.getElementById('breakfastPhoto');if(bp)bp.onclick=()=>imgModal('assets/extras/casinha-vermelha.png','Casinha vermelha','Retire o café da manhã na casinha vermelha, no pé da escada.');
- document.querySelectorAll('[data-video]').forEach(b=>b.onclick=()=>{const u=C.pending[b.dataset.video];u?ext(u):toastMsg(b.dataset.msg)});
- const fr=document.getElementById('fullRules');if(fr)fr.onclick=()=>imgModal('assets/extras/regras-completas.png','Regras completas');
- const rm=document.getElementById('routeMapImage');if(rm)rm.onclick=()=>imgModal('assets/extras/mapa-roteiro.png','Mapa do Roteiro do Vinho');
- const db=document.getElementById('dreamBenefit');if(db)db.onclick=()=>openModal(`<img src="assets/extras/dream-car-beneficio.png" alt="Benefício Dream Car"><div class="modal-caption"><strong>Cupom: CABANAROTADOVINHO</strong><br><br><button class="btn modal-home" onclick="location.href='${C.external.dreamCarPurchase}'">Comprar no site da Dream Car</button></div>`);
- const hb=document.getElementById('hockBenefit');if(hb)hb.onclick=()=>C.pending.hockenheimBenefit?ext(C.pending.hockenheimBenefit):toastMsg('Benefício da Hockenheim será disponibilizado em breve.');
- const cd=document.getElementById('casaDirections');if(cd)cd.onclick=()=>openModal(`<img src="assets/extras/casa-azul-portao.png" alt="Vista da Casa Azul"><img src="assets/extras/casa-azul-fachada.png" alt="Fachada da Casa Azul" style="margin-top:10px"><div class="modal-caption"><strong>Como chegar:</strong> olhando do portão da cabana, esta é a Casa Azul. Para chegar, suba a rua à esquerda. A senha da porta é <strong>2381</strong>. Por favor, feche a porta ao sair.</div>`);
- const gp=document.getElementById('gatePhoto');if(gp)gp.onclick=()=>C.pending.checkoutGatePhoto?imgModal(C.pending.checkoutGatePhoto,'Foto do portão'):toastMsg('Foto do teclado/portão será adicionada em breve.');
- const fc=document.getElementById('finishCheckout');if(fc)fc.onclick=()=>{openModal(`<img src="assets/extras/avaliacao-pos-checkout.png" alt="Avaliação"><button class="btn modal-home" id="homeAfterEval">Voltar para a tela inicial</button>`);const x=document.getElementById('homeAfterEval');if(x)x.onclick=()=>{closeModal();go('home')}}
-}
-document.addEventListener('click',e=>{if(e.target.matches('[data-close]'))closeModal()});window.addEventListener('hashchange',render);render();
-
-</script>
-</body>
-</html>
+<h2 class="section-title">Explore São Roque</h2><div class="card"><div class="info-row"><a class="btn" href="https://maps.app.goo.gl/GU4ZuEZ3PqC5dJuc6" target="_blank">🗺 Abrir Rota no mapa</a><a class="btn-outline" href="assets/extras/mapa-roteiro.png" target="_blank">Mapa do Roteiro do Vinho</a></div></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a></section>
+<section class="screen" id="delivery"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
+    <div class="brand"><div><h1 class="page-title">Delivery na Cabana</h1><small>Opções que costumam entregar até a propriedade</small></div></div><div></div></div>
+<div class="notice"><strong>Mais comodidade para você!</strong><p>Selecionamos algumas opções que costumam entregar até a cabana.</p></div>
+<div class="delivery-list"><div class="delivery-card"><img src="assets/crops/born.jpg" alt="Born In Smoke"><div class="body"><h3>Born In Smoke</h3><p>Carnes e opções defumadas</p><a class="btn" href="https://wa.me/5511970621424" target="_blank">WhatsApp • Fazer pedido</a></div></div><div class="delivery-card"><img src="assets/crops/itacolomy.jpg" alt="Restaurante Itacolomy"><div class="body"><h3>Restaurante Itacolomy</h3><p>Pizzas e comidas</p><a class="btn" href="https://wa.me/5515997140192" target="_blank">WhatsApp • Fazer pedido</a></div></div><div class="delivery-card"><img src="assets/crops/dipomodoro.jpg" alt="Pizzaria Di Pomodoro"><div class="body"><h3>Pizzaria Di Pomodoro</h3><p>Pizzas</p><a class="btn" href="https://wa.me/5511937769975" target="_blank">WhatsApp • Fazer pedido</a></div></div></div>
+<div class="card"><h2>iFood</h2><p>Confira no aplicativo quais estabelecimentos estão entregando na região no momento.</p><a class="btn" href="https://www.ifood.com.br/" target="_blank">Abrir iFood</a></div>
+<div class="notice"><strong>Importante</strong><p>O tempo de entrega pode variar conforme o trânsito e a disponibilidade dos estabelecimentos.</p></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a></section>
+<section class="screen" id="casaAzul"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
+    <div class="brand"><div><h1 class="page-title">Casa Azul</h1><small>Ateliê & Conveniência</small></div></div><div></div></div>
+<img class="feature-image" src="assets/crops/casa-hero.jpg" alt="Casa Azul">
+<div class="card"><h2>Aqui você compra lembranças da viagem e ainda consegue apreciar a linda vista da nossa varanda!</h2><p>Produtos selecionados para sua comodidade e momentos especiais.</p></div>
+<div class="home-grid">
+<div class="home-card"><strong>Bebidas Geladas</strong><span>Cervejas, vinhos, refrigerantes e águas.</span></div>
+<div class="home-card"><strong>Salgadinhos</strong><span>Salgadinhos para sua comodidade.</span></div>
+<div class="home-card"><strong>Lenha</strong><span>Para fogueira e lareira.</span></div>
+<div class="home-card"><strong>Artesanatos e Presentes</strong><span>Peças artesanais e lembranças.</span></div>
+</div>
+<div class="card" style="margin-top:14px"><a class="btn" href="assets/extras/casa-azul-fachada.png" target="_blank">📍 Como chegar</a><p class="static-note">Olhando do portão da cabana, esta é a Casa Azul. Para chegar, suba a rua à esquerda. Senha da porta: 2381. Feche a porta ao sair.</p></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a></section>
+<section class="screen" id="checkout"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
+    <div class="brand"><div><h1 class="page-title">Check out</h1><small>Sua saída tranquila</small></div></div><div></div></div>
+<div class="card"><h2>Esperamos que você tenha aproveitado sua estadia!</h2><p>Para que tudo fique perfeito até o final, siga as orientações abaixo.</p></div>
+<div class="list">
+<div class="step"><div class="ico">1</div><div><h3>Horário de saída</h3><p>Check out até 11h.</p></div></div>
+<div class="step"><div class="ico">2</div><div><h3>Louças e organização</h3><p>Deixar as louças utilizadas lavadas e a cabana minimamente organizada.</p></div></div>
+<div class="step"><div class="ico">3</div><div><h3>Lixo</h3><p>Separar o lixo e deixar na lixeira ao lado da caixa d’água.</p></div></div>
+<div class="step"><div class="ico">4</div><div><h3>Chaves e controles</h3><p>Deixar as chaves e controles nos mesmos locais onde foram encontrados.</p></div></div>
+<div class="step"><div class="ico">5</div><div><h3>Antes de sair</h3><p>Desligar TV, ar condicionado e demais equipamentos elétricos.</p></div></div>
+<div class="step"><div class="ico">6</div><div><h3>Portas e janelas</h3><p>Verificar se estão fechadas antes de deixar a cabana.</p></div></div>
+<div class="step"><div class="ico">7</div><div><h3>Para sair da cabana</h3><p>Há teclados ao lado esquerdo dos portões. Para abrir, use a mesma senha de entrada.</p><div style="margin-top:10px"><span class='btn-outline'>Foto será adicionada em breve</span></div></div></div>
+<div class="step"><div class="ico">8</div><div><h3>Portões</h3><p>Certifique se de que os portões estejam fechados ao sair.</p></div></div></div>
+<div class="notice"><strong>Obrigado pela estadia!</strong><p>Boa viagem e volte sempre!</p></div>
+<a class="btn back-menu" href="assets/extras/avaliacao-pos-checkout.png" target="_blank">✓ Finalizei meu check out</a><a class="btn back-menu" href="#home">⌂ Voltar para o menu</a></section></body></html>
