@@ -243,6 +243,49 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
   .cafe-important{grid-template-columns:70px 1fr;padding:18px}.important-ico{width:58px;height:58px;font-size:34px}
 }
 
+
+/* V24 — Hidromassagem e Calefator conforme layouts enviados */
+.hydro-v24,.calefator-v24{max-width:720px;padding:12px 18px 0;background:#fbf6ed}
+.v24-head{display:grid;grid-template-columns:46px 1fr 46px;align-items:start;gap:6px}
+.v24-back{width:42px;height:42px;color:#0b4f39;display:flex;align-items:center;justify-content:center}
+.v24-back svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.v24-title{text-align:center}
+.v24-title h1{margin:0;color:#0b4f39;font:700 46px/1.05 Georgia,serif}
+.v24-title p{margin:9px 0 0;color:#173f32;font-size:17px;display:flex;align-items:center;justify-content:center;gap:8px}
+.v24-mini-leaf{width:22px;height:22px;display:inline-flex;color:#0b4f39}.v24-mini-leaf.flip{transform:scaleX(-1)}
+.v24-mini-leaf svg,.v24-leaf svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.v24-leaf{width:38px;height:38px;color:#0b4f39;margin-top:3px}
+.v24-hero{width:100%;max-height:430px;object-fit:cover;border-radius:24px;margin:16px 0 14px;display:block}
+.v24-video{width:100%;min-height:70px;border:0;border-radius:20px;background:linear-gradient(90deg,#eef2d8,#f6f3df);color:#123f31;display:grid;grid-template-columns:58px 1fr 40px;align-items:center;padding:0 18px;font:700 23px Georgia,serif;text-align:left;cursor:pointer}
+.v24-play,.v24-arrow{display:flex;align-items:center;justify-content:center;color:#0b4f39}.v24-play{width:48px;height:48px}.v24-play svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.5}.v24-arrow svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.v24-card{margin-top:16px;background:rgba(255,255,255,.8);border:1px solid #efe5d7;border-radius:24px;padding:24px 26px;box-shadow:0 8px 22px rgba(35,55,42,.06)}
+.v24-card-title{display:flex;gap:16px;align-items:center;margin-bottom:12px}.v24-card-title h2{margin:0;color:#163f32;font:700 30px Georgia,serif}
+.shield,.drop-icon{width:58px;height:58px;border-radius:50%;background:#f3eadc;display:flex;align-items:center;justify-content:center;color:#0b4f39;font-size:30px;font-weight:700;flex:none}
+.v24-steps{margin-left:72px;position:relative}.v24-steps:before{content:"";position:absolute;left:19px;top:14px;bottom:16px;border-left:2px dashed #d8d2c5}
+.v24-steps>div{display:grid;grid-template-columns:40px 1fr;gap:18px;align-items:start;margin:14px 0;position:relative}
+.v24-steps>div>span{width:36px;height:36px;border-radius:50%;background:#0b4f39;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;z-index:1}
+.v24-steps p{margin:2px 0 0;color:#111;font-size:20px;line-height:1.4}
+.care-card ul{margin:4px 0 0 82px;padding-left:22px}.care-card li{margin:8px 0;font-size:19px;line-height:1.4}
+.v24-warning{margin:20px 0 0;background:#f9ddd4;border-radius:20px;padding:18px 22px;display:grid;grid-template-columns:90px 1fr;align-items:center;gap:16px;color:#ab2b1f}
+.warning-icon{width:68px;height:68px;border:5px solid #c23528;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:46px;font-weight:900}
+.v24-warning h3{margin:0 0 6px;font:700 26px Georgia,serif}.v24-warning p{margin:0;color:#111;font-size:20px;line-height:1.35}
+.v24-menu{width:calc(100% - 110px);margin:18px auto 12px;min-height:78px;border-radius:18px;background:linear-gradient(90deg,#0b4f39,#063d2d);color:#fff;text-decoration:none;display:grid;grid-template-columns:48px 1fr 48px;align-items:center;padding:0 20px;font:700 25px Georgia,serif}
+.v24-menu span{display:flex;align-items:center;justify-content:center}.v24-menu svg{width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.hydro-v24 .footer-actions,.calefator-v24 .footer-actions{margin:0 -18px;border-radius:0;padding:9px 12px 11px}
+
+@media(max-width:600px){
+  .hydro-v24,.calefator-v24{padding:10px 12px 0}
+  .v24-head{grid-template-columns:40px 1fr 40px}.v24-title h1{font-size:37px}.v24-title p{font-size:14px;gap:5px}.v24-mini-leaf{width:18px;height:18px}.v24-leaf{width:32px;height:32px}
+  .v24-hero{max-height:330px;border-radius:20px;margin-top:12px}
+  .v24-video{min-height:62px;border-radius:17px;grid-template-columns:50px 1fr 34px;font-size:18px;padding:0 14px}.v24-play{width:42px;height:42px}
+  .v24-card{padding:20px 18px;border-radius:20px}.v24-card-title h2{font-size:24px}.shield,.drop-icon{width:50px;height:50px;font-size:27px}
+  .v24-steps{margin-left:50px}.v24-steps>div{grid-template-columns:34px 1fr;gap:13px;margin:12px 0}.v24-steps>div>span{width:32px;height:32px}.v24-steps p{font-size:16px}
+  .care-card ul{margin-left:58px;padding-left:18px}.care-card li{font-size:16px;margin:7px 0}
+  .v24-warning{grid-template-columns:68px 1fr;padding:15px}.warning-icon{width:56px;height:56px;font-size:36px}.v24-warning h3{font-size:22px}.v24-warning p{font-size:16px}
+  .v24-menu{width:calc(100% - 40px);min-height:66px;font-size:20px;grid-template-columns:40px 1fr 40px}
+  .hydro-v24 .footer-actions,.calefator-v24 .footer-actions{margin:0 -12px}
+}
+
 </style></head>
 <body><section class="screen" id="home">
 <div class="topbar"><div></div><div class="brand"><img src="assets/crops/logo.jpg" alt="Logo"><div><h1>Cabana</h1><small>Rota do Vinho</small></div></div><div></div></div>
@@ -389,22 +432,127 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
 </div>
 </section>
 
-<section class="screen" id="hidro"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
-    <div class="brand"><div><h1 class="page-title">Hidromassagem</h1><small>Conforto e relaxamento</small></div></div><div></div></div><img class="feature-image" src="assets/crops/hidro-hero.jpg" alt="Hidromassagem">
-    <div class="list"><div class="step"><div class="ico">1</div><div><h3>Encha a banheira</h3><p>Encha com água até cobrir os jatos antes de ligar a hidromassagem.</p></div></div><div class="step"><div class="ico">2</div><div><h3>Ligue a hidromassagem</h3><p>Use os comandos da própria banheira.</p></div></div><div class="step"><div class="ico">3</div><div><h3>Temperatura</h3><p>Utilize a água em temperatura confortável, no máximo 36 °C.</p></div></div><div class="step"><div class="ico">4</div><div><h3>Cuidados</h3><p>Não utilize ervas, pétalas ou qualquer material que possa entupir a banheira.</p></div></div></div>
-    <div class="notice"><strong>Vídeo</strong><p>Vídeo da hidromassagem será disponibilizado em breve.</p></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+
+<section class="screen hydro-v24" id="hidro">
+  <div class="v24-head">
+    <a class="v24-back" href="#home" aria-label="Voltar"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7M8 12h12"/></svg></a>
+    <div class="v24-title">
+      <h1>Hidromassagem</h1>
+      <p><span class="v24-mini-leaf"><svg viewBox="0 0 64 64">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></span> Relaxe e aproveite esse momento <span class="v24-mini-leaf flip"><svg viewBox="0 0 64 64">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></span></p>
+    </div>
+    <div class="v24-leaf"><svg viewBox="0 0 64 64">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></div>
+  </div>
+
+  <img class="v24-hero" src="assets/v24/hidro-hero.jpg" alt="Hidromassagem">
+
+  <button class="v24-video" type="button" onclick="alert('Vídeo da hidromassagem será adicionado em breve.')">
+    <span class="v24-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4z" fill="currentColor" stroke="none"/></svg></span>
+    <b>Ver vídeo: Como usar a hidromassagem</b>
+    <span class="v24-arrow"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span>
+  </button>
+
+  <div class="v24-card">
+    <div class="v24-card-title"><span class="drop-icon">◯</span><h2>Como usar</h2></div>
+    <div class="v24-steps">
+      <div><span>1</span><p>Encha a banheira com água até cobrir todos os jatos.</p></div>
+      <div><span>2</span><p>Ligue a hidromassagem no botão localizado na borda da banheira.</p></div>
+      <div><span>3</span><p>Ajuste a temperatura da água até no máximo <b>36°C</b> e a intensidade dos jatos de acordo com sua preferência.</p></div>
+      <div><span>4</span><p>Após o uso, desligue a hidromassagem no botão da borda.</p></div>
+    </div>
+  </div>
+
+  <div class="v24-card care-card">
+    <div class="v24-card-title"><span class="shield">✓</span><h2>Cuidados importantes</h2></div>
+    <ul>
+      <li>Não utilize ervas, pétalas ou qualquer coisa que possa entupir a banheira.</li>
+      <li>Evite encostar objetos cortantes na banheira.</li>
+      <li>Não deixe crianças sozinhas ou sem supervisão.</li>
+      <li>Em caso de dúvidas, entre em contato conosco.</li>
+    </ul>
+  </div>
+
+  <a class="v24-menu" href="#home"><span><svg viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"/></svg></span><b>Voltar para o menu</b><span><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span></a>
+  <div class="footer-actions">
 <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
 <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
 <a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
-</div></section>
-<section class="screen" id="calefator"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
-    <div class="brand"><div><h1 class="page-title">Calefator</h1><small>Conforto com segurança</small></div></div><div></div></div><img class="feature-image" src="assets/crops/calefator-hero.jpg" alt="Calefator">
-    <div class="list"><div class="step"><div class="ico">1</div><div><h3>Antes de usar</h3><p>Mantenha cortinas e objetos longe do calefator.</p></div></div><div class="step"><div class="ico">2</div><div><h3>Porta sempre fechada</h3><p>É obrigatório manter a porta do calefator fechada durante todo o uso.</p></div></div><div class="step"><div class="ico">3</div><div><h3>Cuidado com as brasas</h3><p>Tenha cuidado para não deixar brasas caírem no chão.</p></div></div><div class="step"><div class="ico">4</div><div><h3>Não coloque alimentos</h3><p>Não coloque nenhum tipo de alimento no calefator, inclusive queijos ou marshmallows.</p></div></div></div>
-    <div class="notice"><strong>Vídeo</strong><p>Vídeo do calefator será disponibilizado em breve.</p></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+</div>
+</section>
+
+
+<section class="screen calefator-v24" id="calefator">
+  <div class="v24-head">
+    <a class="v24-back" href="#home" aria-label="Voltar"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7M8 12h12"/></svg></a>
+    <div class="v24-title">
+      <h1>Calefator</h1>
+      <p><span class="v24-mini-leaf"><svg viewBox="0 0 64 64">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></span> Conforto com segurança <span class="v24-mini-leaf flip"><svg viewBox="0 0 64 64">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></span></p>
+    </div>
+    <div class="v24-leaf"><svg viewBox="0 0 64 64">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></div>
+  </div>
+
+  <img class="v24-hero" src="assets/v24/calefator-hero.jpg" alt="Calefator">
+
+  <button class="v24-video" type="button" onclick="alert('Vídeo do calefator será adicionado em breve.')">
+    <span class="v24-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4z" fill="currentColor" stroke="none"/></svg></span>
+    <b>Ver vídeo: Como utilizar o calefator</b>
+    <span class="v24-arrow"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span>
+  </button>
+
+  <div class="v24-card">
+    <div class="v24-card-title"><span class="shield">✓</span><h2>Como utilizar com segurança</h2></div>
+    <div class="v24-steps">
+      <div><span>1</span><p>Mantenha cortinas, móveis e objetos inflamáveis afastados.</p></div>
+      <div><span>2</span><p>Mantenha a porta do calefator sempre fechada durante o uso.</p></div>
+      <div><span>3</span><p>Tenha cuidado para não deixar brasas caírem no chão ou em superfícies inflamáveis.</p></div>
+      <div><span>4</span><p>Não coloque nenhum tipo de alimento sobre o calefator, incluindo queijos ou marshmallow.</p></div>
+    </div>
+    <div class="v24-warning"><div class="warning-icon">!</div><div><h3>ATENÇÃO!</h3><p>Risco de incêndio imediato com a porta aberta.</p></div></div>
+  </div>
+
+  <a class="v24-menu" href="#home"><span><svg viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"/></svg></span><b>Voltar para o menu</b><span><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span></a>
+  <div class="footer-actions">
 <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
 <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
 <a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
-</div></section>
+</div>
+</section>
+
 <section class="screen" id="ar"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
     <div class="brand"><div><h1 class="page-title">Ar condicionado</h1><small>Conforto e bem estar</small></div></div><div></div></div><img class="feature-image" src="assets/crops/ar-hero.jpg" alt="Ar condicionado">
     <div class="list"><div class="step"><div class="ico">1</div><div><h3>Onde fica o controle</h3><p>O controle do ar condicionado fica na parede ao lado da escada.</p></div></div><div class="step"><div class="ico">2</div><div><h3>Somente frio</h3><p>O aparelho possui apenas a função de resfriamento. Não possui função quente.</p></div></div><div class="step"><div class="ico">3</div><div><h3>Portas e janelas</h3><p>Mantenha portas e janelas fechadas enquanto o aparelho estiver ligado.</p></div></div><div class="step"><div class="ico">4</div><div><h3>Ao sair da cabana</h3><p>Desligue o ar condicionado.</p></div></div></div>
