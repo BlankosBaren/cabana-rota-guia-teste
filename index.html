@@ -287,42 +287,76 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
 }
 
 
-/* V27 — Ar condicionado fiel à arte aprovada */
-.ar-v27{max-width:720px;padding:12px 18px 0;background:#fbf6ed}
-.ar-head{display:grid;grid-template-columns:46px 1fr 46px;align-items:start;gap:6px}
-.ar-back{width:42px;height:42px;color:#0b4f39;display:flex;align-items:center;justify-content:center}
-.ar-back svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.ar-title{text-align:center}
-.ar-title h1{margin:0;color:#0b4f39;font:700 46px/1.05 Georgia,serif}
-.ar-title p{margin:9px 0 0;color:#173f32;font-size:17px;display:flex;align-items:center;justify-content:center;gap:8px}
-.ar-mini-leaf{width:22px;height:22px;display:inline-flex;color:#0b4f39}.ar-mini-leaf.flip{transform:scaleX(-1)}
-.ar-mini-leaf svg,.ar-leaf svg,.leafstep svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
-.ar-leaf{width:38px;height:38px;color:#0b4f39;margin-top:3px}
-.ar-hero{width:100%;aspect-ratio:1.46/1;object-fit:cover;border-radius:24px;margin:16px 0 14px;display:block}
-.ar-video{width:100%;min-height:70px;border:0;border-radius:20px;background:linear-gradient(90deg,#eef2d8,#f6f3df);color:#123f31;display:grid;grid-template-columns:58px 1fr 40px;align-items:center;padding:0 18px;font:700 22px Georgia,serif;text-align:left;cursor:pointer}
-.ar-play,.ar-arrow{display:flex;align-items:center;justify-content:center;color:#0b4f39}.ar-play{width:48px;height:48px}.ar-play svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.5}.ar-arrow svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.ar-card{margin-top:16px;background:rgba(255,255,255,.82);border:1px solid #efe5d7;border-radius:24px;padding:24px 26px;box-shadow:0 8px 22px rgba(35,55,42,.06)}
-.ar-card-title{display:flex;gap:16px;align-items:center;margin-bottom:14px}.ar-card-title h2{margin:0;color:#163f32;font:700 29px Georgia,serif}
-.ar-snow{width:58px;height:58px;border-radius:50%;background:#eef0dc;display:flex;align-items:center;justify-content:center;color:#0b4f39;flex:none}.ar-snow svg{width:37px;height:37px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round}
-.ar-steps{margin-left:72px;position:relative}.ar-steps:before{content:"";position:absolute;left:19px;top:15px;bottom:18px;border-left:2px dashed #d8d2c5}
-.ar-step{display:grid;grid-template-columns:40px 58px 1fr;gap:16px;align-items:start;margin:14px 0;position:relative}
-.ar-step .num{width:36px;height:36px;border-radius:50%;background:#0b4f39;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;z-index:1}
-.step-icon{width:52px;height:52px;border-radius:50%;background:#eef0dc;color:#0b4f39;display:flex;align-items:center;justify-content:center;font-size:27px;font-weight:700}
-.step-icon.snow svg,.step-icon.leafstep svg{width:31px;height:31px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round}
-.ar-step p{margin:2px 0 0;color:#111;font-size:19px;line-height:1.42}.ar-step strong{color:#0b4f39}
-.ar-menu{width:82%;margin:18px auto 12px;min-height:78px;border-radius:18px;background:linear-gradient(90deg,#0b4f39,#063d2d);color:#fff;text-decoration:none;display:grid;grid-template-columns:48px 1fr 48px;align-items:center;padding:0 20px;font:700 24px Georgia,serif}
-.ar-menu span{display:flex;align-items:center;justify-content:center}.ar-menu svg{width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-.ar-v27 .footer-actions{margin:0 -18px;border-radius:0;padding:9px 12px 11px}
-
+/* V28 — Ar condicionado usa diretamente a arte aprovada.
+   Os hotspots são percentuais e escalam junto com a imagem. */
+.ar-v28{
+  max-width:720px;
+  padding:0;
+  background:#fbf6ed;
+}
+.ar-v28-wrap{
+  position:relative;
+  width:100%;
+  margin:0 auto;
+  line-height:0;
+}
+.ar-v28-art{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.ar-v28-hot{
+  position:absolute;
+  display:block;
+  background:transparent;
+  border:0;
+  padding:0;
+  margin:0;
+  cursor:pointer;
+  z-index:3;
+}
+/* seta superior esquerda */
+.ar-v28-back{
+  left:3.6%;
+  top:2.1%;
+  width:10%;
+  height:5.5%;
+}
+/* botão do vídeo */
+.ar-v28-video{
+  left:4.4%;
+  top:47.1%;
+  width:91.2%;
+  height:5.2%;
+}
+/* voltar para menu */
+.ar-v28-menu{
+  left:16.6%;
+  top:86.1%;
+  width:66.8%;
+  height:5.2%;
+}
+/* rodapé */
+.ar-v28-instagram{
+  left:5%;
+  top:94.0%;
+  width:27%;
+  height:4.6%;
+}
+.ar-v28-site{
+  left:35%;
+  top:94.0%;
+  width:25%;
+  height:4.6%;
+}
+.ar-v28-help{
+  left:62%;
+  top:94.0%;
+  width:33%;
+  height:4.6%;
+}
 @media(max-width:600px){
-  .ar-v27{padding:10px 12px 0}
-  .ar-head{grid-template-columns:40px 1fr 40px}.ar-title h1{font-size:37px}.ar-title p{font-size:14px;gap:5px}.ar-mini-leaf{width:18px;height:18px}.ar-leaf{width:32px;height:32px}
-  .ar-hero{border-radius:20px;margin-top:12px}
-  .ar-video{min-height:62px;border-radius:17px;grid-template-columns:50px 1fr 34px;font-size:17px;padding:0 14px}.ar-play{width:42px;height:42px}
-  .ar-card{padding:20px 18px;border-radius:20px}.ar-card-title h2{font-size:23px}.ar-snow{width:50px;height:50px}.ar-snow svg{width:32px;height:32px}
-  .ar-steps{margin-left:48px}.ar-step{grid-template-columns:34px 46px 1fr;gap:12px;margin:12px 0}.ar-step .num{width:32px;height:32px}.step-icon{width:43px;height:43px;font-size:22px}.step-icon.snow svg,.step-icon.leafstep svg{width:27px;height:27px}.ar-step p{font-size:15.5px}
-  .ar-menu{width:calc(100% - 40px);min-height:66px;font-size:20px;grid-template-columns:40px 1fr 40px}
-  .ar-v27 .footer-actions{margin:0 -12px}
+  .ar-v28{max-width:none;width:100%}
 }
 
 </style></head>
@@ -593,72 +627,30 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
 </section>
 
 
-<section class="screen ar-v27" id="ar">
-  <div class="ar-head">
-    <a class="ar-back" href="#home" aria-label="Voltar"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7M8 12h12"/></svg></a>
-    <div class="ar-title">
-      <h1>Ar condicionado</h1>
-      <p><span class="ar-mini-leaf"><svg viewBox="0 0 64 64">
-<path d="M13 53c16-15 22-27 29-44"/>
-<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
-<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
-<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
-<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
-</svg></span> Conforto e bem estar <span class="ar-mini-leaf flip"><svg viewBox="0 0 64 64">
-<path d="M13 53c16-15 22-27 29-44"/>
-<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
-<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
-<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
-<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
-</svg></span></p>
-    </div>
-    <div class="ar-leaf"><svg viewBox="0 0 64 64">
-<path d="M13 53c16-15 22-27 29-44"/>
-<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
-<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
-<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
-<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
-</svg></div>
+<section class="screen ar-v28" id="ar">
+  <div class="ar-v28-wrap">
+    <img src="assets/v28/ar-condicionado-aprovado.png" alt="Ar condicionado" class="ar-v28-art">
+
+    <a class="ar-v28-hot ar-v28-back" href="#home" aria-label="Voltar"></a>
+
+    <button class="ar-v28-hot ar-v28-video" type="button"
+      onclick="alert('Vídeo do ar condicionado será adicionado em breve.')"
+      aria-label="Ver vídeo: Como utilizar o ar condicionado"></button>
+
+    <a class="ar-v28-hot ar-v28-menu" href="#home" aria-label="Voltar para o menu"></a>
+
+    <a class="ar-v28-hot ar-v28-instagram"
+       href="https://www.instagram.com/cabanarotadovinho/"
+       target="_blank" rel="noopener" aria-label="Instagram"></a>
+
+    <a class="ar-v28-hot ar-v28-site"
+       href="https://www.cabananaserra.com.br/"
+       target="_blank" rel="noopener" aria-label="Site"></a>
+
+    <a class="ar-v28-hot ar-v28-help"
+       href="https://wa.me/5511973053777"
+       target="_blank" rel="noopener" aria-label="Outras dúvidas"></a>
   </div>
-
-  <img class="ar-hero" src="assets/v27/ar-hero.jpg" alt="Controle do ar condicionado ao lado da escada">
-
-  <button class="ar-video" type="button" onclick="alert('Vídeo do ar condicionado será adicionado em breve.')">
-    <span class="ar-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4z" fill="currentColor" stroke="none"/></svg></span>
-    <b>Ver vídeo: Como utilizar o ar condicionado</b>
-    <span class="ar-arrow"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span>
-  </button>
-
-  <div class="ar-card">
-    <div class="ar-card-title">
-      <span class="ar-snow"><svg viewBox="0 0 64 64">
-<path d="M32 6v52M10 19l44 26M54 19L10 45M24 11l8 8 8-8M24 53l8-8 8 8M13 28l11 3-3-11M51 36l-11-3 3 11M51 28l-11 3 3-11M13 36l11-3-3 11"/>
-</svg></span>
-      <h2>Como utilizar com eficiência</h2>
-    </div>
-
-    <div class="ar-steps">
-      <div class="ar-step"><span class="num">1</span><div class="step-icon">▣</div><p>O controle do ar condicionado fica ao lado da escada.<br>Use o controle remoto para ligar/desligar e ajustar a temperatura.</p></div>
-      <div class="ar-step"><span class="num">2</span><div class="step-icon snow"><svg viewBox="0 0 64 64">
-<path d="M32 6v52M10 19l44 26M54 19L10 45M24 11l8 8 8-8M24 53l8-8 8 8M13 28l11 3-3-11M51 36l-11-3 3 11M51 28l-11 3 3-11M13 36l11-3-3 11"/>
-</svg></div><p>O ar condicionado possui <strong>somente função frio.</strong> Para aquecer a cabana, utilize o calefator, quando disponível.</p></div>
-      <div class="ar-step"><span class="num">3</span><div class="step-icon">▯</div><p>Mantenha portas e janelas fechadas enquanto o ar condicionado estiver ligado.</p></div>
-      <div class="ar-step"><span class="num">4</span><div class="step-icon leafstep"><svg viewBox="0 0 64 64">
-<path d="M13 53c16-15 22-27 29-44"/>
-<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
-<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
-<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
-<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
-</svg></div><p>Desligue o ar condicionado ao sair da cabana para economizar energia.</p></div>
-    </div>
-  </div>
-
-  <a class="ar-menu" href="#home"><span><svg viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"/></svg></span><b>Voltar para o menu</b><span><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span></a>
-  <div class="footer-actions">
-<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
-<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
-<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
-</div>
 </section>
 
 <section class="screen" id="tv"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
