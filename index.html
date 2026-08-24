@@ -287,76 +287,28 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
 }
 
 
-/* V28 — Ar condicionado usa diretamente a arte aprovada.
-   Os hotspots são percentuais e escalam junto com a imagem. */
-.ar-v28{
-  max-width:720px;
-  padding:0;
-  background:#fbf6ed;
+/* V29 — Ar condicionado reaproveita exatamente o padrão responsivo V24/V25 */
+.ar-v24{max-width:720px;padding:12px 18px 0;background:#fbf6ed}
+.ar-snow-v29{
+  width:58px;height:58px;border-radius:50%;background:#f3eadc;
+  display:flex;align-items:center;justify-content:center;color:#0b4f39;flex:none;
 }
-.ar-v28-wrap{
-  position:relative;
-  width:100%;
-  margin:0 auto;
-  line-height:0;
+.ar-snow-v29 svg{
+  width:36px;height:36px;fill:none;stroke:currentColor;stroke-width:3;
+  stroke-linecap:round;stroke-linejoin:round;
 }
-.ar-v28-art{
-  display:block;
-  width:100%;
-  height:auto;
-}
-.ar-v28-hot{
-  position:absolute;
-  display:block;
-  background:transparent;
-  border:0;
-  padding:0;
-  margin:0;
-  cursor:pointer;
-  z-index:3;
-}
-/* seta superior esquerda */
-.ar-v28-back{
-  left:3.6%;
-  top:2.1%;
-  width:10%;
-  height:5.5%;
-}
-/* botão do vídeo */
-.ar-v28-video{
-  left:4.4%;
-  top:47.1%;
-  width:91.2%;
-  height:5.2%;
-}
-/* voltar para menu */
-.ar-v28-menu{
-  left:16.6%;
-  top:86.1%;
-  width:66.8%;
-  height:5.2%;
-}
-/* rodapé */
-.ar-v28-instagram{
-  left:5%;
-  top:94.0%;
-  width:27%;
-  height:4.6%;
-}
-.ar-v28-site{
-  left:35%;
-  top:94.0%;
-  width:25%;
-  height:4.6%;
-}
-.ar-v28-help{
-  left:62%;
-  top:94.0%;
-  width:33%;
-  height:4.6%;
-}
+.ar-steps-v29 b{color:#0b4f39}
 @media(max-width:600px){
-  .ar-v28{max-width:none;width:100%}
+  .ar-v24{padding:10px 12px 0}
+  .ar-snow-v29{width:50px;height:50px}
+  .ar-snow-v29 svg{width:31px;height:31px}
+  .ar-v24 .v24-title h1{font-size:37px}
+  .ar-v24 .v24-title p{font-size:14px}
+  .ar-v24 .v24-hero{max-height:330px}
+  .ar-v24 .v24-video{font-size:18px}
+  .ar-v24 .v24-card-title h2{font-size:24px}
+  .ar-v24 .v24-steps p{font-size:16px}
+  .ar-v24 .footer-actions{margin:0 -12px}
 }
 
 </style></head>
@@ -627,30 +579,66 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
 </section>
 
 
-<section class="screen ar-v28" id="ar">
-  <div class="ar-v28-wrap">
-    <img src="assets/v28/ar-condicionado-aprovado.png" alt="Ar condicionado" class="ar-v28-art">
-
-    <a class="ar-v28-hot ar-v28-back" href="#home" aria-label="Voltar"></a>
-
-    <button class="ar-v28-hot ar-v28-video" type="button"
-      onclick="alert('Vídeo do ar condicionado será adicionado em breve.')"
-      aria-label="Ver vídeo: Como utilizar o ar condicionado"></button>
-
-    <a class="ar-v28-hot ar-v28-menu" href="#home" aria-label="Voltar para o menu"></a>
-
-    <a class="ar-v28-hot ar-v28-instagram"
-       href="https://www.instagram.com/cabanarotadovinho/"
-       target="_blank" rel="noopener" aria-label="Instagram"></a>
-
-    <a class="ar-v28-hot ar-v28-site"
-       href="https://www.cabananaserra.com.br/"
-       target="_blank" rel="noopener" aria-label="Site"></a>
-
-    <a class="ar-v28-hot ar-v28-help"
-       href="https://wa.me/5511973053777"
-       target="_blank" rel="noopener" aria-label="Outras dúvidas"></a>
+<section class="screen ar-v24" id="ar">
+  <div class="v24-head">
+    <a class="v24-back" href="#home" aria-label="Voltar"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7M8 12h12"/></svg></a>
+    <div class="v24-title">
+      <h1>Ar condicionado</h1>
+      <p><span class="v24-mini-leaf"><svg viewBox="0 0 64 64">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></span> Conforto e bem estar <span class="v24-mini-leaf flip"><svg viewBox="0 0 64 64">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></span></p>
+    </div>
+    <div class="v24-leaf"><svg viewBox="0 0 64 64">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></div>
   </div>
+
+  <img class="v24-hero" src="assets/v29/ar-hero.jpg" alt="Ar condicionado">
+
+  <button class="v24-video" type="button" onclick="alert('Vídeo do ar condicionado será adicionado em breve.')">
+    <span class="v24-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4z" fill="currentColor" stroke="none"/></svg></span>
+    <b>Ver vídeo: Como utilizar o ar condicionado</b>
+    <span class="v24-arrow"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span>
+  </button>
+
+  <div class="v24-card">
+    <div class="v24-card-title">
+      <span class="ar-snow-v29"><svg viewBox="0 0 64 64">
+<path d="M32 6v52M10 19l44 26M54 19L10 45M24 11l8 8 8-8M24 53l8-8 8 8M13 28l11 3-3-11M51 36l-11-3 3 11M51 28l-11 3 3-11M13 36l11-3-3 11"/>
+</svg></span>
+      <h2>Como utilizar com eficiência</h2>
+    </div>
+    <div class="v24-steps ar-steps-v29">
+      <div><span>1</span><p>O controle do ar condicionado fica ao lado da escada.<br>Use o controle remoto para ligar/desligar e ajustar a temperatura.</p></div>
+      <div><span>2</span><p>O ar condicionado possui <b>somente função frio.</b> Para aquecer a cabana, utilize o calefator, quando disponível.</p></div>
+      <div><span>3</span><p>Mantenha portas e janelas fechadas enquanto o ar condicionado estiver ligado.</p></div>
+      <div><span>4</span><p>Desligue o ar condicionado ao sair da cabana para economizar energia.</p></div>
+    </div>
+  </div>
+
+  <a class="v24-menu" href="#home">
+    <span><svg viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"/></svg></span><b>Voltar para o menu</b><span><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span>
+  </a>
+
+  <div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div>
 </section>
 
 <section class="screen" id="tv"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
