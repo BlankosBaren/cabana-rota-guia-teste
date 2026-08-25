@@ -1,0 +1,971 @@
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fbf6ed"><meta name="color-scheme" content="light only">
+<title>Cabana Rota do Vinho</title><style>
+:root{
+  --cream:#fbf6ed; --cream2:#f2eadc; --green:#0b4a33; --green2:#2f674d;
+  --gold:#b97a2d; --ink:#173b2e; --muted:#5f6f64; --line:#ded4c3;
+  --shadow:0 10px 28px rgba(24,49,37,.10); --radius:24px;
+  color-scheme:light only;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;color-scheme:light only;overflow-x:hidden}
+body{min-height:100vh}
+button,a{font:inherit}
+button{cursor:pointer}
+#app{width:100%;min-height:100vh}
+.page{width:min(100%,720px);margin:0 auto;padding:16px 14px 26px;background:var(--cream)}
+.topbar{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:8px;margin-bottom:14px}
+.brand{display:flex;align-items:center;justify-content:center;gap:10px;min-width:0}
+.brand img{width:58px;height:58px;border-radius:50%;object-fit:cover}
+.brand h1,.page-title{font-family:Georgia,'Times New Roman',serif;color:var(--green);margin:0;font-weight:700}
+.brand h1{font-size:clamp(30px,8vw,46px);line-height:.95}
+.brand small{display:block;font-family:Georgia,serif;font-size:18px;text-align:center;color:var(--green)}
+.icon-btn{width:44px;height:44px;border:0;background:transparent;color:var(--green);font-size:34px;display:grid;place-items:center}
+.hero{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:18px;background:#dfe6dc}
+.hero img{display:block;width:100%;height:auto}
+.hero-copy{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(transparent,rgba(4,55,35,.88));color:#fff}
+.hero-copy h2{font-family:Georgia,serif;font-size:31px;margin:0 0 4px}.hero-copy p{margin:0;font-size:17px;line-height:1.35}
+.section-title{font-family:Georgia,serif;font-size:27px;color:var(--green);margin:22px 6px 12px;display:flex;align-items:center;gap:8px}
+.home-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.home-card{border:1px solid #e5dccd;border-radius:19px;background:#fffaf3;padding:12px 7px 10px;min-height:160px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;color:var(--ink);box-shadow:0 3px 10px rgba(22,52,40,.04)}
+.home-card img{width:64px;height:64px;border-radius:14px;object-fit:cover;margin-bottom:7px}
+.home-card strong{font-family:Georgia,serif;font-size:16px;line-height:1.05;color:var(--green)}
+.home-card span{font-size:12px;line-height:1.25;margin-top:5px;color:#2c3932}
+.help-card{margin-top:16px;background:#f0eadf;border:1px solid #e3d9c8;border-radius:20px;padding:14px;display:grid;grid-template-columns:50px 1fr auto;gap:10px;align-items:center}
+.help-icon{width:50px;height:50px;border-radius:50%;background:var(--green);color:white;display:grid;place-items:center;font-size:26px}
+.help-card strong{font-family:Georgia,serif;font-size:21px}.help-card p{margin:3px 0 0;font-size:14px}
+.btn,.btn-outline,.btn-small{border:0;border-radius:16px;padding:13px 18px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
+.btn{background:var(--green);color:white}.btn-outline{background:#fffaf3;color:var(--green);border:1px solid #a8b9aa}.btn-small{padding:10px 13px;border-radius:12px;background:var(--green);color:white;font-size:14px}
+.footer-actions{margin-top:12px;background:var(--green);border-radius:18px;padding:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.footer-actions button{border:0;background:transparent;color:white;font-size:13px;padding:9px 4px}
+.card{background:#fffaf3;border:1px solid #e4dacb;border-radius:22px;padding:18px;margin-bottom:12px;box-shadow:0 4px 14px rgba(24,49,37,.04)}
+.card h2,.card h3{font-family:Georgia,serif;color:var(--green);margin:0 0 8px}.card h2{font-size:25px}.card h3{font-size:21px}
+.card p{font-size:17px;line-height:1.45;margin:5px 0}
+.list{display:grid;gap:10px}.step{display:grid;grid-template-columns:48px 1fr;gap:12px;align-items:start;background:#fffaf3;border:1px solid #e5dccd;border-radius:20px;padding:14px}
+.step .num,.step .ico{width:48px;height:48px;border-radius:50%;background:#eef1e4;display:grid;place-items:center;color:var(--green);font-size:22px;font-weight:700}.step h3{font-family:Georgia,serif;color:var(--green);font-size:21px;margin:1px 0 5px}.step p{margin:0;font-size:16px;line-height:1.4}
+.feature-image{width:100%;border-radius:22px;display:block;margin-bottom:14px;box-shadow:var(--shadow)}
+.info-row{display:flex;gap:10px;flex-wrap:wrap}.info-row .btn,.info-row .btn-outline{flex:1 1 170px}
+.notice{background:#efe9db;border-radius:20px;padding:16px;border:1px solid #dfd5c5;margin:14px 0}.notice strong{font-family:Georgia,serif;font-size:20px;color:var(--green)}
+.partner-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.partner{background:#fffaf3;border:1px solid #e3d8c6;border-radius:20px;overflow:hidden}.partner img{width:100%;height:135px;object-fit:cover}.partner .body{padding:12px}.partner h3{font-family:Georgia,serif;color:var(--green);margin:0 0 5px;font-size:20px}.partner p{font-size:14px;line-height:1.3;margin:0 0 10px}.partner .actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.delivery-list{display:grid;gap:14px}.delivery-card{background:#fffaf3;border:1px solid #e3d8c6;border-radius:22px;overflow:hidden;display:grid;grid-template-columns:120px 1fr;min-height:160px}.delivery-card img{width:100%;height:100%;object-fit:cover}.delivery-card .body{padding:14px}.delivery-card h3{font-family:Georgia,serif;color:var(--green);font-size:22px;margin:0 0 5px}.delivery-card p{font-size:15px;margin:0 0 12px}.delivery-card .btn{width:100%;padding:11px}
+.wifi-box{text-align:left}.wifi-value{font-size:30px;font-weight:800;color:var(--green);word-break:break-word;margin:4px 0 14px}
+.rule-link{width:100%;margin-top:10px}
+.checkout-actions{display:grid;gap:10px;margin-top:16px}.checkout-actions .btn,.checkout-actions .btn-outline{width:100%}
+.back-menu{width:100%;margin-top:16px}
+.modal[hidden]{display:none}.modal{position:fixed;inset:0;z-index:100}.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.72)}.modal-panel{position:absolute;inset:3vh 3vw;max-width:800px;margin:auto;background:#111;border-radius:22px;overflow:auto;padding:52px 12px 14px}.modal-close{position:fixed;right:18px;top:18px;width:44px;height:44px;border:0;border-radius:50%;background:#fff;color:var(--green);font-size:28px;z-index:2}.modal img{display:block;max-width:100%;height:auto;margin:auto;border-radius:12px}.modal-caption{background:white;color:var(--ink);padding:16px;border-radius:14px;margin-top:10px;line-height:1.45;font-size:16px}.modal-home{width:100%;margin-top:12px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(16px);background:var(--green);color:white;padding:12px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:.2s;z-index:200}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:420px){
+  .page{padding:10px 9px 20px}.topbar{grid-template-columns:38px 1fr 38px}.icon-btn{width:38px;height:38px;font-size:30px}.brand img{width:50px;height:50px}.brand h1{font-size:34px}.brand small{font-size:16px}
+  .home-grid{gap:7px}.home-card{min-height:150px;padding:10px 5px 8px}.home-card img{width:58px;height:58px}.home-card strong{font-size:14px}.home-card span{font-size:11px}.section-title{font-size:24px;margin-top:18px}.help-card{grid-template-columns:44px 1fr}.help-card .btn{grid-column:1/-1}.help-icon{width:44px;height:44px}
+  .partner-grid{grid-template-columns:1fr}.delivery-card{grid-template-columns:105px 1fr}.delivery-card h3{font-size:20px}.card p{font-size:16px}.step p{font-size:15px}
+}
+@media(prefers-color-scheme:dark){html,body,#app,.page{background:var(--cream)!important;color-scheme:light only}}
+
+
+
+/* V20: núcleo de navegação sem JavaScript */
+body{min-height:100dvh}
+.screen{display:none;width:min(100%,720px);margin:0 auto;padding:16px 14px 26px;background:var(--cream);min-height:100dvh}
+#home{display:block}
+.screen:target{display:block}
+body:has(.screen:target) #home{display:none}
+#home:target{display:block!important}
+.navlink{text-decoration:none;color:inherit}
+.home-card{appearance:none}
+a.btn,a.btn-outline,a.btn-small{cursor:pointer}
+.top-back{font-size:34px;color:var(--green);text-decoration:none;display:grid;place-items:center;width:44px;height:44px}
+.footer-actions a{color:#fff;text-decoration:none;text-align:center;font-size:13px;padding:9px 4px}
+.footer-actions{align-items:center}
+.static-note{font-size:14px;color:var(--muted)}
+@media(max-width:420px){.screen{padding:10px 9px 20px}.top-back{width:38px;height:38px;font-size:30px}}
+
+/* V21 — refino visual e navegação */
+.footer-actions{
+  padding:8px 10px;
+  border-radius:18px;
+  gap:4px;
+}
+.footer-actions a{
+  min-height:54px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  color:#fff;
+  font-weight:700;
+  font-size:14px;
+  border-radius:12px;
+}
+.footer-actions a:hover{background:rgba(255,255,255,.08)}
+.footer-ico{width:24px;height:24px;display:inline-flex;flex:none}
+.footer-ico svg,.btn-svg svg{
+  width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;
+}
+.btn-svg{width:22px;height:22px;display:inline-flex}
+.back-menu{gap:10px;font-size:16px}
+.feature-image{object-fit:cover;max-height:390px}
+.partner img{height:170px;object-fit:cover}
+.delivery-card{grid-template-columns:180px minmax(0,1fr);min-height:170px}
+.delivery-card img{min-height:170px}
+.delivery-card .body{display:flex;flex-direction:column;justify-content:center}
+.delivery-card .btn{margin-top:auto}
+@media(max-width:600px){
+  .footer-actions a{font-size:12px;gap:5px;flex-direction:column;min-height:58px}
+  .footer-ico{width:22px;height:22px}
+  .delivery-card{grid-template-columns:120px minmax(0,1fr)}
+  .partner img{height:155px}
+}
+@media(max-width:390px){
+  .footer-actions{padding:6px}
+  .footer-actions a{font-size:11px}
+  .delivery-card{grid-template-columns:105px minmax(0,1fr)}
+}
+
+
+/* V22 — Wi Fi reproduzindo o layout aprovado */
+.wifi-approved{max-width:720px;padding:18px 22px 0;background:#fbf6ed}
+.wifi-head{display:grid;grid-template-columns:58px 1fr 58px;align-items:start;gap:8px}
+.wifi-back{width:50px;height:50px;color:#0b4f39;display:flex;align-items:center;justify-content:center}
+.wifi-back svg{width:42px;height:42px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.wifi-title-wrap{text-align:center}
+.wifi-title-wrap h1{margin:2px 0;color:#0b4f39;font-family:Georgia,serif;font-size:54px;line-height:1;font-weight:700}
+.wifi-title-wrap p{margin:10px 0 0;color:#123f31;font-size:20px;line-height:1.3}
+.wifi-leaf{color:#0b4f39;font-size:44px;text-align:center;transform:rotate(-20deg);line-height:1;padding-top:6px}
+.wifi-symbol{width:320px;height:270px;margin:18px auto;display:flex;align-items:center;justify-content:center;color:#0b4f39;border-radius:50%;background:radial-gradient(circle at center,rgba(225,215,195,.55),rgba(251,246,237,0) 68%)}
+.wifi-symbol svg{width:225px;height:225px;fill:none;stroke:currentColor;stroke-width:5.8;stroke-linecap:round}
+.wifi-card-approved{background:rgba(255,255,255,.78);border:1px solid #f1e7d8;border-radius:28px;padding:34px 36px 30px;box-shadow:0 12px 28px rgba(35,55,42,.08)}
+.wifi-label{color:#163f32;font-family:Georgia,serif;font-size:28px;font-weight:700;margin-bottom:8px}
+.wifi-main-value{color:#0a4a36;font-family:Georgia,serif;font-size:46px;font-weight:700;line-height:1.1}
+.wifi-divider{height:1px;background:#e8dcc9;margin:28px 0}
+.wifi-copy-btn{width:100%;margin-top:30px;min-height:82px;border:0;border-radius:22px;background:#f6efe5;color:#164635;display:flex;align-items:center;justify-content:center;gap:18px;font-family:Georgia,serif;font-size:28px;cursor:pointer}
+.wifi-copy-icon{width:38px;height:38px;display:inline-flex}
+.wifi-copy-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.wifi-info-approved{margin:38px 0 34px;display:grid;grid-template-columns:92px 1fr;gap:18px;align-items:start}
+.wifi-question{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#f1eadf;color:#0b4f39;font-size:48px;font-weight:700}
+.wifi-info-copy h2{margin:4px 0 14px;color:#163f32;font-family:Georgia,serif;font-size:30px}
+.wifi-info-copy p{margin:0;color:#111;font-size:24px;line-height:1.45}
+.wifi-menu-btn{width:100%;min-height:96px;border-radius:22px;background:linear-gradient(90deg,#0b4f39,#063d2d);color:#fff;text-decoration:none;display:grid;grid-template-columns:54px 1fr 54px;align-items:center;padding:0 26px;font-family:Georgia,serif;font-size:29px;font-weight:700;margin-bottom:16px}
+.wifi-menu-home,.wifi-menu-arrow{display:flex;align-items:center;justify-content:center}
+.wifi-menu-home svg,.wifi-menu-arrow svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.wifi-approved .footer-actions{margin:0 -22px;border-radius:0;padding:10px 14px 12px}
+@media(max-width:600px){
+  .wifi-approved{padding:12px 14px 0}
+  .wifi-head{grid-template-columns:44px 1fr 44px}
+  .wifi-back{width:42px;height:42px}.wifi-back svg{width:34px;height:34px}
+  .wifi-title-wrap h1{font-size:40px}.wifi-title-wrap p{font-size:15px;margin-top:7px}.wifi-leaf{font-size:32px}
+  .wifi-symbol{width:240px;height:205px;margin:8px auto 12px}.wifi-symbol svg{width:175px;height:175px}
+  .wifi-card-approved{padding:26px 24px 24px;border-radius:24px}
+  .wifi-label{font-size:22px}.wifi-main-value{font-size:34px}
+  .wifi-copy-btn{min-height:68px;font-size:22px;border-radius:19px;margin-top:24px}.wifi-copy-icon{width:30px;height:30px}
+  .wifi-info-approved{grid-template-columns:70px 1fr;gap:14px;margin:30px 0 28px}
+  .wifi-question{width:58px;height:58px;font-size:38px}.wifi-info-copy h2{font-size:24px}.wifi-info-copy p{font-size:18px}
+  .wifi-menu-btn{min-height:78px;font-size:23px;border-radius:18px;padding:0 18px;grid-template-columns:44px 1fr 44px}
+  .wifi-approved .footer-actions{margin:0 -14px}
+}
+
+
+/* V23 — Wi Fi menor e Café da manhã conforme artes aprovadas */
+.wifi-v23,.cafe-v23{max-width:660px;padding:12px 18px 0;background:#fbf6ed}
+.v23-head{display:grid;grid-template-columns:46px 1fr 46px;align-items:start;gap:6px}
+.v23-back{width:42px;height:42px;color:#0b4f39;display:flex;align-items:center;justify-content:center}
+.v23-back svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.v23-title{text-align:center}
+.v23-title h1{margin:0;color:#0b4f39;font-family:Georgia,serif;font-size:42px;line-height:1.05}
+.v23-title p{margin:9px 0 0;color:#123f31;font-size:16px;line-height:1.3;display:flex;justify-content:center;align-items:center;gap:7px}
+.mini-leaf{width:22px;height:22px;display:inline-flex;color:#0b4f39}
+.mini-leaf.flip{transform:scaleX(-1)}
+.mini-leaf svg,.v23-leaf svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.v23-leaf{width:38px;height:38px;color:#0b4f39;margin-top:3px}
+
+.wifi-v23-symbol{width:220px;height:180px;margin:8px auto 10px;display:flex;align-items:center;justify-content:center;color:#0b4f39;border-radius:50%;background:radial-gradient(circle,rgba(230,221,205,.55),rgba(251,246,237,0) 68%)}
+.wifi-v23-symbol svg{width:154px;height:154px;fill:none;stroke:currentColor;stroke-width:5.8;stroke-linecap:round}
+.wifi-v23-card{background:rgba(255,255,255,.78);border:1px solid #f1e7d8;border-radius:24px;padding:26px 28px 24px;box-shadow:0 10px 24px rgba(35,55,42,.07)}
+.wifi-v23-label{font:700 21px Georgia,serif;color:#163f32;margin-bottom:7px}
+.wifi-v23-value{font:700 34px Georgia,serif;color:#0a4a36;line-height:1.1}
+.wifi-v23-divider{height:1px;background:#e8dcc9;margin:22px 0}
+.wifi-v23-copy{width:100%;margin-top:24px;min-height:62px;border:0;border-radius:18px;background:#f6efe5;color:#164635;display:flex;align-items:center;justify-content:center;gap:14px;font:700 21px Georgia,serif;cursor:pointer}
+.wifi-v23-copy span:first-child{width:29px;height:29px;display:flex}
+.wifi-v23-copy svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.wifi-v23-info{margin:28px 0 26px;display:grid;grid-template-columns:66px 1fr;gap:14px;align-items:start}
+.wifi-q{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#f1eadf;color:#0b4f39;font-size:36px;font-weight:700}
+.wifi-v23-info h2{margin:3px 0 10px;color:#163f32;font:700 23px Georgia,serif}
+.wifi-v23-info p{margin:0;color:#111;font-size:17px;line-height:1.45}
+
+.v23-menu{width:100%;min-height:72px;border-radius:18px;background:linear-gradient(90deg,#0b4f39,#063d2d);color:#fff;text-decoration:none;display:grid;grid-template-columns:42px 1fr 42px;align-items:center;padding:0 18px;font:700 22px Georgia,serif;margin:0 0 12px}
+.v23-menu span{display:flex;align-items:center;justify-content:center}
+.v23-menu svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.wifi-v23 .footer-actions,.cafe-v23 .footer-actions{margin:0 -18px;border-radius:0;padding:9px 12px 11px}
+
+/* Café da manhã */
+.cafe-v23{max-width:720px}
+.cafe-v23 .v23-title h1{font-size:46px}
+.cafe-v23-hero{width:390px;height:250px;margin:8px auto 12px;border-radius:50%;overflow:hidden;background:#f5eee4}
+.cafe-v23-hero img{width:100%;height:100%;object-fit:cover}
+.cafe-main-card,.cafe-return-card,.cafe-important{background:rgba(255,255,255,.77);border:1px solid #f0e6d8;border-radius:24px;box-shadow:0 8px 22px rgba(35,55,42,.06)}
+.cafe-main-card{padding:26px 28px}
+.cafe-time-row{display:grid;grid-template-columns:105px 1fr;gap:18px;align-items:center}
+.clock-ico{width:88px;height:88px;border-radius:50%;border:5px solid #0b4f39;position:relative;background:#f5eee3}
+.clock-ico:before{content:"";position:absolute;left:50%;top:18px;width:4px;height:28px;background:#0b4f39;border-radius:4px;transform:translateX(-50%)}
+.clock-ico:after{content:"";position:absolute;left:50%;top:44px;width:24px;height:4px;background:#0b4f39;border-radius:4px;transform:rotate(32deg);transform-origin:left center}
+.cafe-main-card h2,.cafe-return-card h2,.cafe-important h2{margin:0;color:#163f32;font:700 28px Georgia,serif}
+.cafe-time{font:700 45px Georgia,serif;color:#0b4f39;margin:2px 0}
+.cafe-main-card p,.cafe-return-card p,.cafe-important p{margin:4px 0 0;color:#111;font-size:20px;line-height:1.35}
+.cafe-divider{height:1px;background:#e7dac6;margin:24px 0}
+.cafe-place-row{display:grid;grid-template-columns:118px 1fr auto;gap:18px;align-items:center}
+.cafe-place-row>img{width:112px;height:112px;border-radius:50%;object-fit:cover}
+.cafe-place-btn{min-height:58px;padding:0 16px;border-radius:30px;background:#f0e7da;color:#164635;text-decoration:none;display:flex;align-items:center;gap:9px;white-space:nowrap;font-size:17px}
+.cafe-place-btn span{width:25px;height:25px;display:flex}
+.cafe-place-btn svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.cafe-return-card{margin-top:14px;padding:20px 24px;display:grid;grid-template-columns:105px 1fr;gap:20px;align-items:center}
+.cafe-return-card img{width:96px;height:96px;border-radius:50%;object-fit:cover}
+.cafe-important{margin:14px 0 18px;padding:22px 24px;display:grid;grid-template-columns:92px 1fr;gap:18px;align-items:center;background:#f3eee6}
+.important-ico{width:74px;height:74px;border:4px solid #0b4f39;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#0b4f39;font-size:44px;font-weight:700}
+
+@media(max-width:600px){
+  .wifi-v23,.cafe-v23{padding:10px 12px 0}
+  .v23-head{grid-template-columns:40px 1fr 40px}
+  .v23-title h1{font-size:35px}.cafe-v23 .v23-title h1{font-size:38px}
+  .v23-title p{font-size:13px;gap:5px}.mini-leaf{width:18px;height:18px}.v23-leaf{width:32px;height:32px}
+  .wifi-v23-symbol{width:190px;height:155px}.wifi-v23-symbol svg{width:132px;height:132px}
+  .wifi-v23-card{padding:22px 21px}.wifi-v23-label{font-size:19px}.wifi-v23-value{font-size:29px}
+  .wifi-v23-copy{min-height:57px;font-size:18px}.wifi-v23-info{grid-template-columns:58px 1fr}.wifi-q{width:50px;height:50px;font-size:31px}.wifi-v23-info h2{font-size:20px}.wifi-v23-info p{font-size:15px}
+  .v23-menu{min-height:64px;font-size:19px;border-radius:16px}
+  .wifi-v23 .footer-actions,.cafe-v23 .footer-actions{margin:0 -12px}
+  .cafe-v23-hero{width:290px;height:188px}
+  .cafe-main-card{padding:20px}
+  .cafe-time-row{grid-template-columns:78px 1fr;gap:12px}.clock-ico{width:68px;height:68px;border-width:4px}
+  .clock-ico:before{top:14px;height:22px}.clock-ico:after{top:34px;width:18px}
+  .cafe-main-card h2,.cafe-return-card h2,.cafe-important h2{font-size:22px}.cafe-time{font-size:37px}
+  .cafe-main-card p,.cafe-return-card p,.cafe-important p{font-size:16px}
+  .cafe-place-row{grid-template-columns:82px 1fr;gap:12px}.cafe-place-row>img{width:78px;height:78px}.cafe-place-btn{grid-column:2;justify-self:start;min-height:50px;font-size:15px;margin-top:5px}
+  .cafe-return-card{grid-template-columns:82px 1fr;padding:18px}.cafe-return-card img{width:74px;height:74px}
+  .cafe-important{grid-template-columns:70px 1fr;padding:18px}.important-ico{width:58px;height:58px;font-size:34px}
+}
+
+
+/* V24 — Hidromassagem e Calefator conforme layouts enviados */
+.hydro-v24,.calefator-v24{max-width:720px;padding:12px 18px 0;background:#fbf6ed}
+.v24-head{display:grid;grid-template-columns:46px 1fr 46px;align-items:start;gap:6px}
+.v24-back{width:42px;height:42px;color:#0b4f39;display:flex;align-items:center;justify-content:center}
+.v24-back svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.v24-title{text-align:center}
+.v24-title h1{margin:0;color:#0b4f39;font:700 46px/1.05 Georgia,serif}
+.v24-title p{margin:9px 0 0;color:#173f32;font-size:17px;display:flex;align-items:center;justify-content:center;gap:8px}
+.v24-mini-leaf{width:22px;height:22px;display:inline-flex;color:#0b4f39}.v24-mini-leaf.flip{transform:scaleX(-1)}
+.v24-mini-leaf svg,.v24-leaf svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.v24-leaf{width:38px;height:38px;color:#0b4f39;margin-top:3px}
+.v24-hero{width:100%;max-height:430px;object-fit:cover;border-radius:24px;margin:16px 0 14px;display:block}
+.v24-video{width:100%;min-height:70px;border:0;border-radius:20px;background:linear-gradient(90deg,#eef2d8,#f6f3df);color:#123f31;display:grid;grid-template-columns:58px 1fr 40px;align-items:center;padding:0 18px;font:700 23px Georgia,serif;text-align:left;cursor:pointer}
+.v24-play,.v24-arrow{display:flex;align-items:center;justify-content:center;color:#0b4f39}.v24-play{width:48px;height:48px}.v24-play svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.5}.v24-arrow svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.v24-card{margin-top:16px;background:rgba(255,255,255,.8);border:1px solid #efe5d7;border-radius:24px;padding:24px 26px;box-shadow:0 8px 22px rgba(35,55,42,.06)}
+.v24-card-title{display:flex;gap:16px;align-items:center;margin-bottom:12px}.v24-card-title h2{margin:0;color:#163f32;font:700 30px Georgia,serif}
+.shield,.drop-icon{width:58px;height:58px;border-radius:50%;background:#f3eadc;display:flex;align-items:center;justify-content:center;color:#0b4f39;font-size:30px;font-weight:700;flex:none}
+.v24-steps{margin-left:72px;position:relative}.v24-steps:before{content:"";position:absolute;left:19px;top:14px;bottom:16px;border-left:2px dashed #d8d2c5}
+.v24-steps>div{display:grid;grid-template-columns:40px 1fr;gap:18px;align-items:start;margin:14px 0;position:relative}
+.v24-steps>div>span{width:36px;height:36px;border-radius:50%;background:#0b4f39;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;z-index:1}
+.v24-steps p{margin:2px 0 0;color:#111;font-size:20px;line-height:1.4}
+.care-card ul{margin:4px 0 0 82px;padding-left:22px}.care-card li{margin:8px 0;font-size:19px;line-height:1.4}
+.v24-warning{margin:20px 0 0;background:#f9ddd4;border-radius:20px;padding:18px 22px;display:grid;grid-template-columns:90px 1fr;align-items:center;gap:16px;color:#ab2b1f}
+.warning-icon{width:68px;height:68px;border:5px solid #c23528;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:46px;font-weight:900}
+.v24-warning h3{margin:0 0 6px;font:700 26px Georgia,serif}.v24-warning p{margin:0;color:#111;font-size:20px;line-height:1.35}
+.v24-menu{width:calc(100% - 110px);margin:18px auto 12px;min-height:78px;border-radius:18px;background:linear-gradient(90deg,#0b4f39,#063d2d);color:#fff;text-decoration:none;display:grid;grid-template-columns:48px 1fr 48px;align-items:center;padding:0 20px;font:700 25px Georgia,serif}
+.v24-menu span{display:flex;align-items:center;justify-content:center}.v24-menu svg{width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.hydro-v24 .footer-actions,.calefator-v24 .footer-actions{margin:0 -18px;border-radius:0;padding:9px 12px 11px}
+
+@media(max-width:600px){
+  .hydro-v24,.calefator-v24{padding:10px 12px 0}
+  .v24-head{grid-template-columns:40px 1fr 40px}.v24-title h1{font-size:37px}.v24-title p{font-size:14px;gap:5px}.v24-mini-leaf{width:18px;height:18px}.v24-leaf{width:32px;height:32px}
+  .v24-hero{max-height:330px;border-radius:20px;margin-top:12px}
+  .v24-video{min-height:62px;border-radius:17px;grid-template-columns:50px 1fr 34px;font-size:18px;padding:0 14px}.v24-play{width:42px;height:42px}
+  .v24-card{padding:20px 18px;border-radius:20px}.v24-card-title h2{font-size:24px}.shield,.drop-icon{width:50px;height:50px;font-size:27px}
+  .v24-steps{margin-left:50px}.v24-steps>div{grid-template-columns:34px 1fr;gap:13px;margin:12px 0}.v24-steps>div>span{width:32px;height:32px}.v24-steps p{font-size:16px}
+  .care-card ul{margin-left:58px;padding-left:18px}.care-card li{font-size:16px;margin:7px 0}
+  .v24-warning{grid-template-columns:68px 1fr;padding:15px}.warning-icon{width:56px;height:56px;font-size:36px}.v24-warning h3{font-size:22px}.v24-warning p{font-size:16px}
+  .v24-menu{width:calc(100% - 40px);min-height:66px;font-size:20px;grid-template-columns:40px 1fr 40px}
+  .hydro-v24 .footer-actions,.calefator-v24 .footer-actions{margin:0 -12px}
+}
+
+
+/* V29 — Ar condicionado reaproveita exatamente o padrão responsivo V24/V25 */
+.ar-v24{max-width:720px;padding:12px 18px 0;background:#fbf6ed}
+.ar-snow-v29{
+  width:58px;height:58px;border-radius:50%;background:#f3eadc;
+  display:flex;align-items:center;justify-content:center;color:#0b4f39;flex:none;
+}
+.ar-snow-v29 svg{
+  width:36px;height:36px;fill:none;stroke:currentColor;stroke-width:3;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.ar-steps-v29 b{color:#0b4f39}
+@media(max-width:600px){
+  .ar-v24{padding:10px 12px 0}
+  .ar-snow-v29{width:50px;height:50px}
+  .ar-snow-v29 svg{width:31px;height:31px}
+  .ar-v24 .v24-title h1{font-size:37px}
+  .ar-v24 .v24-title p{font-size:14px}
+  .ar-v24 .v24-hero{max-height:330px}
+  .ar-v24 .v24-video{font-size:18px}
+  .ar-v24 .v24-card-title h2{font-size:24px}
+  .ar-v24 .v24-steps p{font-size:16px}
+  .ar-v24 .footer-actions{margin:0 -12px}
+}
+
+
+/* V30 — ajuste fino do alinhamento dos passos do Ar no mobile */
+@media(max-width:600px){
+  .ar-v24 .ar-steps-v29 > div{
+    grid-template-columns:42px 1fr !important;
+    column-gap:8px !important;
+  }
+  .ar-v24 .ar-steps-v29 > div > span{
+    transform:translateX(-10px);
+  }
+  .ar-v24 .ar-steps-v29 > div > p{
+    margin-left:-8px !important;
+  }
+}
+
+/* V31 TV + Regras */
+.v31-page .v31-hero{width:100%;height:310px;object-fit:cover;border-radius:24px;margin:10px 0 18px}.v31-card{background:#fffdfa;border:1px solid #eadfce;border-radius:24px;padding:8px 24px}.v31-row{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center;padding:20px 0;border-bottom:1px solid #eee3d5}.v31-row:last-child{border:0}.v31-row h3{font-family:Georgia,serif;color:#064f39;font-size:27px;margin:0 0 9px}.v31-row p{font-size:20px;line-height:1.45;margin:0}.v31-row strong{color:#07543e}.v31-bigico,.v31-apps{width:96px;height:96px;border-radius:50%;background:#f4efe3;color:#07543e;display:flex;align-items:center;justify-content:center;font-size:43px;margin:auto}.v31-apps{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:18px}.v31-apps b{font:700 10px Arial;background:#07543e;color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center}.v31-video{margin:16px auto 0;max-width:650px;display:grid!important;grid-template-columns:45px 1fr 25px;align-items:center;font-size:23px}.v31-video b{text-align:right;font-size:34px}.v31-rules .v31-row{grid-template-columns:110px 1fr;padding:15px 0}.v31-rules h3 span{display:inline-flex;width:31px;height:31px;border-radius:50%;background:#07543e;color:#fff;align-items:center;justify-content:center;font:700 16px Arial;margin-right:8px}.v31-pdf{margin:14px 0 18px;background:#f3efdf;border:1px solid #d8ccb7;border-radius:18px;padding:14px 18px;display:grid;grid-template-columns:1fr 1.25fr;align-items:center;gap:14px;color:#064f39;font-size:19px}.v31-pdf strong{font-family:Georgia,serif;font-size:25px}.v31-pdf .btn{margin:0}
+@media(max-width:600px){.v31-page .page-title{font-size:44px!important}.v31-page .brand small{font-size:17px!important}.v31-page .v31-hero{height:225px;border-radius:18px}.v31-card{padding:4px 12px}.v31-row{grid-template-columns:76px 1fr;gap:9px;padding:15px 0}.v31-row h3{font-size:22px;line-height:1.12;margin-bottom:6px}.v31-row p{font-size:16.5px;line-height:1.36}.v31-bigico,.v31-apps{width:66px;height:66px;font-size:29px}.v31-apps{padding:11px}.v31-apps b{font-size:7px}.v31-rules .v31-row{grid-template-columns:70px 1fr;gap:8px;padding:12px 0}.v31-rules h3 span{width:25px;height:25px;font-size:13px}.v31-pdf{grid-template-columns:1fr;padding:12px;font-size:16px}.v31-pdf strong{font-size:21px}.v31-video{font-size:19px}}
+
+/* V32: ajustes finais TV e Regras */
+.v32-tv-video{margin:0 0 16px!important;max-width:none!important;width:100%;}
+.v32-pdf-only{display:block!important;padding:0!important;background:transparent!important;border:0!important;}
+.v32-pdf-only .rule-link{width:100%;margin:0!important;display:flex!important;align-items:center;justify-content:space-between;}
+.v31-rules h3 span{display:none!important;}
+
+/* V33 — correção pontual da TV */
+#tv .topbar{
+  position:relative;
+  display:grid;
+  grid-template-columns:44px minmax(0,1fr) 44px;
+  align-items:start;
+}
+#tv .topbar .brand{
+  width:100%;
+  justify-content:center;
+  text-align:center;
+}
+#tv .page-title{
+  display:block;
+  width:100%;
+  text-align:center;
+}
+#tv .v31-bigico.tv-icon{
+  padding:15px;
+  box-sizing:border-box;
+}
+#tv .tv-icon svg{
+  width:100%;
+  height:100%;
+  display:block;
+  fill:none;
+  stroke:#07543e;
+  stroke-width:4;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+#tv .tv-remote svg{
+  fill:#07543e;
+  stroke:#07543e;
+}
+#tv .tv-remote svg circle,
+#tv .tv-remote svg path{
+  fill:#f6f0e4;
+  stroke:#f6f0e4;
+}
+#tv .tv-remote svg circle:first-of-type{
+  fill:#f0a13b;
+  stroke:none;
+}
+#tv .tv-play svg{
+  padding:8px;
+  fill:#07543e;
+  stroke:none;
+}
+#tv .tv-power svg{
+  padding:5px;
+}
+#tv .tv-app-grid{
+  width:96px;
+  min-height:96px;
+  border-radius:50%;
+  background:#f4efe3;
+  margin:auto;
+  padding:15px 9px;
+  box-sizing:border-box;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:5px;
+  align-content:center;
+  justify-items:center;
+}
+#tv .tv-app-grid > span{
+  width:25px;
+  height:25px;
+  border-radius:5px;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  font-family:Arial,sans-serif;
+  font-weight:700;
+  line-height:1;
+}
+#tv .app-netflix{background:#050505;color:#e50914;font-size:21px;}
+#tv .app-youtube{background:#fff;}
+#tv .app-youtube i{display:block;width:22px;height:15px;border-radius:5px;background:#ff0000;position:relative;}
+#tv .app-youtube i:after{content:"";position:absolute;left:8px;top:4px;border-left:7px solid #fff;border-top:4px solid transparent;border-bottom:4px solid transparent;}
+#tv .app-prime{background:#eef5fb;color:#1769aa;font-size:7px;flex-direction:column;}
+#tv .app-prime small{font-size:6px;}
+#tv .app-disney{background:#092b69;color:#fff;font-size:6px;}
+#tv .app-globo{background:#f0442f;color:#fff;font-size:6px;flex-direction:column;}
+#tv .app-globo small{font-size:6px;}
+
+@media(max-width:600px){
+  #tv .topbar{
+    grid-template-columns:40px minmax(0,1fr) 40px;
+    align-items:start;
+  }
+  #tv .topbar .top-back{
+    justify-self:start;
+  }
+  #tv .topbar .brand{
+    justify-self:center;
+  }
+  #tv .page-title{
+    margin:0 auto!important;
+    line-height:1!important;
+    font-size:42px!important;
+  }
+  #tv .brand small{
+    display:block;
+    margin-top:4px;
+    text-align:center;
+  }
+  #tv .v31-bigico.tv-icon{
+    padding:11px;
+  }
+  #tv .tv-app-grid{
+    width:66px;
+    min-height:66px;
+    padding:9px 5px;
+    gap:3px;
+  }
+  #tv .tv-app-grid > span{
+    width:17px;
+    height:17px;
+    border-radius:4px;
+  }
+  #tv .app-netflix{font-size:14px}
+  #tv .app-youtube i{width:15px;height:10px;border-radius:3px}
+  #tv .app-youtube i:after{left:5px;top:2px;border-left-width:5px;border-top-width:3px;border-bottom-width:3px}
+  #tv .app-prime,#tv .app-disney,#tv .app-globo{font-size:4.5px}
+  #tv .app-prime small,#tv .app-globo small{font-size:4px}
+}
+
+
+/* V34 — Regras da Cabana: ícones fiéis + título mobile alinhado */
+#regras .v34-rule-icon{
+  overflow:hidden;
+  padding:0;
+  background:#f4efe3;
+}
+#regras .v34-rule-icon img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+}
+#regras .topbar{
+  display:grid;
+  grid-template-columns:44px minmax(0,1fr) 44px;
+  align-items:start;
+}
+#regras .topbar .brand{
+  width:100%;
+  justify-content:center;
+  text-align:center;
+}
+#regras .page-title{
+  width:100%;
+  text-align:center;
+}
+@media(max-width:600px){
+  #regras .topbar{
+    grid-template-columns:40px minmax(0,1fr) 40px;
+  }
+  #regras .topbar .top-back{
+    justify-self:start;
+  }
+  #regras .topbar .brand{
+    justify-self:center;
+    min-width:0;
+  }
+  #regras .page-title{
+    font-size:34px!important;
+    line-height:1.05!important;
+    margin:0 auto 3px!important;
+    white-space:normal;
+  }
+  #regras .brand small{
+    display:block;
+    font-size:15px!important;
+    line-height:1.2;
+    text-align:center;
+    margin-top:3px;
+  }
+  #regras .v34-rule-icon{
+    width:66px!important;
+    height:66px!important;
+  }
+}
+@media(max-width:390px){
+  #regras .page-title{
+    font-size:31px!important;
+  }
+  #regras .brand small{
+    font-size:14px!important;
+  }
+}
+
+
+/* V36 — alinhamento uniforme dos cinco ícones de Regras */
+#regras .v34-rule-icon{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+  padding:0!important;
+}
+#regras .v34-rule-icon img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  display:block!important;
+  margin:0!important;
+  transform:none!important;
+}
+
+</style></head>
+<body><section class="screen" id="home">
+<div class="topbar"><div></div><div class="brand"><img src="assets/crops/logo.jpg" alt="Logo"><div><h1>Cabana</h1><small>Rota do Vinho</small></div></div><div></div></div>
+<div class="hero"><img src="assets/crops/home-hero.jpg" alt="Cabana Rota do Vinho"></div>
+<h2 class="section-title">Sua estadia</h2><div class="home-grid"><a class="home-card navlink" href="#checkin"><img src="assets/crops/checkin-icon.jpg" alt=""><strong>Check in</strong><span>Informações para sua chegada</span></a><a class="home-card navlink" href="#wifi"><img src="assets/crops/wifi-icon.jpg" alt=""><strong>Wi Fi</strong><span>Rede e senha para você se conectar</span></a><a class="home-card navlink" href="#cafe"><img src="assets/crops/cafe-icon.jpg" alt=""><strong>Café da manhã</strong><span>Horário e informações sobre o delivery</span></a><a class="home-card navlink" href="#hidro"><img src="assets/crops/hidro-icon.jpg" alt=""><strong>Hidromassagem</strong><span>Dicas para aproveitar sua banheira</span></a><a class="home-card navlink" href="#calefator"><img src="assets/crops/calefator-icon.jpg" alt=""><strong>Calefator</strong><span>Como usar com segurança</span></a><a class="home-card navlink" href="#ar"><img src="assets/crops/ar-icon.jpg" alt=""><strong>Ar condicionado</strong><span>Dicas para usar da melhor forma</span></a><a class="home-card navlink" href="#tv"><img src="assets/crops/tv-icon.jpg" alt=""><strong>TV</strong><span>Canais e instruções de uso</span></a><a class="home-card navlink" href="#regras"><img src="assets/crops/regras-icon.jpg" alt=""><strong>Regras da cabana</strong><span>Regras importantes para sua estadia</span></a><a class="home-card navlink" href="#rota"><img src="assets/crops/rota-icon.jpg" alt=""><strong>Rota do Vinho</strong><span>Vinícolas, passeios e experiências</span></a><a class="home-card navlink" href="#delivery"><img src="assets/crops/delivery-icon.jpg" alt=""><strong>Delivery na Cabana</strong><span>Restaurantes parceiros que entregam</span></a><a class="home-card navlink" href="#casaAzul"><img src="assets/crops/casa-icon.jpg" alt=""><strong>Casa Azul</strong><span>Ateliê & Conveniência</span></a><a class="home-card navlink" href="#checkout"><img src="assets/crops/checkout-icon.jpg" alt=""><strong>Check out</strong><span>Informações para sua saída</span></a></div>
+<div class="help-card"><div class="help-icon">♡</div><div><strong>Precisa de ajuda?</strong><p>Fale conosco sempre que precisar.</p></div><a class="btn" href="https://wa.me/5511973053777" target="_blank">WhatsApp</a></div>
+<div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
+<section class="screen" id="checkin"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
+    <div class="brand"><div><h1 class="page-title">Check in</h1></div></div><div></div></div>
+<img class="feature-image" src="assets/crops/checkin-hero.jpg" alt="Área externa da cabana"><div class="list">
+<div class="step"><div class="ico">🕒</div><div><h3>Horário de entrada</h3><p>A partir das 15h.</p></div></div>
+<div class="step"><div class="ico">📍</div><div><h3>Como chegar</h3><p>Abra a localização da cabana no Google Maps.</p><div style="margin-top:10px"><a class="btn-outline" href="https://www.google.com/maps/search/Estrada+Velha+do+Carmo+2100+Canguera+São+Roque+São+Paulo" target="_blank">Abrir localização</a></div></div></div>
+<div class="step"><div class="ico">🚗</div><div><h3>Ao chegar à propriedade</h3><p>Veja como funciona a entrada, onde estacionar e o caminho até sua cabana.</p><div style="margin-top:10px"><a class="btn-outline" href="https://drive.google.com/file/d/1t73j4HniVZpLaHsH1f2_Ayz7i-VtMaQ-/view" target="_blank">Ver foto ou vídeo</a></div></div></div>
+<div class="step"><div class="ico">🔑</div><div><h3>Acesso à cabana</h3><p>Veja onde encontrar a chave e como acessar sua cabana.</p><div style="margin-top:10px"><a class="btn-outline" href="https://drive.google.com/file/d/1t73j4HniVZpLaHsH1f2_Ayz7i-VtMaQ-/view" target="_blank">Ver vídeo ou fotos</a></div></div></div>
+<div class="step"><div class="ico">🔐</div><div><h3>Chaves e controles</h3><p>Dentro da cabana, no local indicado.</p></div></div></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
+
+
+<section class="screen wifi-v23" id="wifi">
+  <div class="v23-head">
+    <a class="v23-back" href="#home" aria-label="Voltar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7M8 12h12"/></svg></a>
+    <div class="v23-title">
+      <h1>Wi Fi</h1>
+      <p><span class="mini-leaf"><svg viewBox="0 0 64 64" aria-hidden="true">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></span> Rede e senha para você se conectar <span class="mini-leaf flip"><svg viewBox="0 0 64 64" aria-hidden="true">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></span></p>
+    </div>
+    <div class="v23-leaf"><svg viewBox="0 0 64 64" aria-hidden="true">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></div>
+  </div>
+
+  <div class="wifi-v23-symbol"><svg viewBox="0 0 64 64" aria-hidden="true">
+<path d="M8 24c13-13 35-13 48 0"/><path d="M16 33c9-9 23-9 32 0"/><path d="M24 42c5-5 11-5 16 0"/>
+<circle cx="32" cy="51" r="3.8" fill="currentColor" stroke="none"/>
+</svg></div>
+
+  <div class="wifi-v23-card">
+    <div class="wifi-v23-label">Rede</div>
+    <div class="wifi-v23-value">Cabana Rota do Vinho</div>
+    <div class="wifi-v23-divider"></div>
+    <div class="wifi-v23-label">Senha</div>
+    <div class="wifi-v23-value">Sagui2024@@</div>
+    <button class="wifi-v23-copy" type="button"
+      onclick="navigator.clipboard&&navigator.clipboard.writeText('Sagui2024@@');this.querySelector('.copy-text').textContent='Senha copiada ✓'">
+      <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="10" height="12" rx="2"/><path d="M6 16H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span><b class="copy-text">Copiar senha</b>
+    </button>
+  </div>
+
+  <div class="wifi-v23-info">
+    <div class="wifi-q">?</div>
+    <div><h2>Informações adicionais</h2><p>Temos Wi Fi na portaria.<br>Rede viva natural, não possui senha.</p></div>
+  </div>
+
+  <a class="v23-menu" href="#home"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"/></svg></span><b>Voltar para o menu</b><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></span></a>
+  <div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div>
+</section>
+
+
+
+<section class="screen cafe-v23" id="cafe">
+  <div class="v23-head">
+    <a class="v23-back" href="#home" aria-label="Voltar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7M8 12h12"/></svg></a>
+    <div class="v23-title">
+      <h1>Café da manhã</h1>
+      <p><span class="mini-leaf"><svg viewBox="0 0 64 64" aria-hidden="true">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></span> Horário e informações sobre o delivery <span class="mini-leaf flip"><svg viewBox="0 0 64 64" aria-hidden="true">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></span></p>
+    </div>
+    <div class="v23-leaf"><svg viewBox="0 0 64 64" aria-hidden="true">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></div>
+  </div>
+
+  <div class="cafe-v23-hero"><img src="assets/v23/cafe-hero.jpg" alt="Café da manhã"></div>
+
+  <div class="cafe-main-card">
+    <div class="cafe-time-row">
+      <div class="clock-ico"><span></span></div>
+      <div><h2>Horário de entrega</h2><div class="cafe-time">8h30</div><p>Seu café da manhã será<br>entregue na sua cabana.</p></div>
+    </div>
+    <div class="cafe-divider"></div>
+    <div class="cafe-place-row">
+      <img src="assets/v23/cafe-casinha.jpg" alt="Casinha vermelha">
+      <div class="cafe-place-copy"><h2>Onde retirar</h2><p>Na casinha vermelha,<br>no pé da escada.</p></div>
+      <a class="cafe-place-btn" href="assets/v23/cafe-casinha.jpg" target="_blank"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.1 6-11a6 6 0 1 0-12 0c0 5.9 6 11 6 11z"/><circle cx="12" cy="10" r="2"/></svg></span><b>Ver onde retirar</b><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></span></a>
+    </div>
+  </div>
+
+  <div class="cafe-return-card">
+    <img src="assets/v23/cafe-cesta.jpg" alt="Cesta do café">
+    <div><h2>Devolução da cesta</h2><p>Após o café, pedimos que devolva a cesta também na casinha vermelha até às <b>14h</b> para retirada.</p></div>
+  </div>
+
+  <div class="cafe-important">
+    <div class="important-ico">!</div>
+    <div><h2>Importante</h2><p>Os comércios só abrem após as 8h, por este motivo não conseguimos alterar o horário do café da manhã.</p></div>
+  </div>
+
+  <a class="v23-menu" href="#home"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"/></svg></span><b>Voltar para o menu</b><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></span></a>
+  <div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div>
+</section>
+
+
+<section class="screen hydro-v24" id="hidro">
+  <div class="v24-head">
+    <a class="v24-back" href="#home" aria-label="Voltar"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7M8 12h12"/></svg></a>
+    <div class="v24-title">
+      <h1>Hidromassagem</h1>
+      <p><span class="v24-mini-leaf"><svg viewBox="0 0 64 64">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></span> Relaxe e aproveite esse momento <span class="v24-mini-leaf flip"><svg viewBox="0 0 64 64">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></span></p>
+    </div>
+    <div class="v24-leaf"><svg viewBox="0 0 64 64">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></div>
+  </div>
+
+  <img class="v24-hero" src="assets/v24/hidro-hero.jpg" alt="Hidromassagem">
+
+  <button class="v24-video" type="button" onclick="alert('Vídeo da hidromassagem será adicionado em breve.')">
+    <span class="v24-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4z" fill="currentColor" stroke="none"/></svg></span>
+    <b>Ver vídeo: Como usar a hidromassagem</b>
+    <span class="v24-arrow"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span>
+  </button>
+
+  <div class="v24-card">
+    <div class="v24-card-title"><span class="drop-icon">◯</span><h2>Como usar</h2></div>
+    <div class="v24-steps">
+      <div><span>1</span><p>Encha a banheira com água até cobrir todos os jatos.</p></div>
+      <div><span>2</span><p>Ligue a hidromassagem no botão localizado na borda da banheira.</p></div>
+      <div><span>3</span><p>Ajuste a temperatura da água até no máximo <b>36°C</b> e a intensidade dos jatos de acordo com sua preferência.</p></div>
+      <div><span>4</span><p>Após o uso, desligue a hidromassagem no botão da borda.</p></div>
+    </div>
+  </div>
+
+  <div class="v24-card care-card">
+    <div class="v24-card-title"><span class="shield">✓</span><h2>Cuidados importantes</h2></div>
+    <ul>
+      <li>Não utilize ervas, pétalas ou qualquer coisa que possa entupir a banheira.</li>
+      <li>Evite encostar objetos cortantes na banheira.</li>
+      <li>Não deixe crianças sozinhas ou sem supervisão.</li>
+      <li>Em caso de dúvidas, entre em contato conosco.</li>
+    </ul>
+  </div>
+
+  <a class="v24-menu" href="#home"><span><svg viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"/></svg></span><b>Voltar para o menu</b><span><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span></a>
+  <div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div>
+</section>
+
+
+<section class="screen calefator-v24" id="calefator">
+  <div class="v24-head">
+    <a class="v24-back" href="#home" aria-label="Voltar"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7M8 12h12"/></svg></a>
+    <div class="v24-title">
+      <h1>Calefator</h1>
+      <p><span class="v24-mini-leaf"><svg viewBox="0 0 64 64">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></span> Conforto com segurança <span class="v24-mini-leaf flip"><svg viewBox="0 0 64 64">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></span></p>
+    </div>
+    <div class="v24-leaf"><svg viewBox="0 0 64 64">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></div>
+  </div>
+
+  <img class="v24-hero" src="assets/v24/calefator-hero.jpg" alt="Calefator">
+
+  <button class="v24-video" type="button" onclick="alert('Vídeo do calefator será adicionado em breve.')">
+    <span class="v24-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4z" fill="currentColor" stroke="none"/></svg></span>
+    <b>Ver vídeo: Como utilizar o calefator</b>
+    <span class="v24-arrow"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span>
+  </button>
+
+  <div class="v24-card">
+    <div class="v24-card-title"><span class="shield">✓</span><h2>Como utilizar com segurança</h2></div>
+    <div class="v24-steps">
+      <div><span>1</span><p>Mantenha cortinas, móveis e objetos inflamáveis afastados.</p></div>
+      <div><span>2</span><p>Mantenha a porta do calefator sempre fechada durante o uso.</p></div>
+      <div><span>3</span><p>Tenha cuidado para não deixar brasas caírem no chão ou em superfícies inflamáveis.</p></div>
+      <div><span>4</span><p>Não coloque nenhum tipo de alimento sobre o calefator, incluindo queijos ou marshmallow.</p></div>
+    </div>
+    <div class="v24-warning"><div class="warning-icon">!</div><div><h3>ATENÇÃO!</h3><p>Risco de incêndio imediato com a porta aberta.</p></div></div>
+  </div>
+
+  <a class="v24-menu" href="#home"><span><svg viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"/></svg></span><b>Voltar para o menu</b><span><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span></a>
+  <div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div>
+</section>
+
+
+<section class="screen ar-v24" id="ar">
+  <div class="v24-head">
+    <a class="v24-back" href="#home" aria-label="Voltar"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7M8 12h12"/></svg></a>
+    <div class="v24-title">
+      <h1>Ar condicionado</h1>
+      <p><span class="v24-mini-leaf"><svg viewBox="0 0 64 64">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></span> Conforto e bem estar <span class="v24-mini-leaf flip"><svg viewBox="0 0 64 64">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></span></p>
+    </div>
+    <div class="v24-leaf"><svg viewBox="0 0 64 64">
+<path d="M13 53c16-15 22-27 29-44"/>
+<path d="M25 38c-9 1-14-4-15-11 8-1 14 3 15 11z"/>
+<path d="M34 27c-7-4-8-10-5-16 7 3 10 9 5 16z"/>
+<path d="M39 31c4-8 10-10 16-7-3 8-9 11-16 7z"/>
+<path d="M30 45c5-7 12-8 17-4-4 7-10 10-17 4z"/>
+</svg></div>
+  </div>
+
+  <img class="v24-hero" src="assets/v29/ar-hero.jpg" alt="Ar condicionado">
+
+  <button class="v24-video" type="button" onclick="alert('Vídeo do ar condicionado será adicionado em breve.')">
+    <span class="v24-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4z" fill="currentColor" stroke="none"/></svg></span>
+    <b>Ver vídeo: Como utilizar o ar condicionado</b>
+    <span class="v24-arrow"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span>
+  </button>
+
+  <div class="v24-card">
+    <div class="v24-card-title">
+      <span class="ar-snow-v29"><svg viewBox="0 0 64 64">
+<path d="M32 6v52M10 19l44 26M54 19L10 45M24 11l8 8 8-8M24 53l8-8 8 8M13 28l11 3-3-11M51 36l-11-3 3 11M51 28l-11 3 3-11M13 36l11-3-3 11"/>
+</svg></span>
+      <h2>Como utilizar com eficiência</h2>
+    </div>
+    <div class="v24-steps ar-steps-v29">
+      <div><span>1</span><p>O controle do ar condicionado fica ao lado da escada.<br>Use o controle remoto para ligar/desligar e ajustar a temperatura.</p></div>
+      <div><span>2</span><p>O ar condicionado possui <b>somente função frio.</b> Para aquecer a cabana, utilize o calefator, quando disponível.</p></div>
+      <div><span>3</span><p>Mantenha portas e janelas fechadas enquanto o ar condicionado estiver ligado.</p></div>
+      <div><span>4</span><p>Desligue o ar condicionado ao sair da cabana para economizar energia.</p></div>
+    </div>
+  </div>
+
+  <a class="v24-menu" href="#home">
+    <span><svg viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"/></svg></span><b>Voltar para o menu</b><span><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span>
+  </a>
+
+  <div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div>
+</section>
+
+<section class="screen v31-page" id="tv"><div class="topbar"><a class="top-back" href="#home">←</a><div class="brand"><div><h1 class="page-title">TV</h1><small>Entretenimento para relaxar</small></div></div><div></div></div><img class="feature-image v31-hero" src="assets/v31/tv-hero.jpg" alt="TV"><a class="btn v31-video v32-tv-video" href="#"><span>▷</span><strong>Ver vídeo: Como utilizar a TV</strong><b>›</b></a><div class="v31-card"><div class="v31-row"><div class="v31-bigico tv-icon tv-remote"><svg viewBox="0 0 64 96" aria-hidden="true">
+<rect x="15" y="4" width="34" height="88" rx="10"/>
+<circle cx="32" cy="18" r="4" fill="#f0a13b" stroke="none"/>
+<circle cx="24" cy="31" r="3"/><circle cx="32" cy="31" r="3"/><circle cx="40" cy="31" r="3"/>
+<circle cx="24" cy="41" r="3"/><circle cx="32" cy="41" r="3"/><circle cx="40" cy="41" r="3"/>
+<circle cx="24" cy="51" r="3"/><circle cx="32" cy="51" r="3"/><circle cx="40" cy="51" r="3"/>
+<path d="M24 66h16M32 59v14"/>
+</svg></div><div><h3>Controle da TV</h3><p>O controle da TV fica dentro da <strong>cestinha</strong> em frente ao microondas.</p></div></div><div class="v31-row"><div class="tv-app-grid" aria-label="Netflix, YouTube, Prime Video, Disney Plus e Globoplay">
+<span class="app-netflix">N</span>
+<span class="app-youtube"><i></i></span>
+<span class="app-prime">prime<small>video</small></span>
+<span class="app-disney">Disney+</span>
+<span class="app-globo">globo<small>play</small></span>
+</div><div><h3>Canais e aplicativos</h3><p>A TV possui acesso à Netflix, YouTube, Prime Video, Disney+ e Globoplay. Use <strong>sua própria conta</strong> para acessar os aplicativos e não se esqueça de <strong>desconectar</strong> ao sair da cabana.</p></div></div><div class="v31-row"><div class="v31-bigico tv-icon tv-play"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M22 14l30 18-30 18z"/></svg></div><div><h3>Para assistir</h3><p>Ligue a TV e escolha o aplicativo desejado. Faça login com sua conta e aproveite!</p></div></div><div class="v31-row"><div class="v31-bigico tv-icon tv-power"><svg viewBox="0 0 64 64" aria-hidden="true">
+<path d="M32 8v24"/>
+<path d="M20 15a23 23 0 1 0 24 0"/>
+</svg></div><div><h3>Ao sair da cabana</h3><p>Desligue a TV e desconecte sua conta dos aplicativos.</p></div></div></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu <span class="btn-chevron">›</span></a></section>
+<section class="screen v31-page" id="regras"><div class="topbar"><a class="top-back" href="#home">←</a><div class="brand"><div><h1 class="page-title">Regras da Cabana</h1><small>Para uma estadia tranquila e especial</small></div></div><div></div></div><img class="feature-image v31-hero regras-hero" src="assets/v31/regras-hero.jpg" alt="Regras da Cabana"><div class="v31-card v31-rules"><div class="v31-row"><div class="v31-bigico v34-rule-icon"><img src="assets/v36/regra-fumar.jpg" alt=""></div><div><h3>Dentro da cabana</h3><p>Não é permitido fumar dentro da cabana.<br>O cheiro impregna nas cortinas e demais tecidos.</p></div></div><div class="v31-row"><div class="v31-bigico v34-rule-icon"><img src="assets/v36/regra-alimentos.jpg" alt=""></div><div><h3>Alimentos</h3><p>Não é permitido fazer frituras, churrasco ou preparações gordurosas dentro da cabana.</p></div></div><div class="v31-row"><div class="v31-bigico v34-rule-icon"><img src="assets/v36/regra-calefator.jpg" alt=""></div><div><h3>Calefator</h3><p>Não coloque alimentos no calefator.<br>Mantenha a porta fechada durante todo o uso.</p></div></div><div class="v31-row"><div class="v31-bigico v34-rule-icon"><img src="assets/v36/regra-enxoval.jpg" alt=""></div><div><h3>Enxoval</h3><p>Não utilize toalhas ou roupas de cama para remover maquiagem. Itens do enxoval com <strong>qualquer mancha, principalmente sangue</strong>, serão descartados e <strong>cobrados</strong> pelo valor de reposição.</p></div></div><div class="v31-row"><div class="v31-bigico v34-rule-icon"><img src="assets/v36/regra-itens.jpg" alt=""></div><div><h3>Itens da cabana</h3><p>Todos os utensílios, equipamentos e objetos pertencem à cabana. Itens ausentes após o checkout serão <strong>cobrados</strong> pelo valor de reposição.</p></div></div></div><div class="v31-pdf v32-pdf-only"><a class="btn rule-link" href="assets/extras/regras-completas.png" target="_blank">▤ Ver regras completas (PDF) <span class="btn-chevron">›</span></a></div><a class="btn back-menu" href="#home">⌂ Voltar para o menu <span class="btn-chevron">›</span></a></section>
+<section class="screen" id="rota"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
+    <div class="brand"><div><h1 class="page-title">Rota do Vinho</h1><small>Descubra São Roque</small></div></div><div></div></div>
+<img class="feature-image" src="assets/crops/rota-hero.jpg" alt="Rota do Vinho">
+<div class="card"><h2>Parceiros da Cabana</h2><p>Aproveite benefícios exclusivos com nossos parceiros.</p></div>
+<div class="partner-grid">
+<div class="partner"><img src="assets/crops/hockenheim.jpg"><div class="body"><h3>Choperia Hockenheim</h3><p>Parceiro Cabana Rota do Vinho</p><div class="actions"><span class="btn-small">Benefício em breve</span><a class="btn-small" href="https://maps.app.goo.gl/RYzwLAWStjWCSCwy5" target="_blank">Como chegar</a></div></div></div>
+<div class="partner"><img src="assets/crops/dreamcar.jpg"><div class="body"><h3>Dream Car Museum</h3><p>Parceiro Cabana Rota do Vinho</p><div class="actions"><a class="btn-small" href="assets/extras/dream-car-beneficio.png" target="_blank">Benefício</a><a class="btn-small" href="https://maps.app.goo.gl/72qbr9jjbKpXwU26A" target="_blank">Como chegar</a></div></div></div>
+</div>
+<h2 class="section-title">Explore São Roque</h2><div class="card"><div class="info-row"><a class="btn" href="https://maps.app.goo.gl/GU4ZuEZ3PqC5dJuc6" target="_blank">Abrir Rota no mapa</a><a class="btn-outline" href="assets/extras/mapa-roteiro.png" target="_blank">Mapa do Roteiro do Vinho</a></div></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
+<section class="screen" id="delivery"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
+    <div class="brand"><div><h1 class="page-title">Delivery na Cabana</h1><small>Opções que costumam entregar até a propriedade</small></div></div><div></div></div>
+<div class="notice"><strong>Mais comodidade para você!</strong><p>Selecionamos algumas opções que costumam entregar até a cabana.</p></div>
+<div class="delivery-list"><div class="delivery-card"><img src="assets/crops/born.jpg" alt="Born In Smoke"><div class="body"><h3>Born In Smoke</h3><p>Carnes e opções defumadas</p><a class="btn" href="https://wa.me/5511970621424" target="_blank">WhatsApp • Fazer pedido</a></div></div><div class="delivery-card"><img src="assets/crops/itacolomy.jpg" alt="Restaurante Itacolomy"><div class="body"><h3>Restaurante Itacolomy</h3><p>Pizzas e comidas</p><a class="btn" href="https://wa.me/5515997140192" target="_blank">WhatsApp • Fazer pedido</a></div></div><div class="delivery-card"><img src="assets/crops/dipomodoro.jpg" alt="Pizzaria Di Pomodoro"><div class="body"><h3>Pizzaria Di Pomodoro</h3><p>Pizzas</p><a class="btn" href="https://wa.me/5511937769975" target="_blank">WhatsApp • Fazer pedido</a></div></div></div>
+<div class="card"><h2>iFood</h2><p>Confira no aplicativo quais estabelecimentos estão entregando na região no momento.</p><a class="btn" href="https://www.ifood.com.br/" target="_blank">Abrir iFood</a></div>
+<div class="notice"><strong>Importante</strong><p>O tempo de entrega pode variar conforme o trânsito e a disponibilidade dos estabelecimentos.</p></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
+<section class="screen" id="casaAzul"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
+    <div class="brand"><div><h1 class="page-title">Casa Azul</h1><small>Ateliê & Conveniência</small></div></div><div></div></div>
+<img class="feature-image" src="assets/crops/casa-hero.jpg" alt="Casa Azul">
+<div class="card"><h2>Aqui você compra lembranças da viagem e ainda consegue apreciar a linda vista da nossa varanda!</h2><p>Produtos selecionados para sua comodidade e momentos especiais.</p></div>
+<div class="home-grid">
+<div class="home-card"><strong>Bebidas Geladas</strong><span>Cervejas, vinhos, refrigerantes e águas.</span></div>
+<div class="home-card"><strong>Salgadinhos</strong><span>Salgadinhos para sua comodidade.</span></div>
+<div class="home-card"><strong>Lenha</strong><span>Para fogueira e lareira.</span></div>
+<div class="home-card"><strong>Artesanatos e Presentes</strong><span>Peças artesanais e lembranças.</span></div>
+</div>
+<div class="card" style="margin-top:14px"><a class="btn" href="assets/extras/casa-azul-fachada.png" target="_blank">Como chegar</a><p class="static-note">Olhando do portão da cabana, esta é a Casa Azul. Para chegar, suba a rua à esquerda. Senha da porta: 2381. Feche a porta ao sair.</p></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
+<section class="screen" id="checkout"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
+    <div class="brand"><div><h1 class="page-title">Check out</h1><small>Sua saída tranquila</small></div></div><div></div></div>
+<div class="card"><h2>Esperamos que você tenha aproveitado sua estadia!</h2><p>Para que tudo fique perfeito até o final, siga as orientações abaixo.</p></div>
+<div class="list">
+<div class="step"><div class="ico">1</div><div><h3>Horário de saída</h3><p>Check out até 11h.</p></div></div>
+<div class="step"><div class="ico">2</div><div><h3>Louças e organização</h3><p>Deixar as louças utilizadas lavadas e a cabana minimamente organizada.</p></div></div>
+<div class="step"><div class="ico">3</div><div><h3>Lixo</h3><p>Separar o lixo e deixar na lixeira ao lado da caixa d’água.</p></div></div>
+<div class="step"><div class="ico">4</div><div><h3>Chaves e controles</h3><p>Deixar as chaves e controles nos mesmos locais onde foram encontrados.</p></div></div>
+<div class="step"><div class="ico">5</div><div><h3>Antes de sair</h3><p>Desligar TV, ar condicionado e demais equipamentos elétricos.</p></div></div>
+<div class="step"><div class="ico">6</div><div><h3>Portas e janelas</h3><p>Verificar se estão fechadas antes de deixar a cabana.</p></div></div>
+<div class="step"><div class="ico">7</div><div><h3>Para sair da cabana</h3><p>Há teclados ao lado esquerdo dos portões. Para abrir, use a mesma senha de entrada.</p><div style="margin-top:10px"><span class='btn-outline'>Foto será adicionada em breve</span></div></div></div>
+<div class="step"><div class="ico">8</div><div><h3>Portões</h3><p>Certifique se de que os portões estejam fechados ao sair.</p></div></div></div>
+<div class="notice"><strong>Obrigado pela estadia!</strong><p>Boa viagem e volte sempre!</p></div>
+<a class="btn back-menu" href="assets/extras/avaliacao-pos-checkout.png" target="_blank">Finalizei meu check out</a><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
+<script>
+(function(){
+  function goTop(){ requestAnimationFrame(function(){ window.scrollTo({top:0,left:0,behavior:"auto"}); }); }
+  window.addEventListener("hashchange", goTop);
+  window.addEventListener("load", goTop);
+  document.addEventListener("click", function(e){
+    var a=e.target.closest('a[href^="#"]');
+    if(a) setTimeout(goTop,0);
+  });
+})();
+</script>
+
+</body></html>
