@@ -676,6 +676,33 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
   }
 }
 
+
+/* V44 — parceiros: preencher integralmente o quadro da foto */
+#rota .partner > img{
+  width:100% !important;
+  height:170px !important;
+  display:block !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  margin:0 !important;
+  background:transparent !important;
+}
+#rota .partner:first-child > img{
+  object-fit:cover !important;
+  object-position:center center !important;
+}
+#rota .partner:nth-child(2) > img{
+  object-fit:cover !important;
+  object-position:center center !important;
+}
+@media(max-width:600px){
+  #rota .partner > img{
+    width:100% !important;
+    height:190px !important;
+    object-fit:cover !important;
+  }
+}
+
 </style></head>
 <body><section class="screen" id="home">
 <div class="topbar"><div></div><div class="brand"><img src="assets/crops/logo.jpg" alt="Logo"><div><h1>Cabana</h1><small>Rota do Vinho</small></div></div><div></div></div>
