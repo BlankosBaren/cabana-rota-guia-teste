@@ -716,107 +716,73 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
 }
 
 
-/* V46 — Delivery na Cabana */
-#delivery.delivery-v46{max-width:720px;padding:12px 18px 0;background:#fbf6ed}
-#delivery .delivery-head{margin-bottom:16px}
-#delivery .delivery-intro{
-  display:grid;grid-template-columns:86px 1fr;gap:18px;align-items:center;
-  padding:18px 22px;margin-bottom:16px;border-radius:24px;
-  background:#f5eadb;border:1px solid #ebdfcf
-}
-#delivery .delivery-intro-icon{
-  width:68px;height:68px;border-radius:50%;background:#f4eee2;color:#07543e;
-  display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:700
-}
-#delivery .delivery-intro h2{margin:0 0 6px;color:#07543e;font:700 25px Georgia,serif}
-#delivery .delivery-intro p{margin:0;font-size:17px;line-height:1.4}
-
-#delivery .delivery-v46-list{display:grid;gap:16px}
-#delivery .delivery-v46-card{
-  display:grid;grid-template-columns:42% 58%;overflow:hidden;
-  border:1px solid #e7dac8;border-radius:24px;background:#fffaf3
-}
-#delivery .delivery-v46-card>img{
-  width:100%;height:100%;min-height:245px;object-fit:cover;object-position:center;
-  display:block
-}
-#delivery .delivery-v46-body{
-  padding:18px 20px;display:flex;flex-direction:column;min-width:0
-}
-#delivery .delivery-v46-body h3{
-  margin:0 0 10px;color:#07543e;font:700 28px Georgia,serif
-}
-#delivery .delivery-v46-body p{margin:5px 0;font-size:16px;line-height:1.4}
-#delivery .delivery-kind{margin-bottom:16px!important}
-#delivery .delivery-bottom{
-  display:grid;grid-template-columns:1fr auto;gap:14px;align-items:end;margin-top:auto
-}
-#delivery .delivery-order{
-  display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;
-  min-width:150px;padding:13px 16px;border-radius:14px;background:#07543e;color:#fff;
-  text-decoration:none;font-weight:700
+/* V47 — correção pontual da tela Delivery sobre a V45 estável */
+#delivery .restaurant-card,
+#delivery .delivery-card,
+#delivery .place-card,
+#delivery .food-card{
+  position:relative !important;
+  overflow:hidden !important;
 }
 
-#delivery .delivery-ifood{
-  display:grid;grid-template-columns:190px 1fr;gap:22px;align-items:center;
-  margin-top:16px;padding:18px;border:1px solid #e7dac8;border-radius:24px;background:#fffaf3
-}
-#delivery .ifood-logo{
-  height:160px;border-radius:20px;background:#e71922;color:white;
-  display:flex;align-items:center;justify-content:center;font:italic 700 52px Arial,sans-serif
-}
-#delivery .ifood-copy h3{margin:0 0 8px;color:#07543e;font:700 27px Georgia,serif}
-#delivery .ifood-copy p{font-size:16px;line-height:1.45;margin:0 0 16px}
-#delivery .ifood-copy a{
-  float:right;background:#e71922;color:white;text-decoration:none;font-weight:700;
-  border-radius:13px;padding:13px 22px
+/* Alvos amplos para os cards de restaurantes existentes */
+#delivery .restaurant-card img,
+#delivery .delivery-card img,
+#delivery .place-card img,
+#delivery .food-card img,
+#delivery .restaurant img,
+#delivery .delivery-item img{
+  position:static !important;
+  float:none !important;
+  transform:none !important;
+  margin:0 !important;
+  display:block !important;
+  width:100% !important;
+  max-width:100% !important;
+  height:100% !important;
+  max-height:none !important;
+  object-fit:cover !important;
+  object-position:center center !important;
 }
 
-#delivery .delivery-important{
-  display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:center;
-  margin:16px 0;padding:16px 22px;border-radius:22px;background:#f3e8d8
+/* Estrutura visual dos 3 cards, sem alterar o conteúdo */
+#delivery .restaurant-card,
+#delivery .delivery-card,
+#delivery .place-card,
+#delivery .food-card,
+#delivery .restaurant,
+#delivery .delivery-item{
+  box-sizing:border-box !important;
+  min-width:0 !important;
 }
-#delivery .important-i{
-  width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-  background:#07543e;color:white;font:700 30px Georgia,serif
-}
-#delivery .delivery-important strong{font:700 22px Georgia,serif;color:#07543e}
-#delivery .delivery-important p{margin:4px 0 0;font-size:15px;line-height:1.4}
 
+/* Se o card estiver em grid/flex horizontal, limita a coluna da foto */
+#delivery .restaurant-card,
+#delivery .delivery-card,
+#delivery .place-card,
+#delivery .food-card{
+  align-items:stretch !important;
+}
+#delivery .restaurant-card > :first-child,
+#delivery .delivery-card > :first-child,
+#delivery .place-card > :first-child,
+#delivery .food-card > :first-child{
+  overflow:hidden !important;
+}
+
+/* Mobile: garante que a imagem continue contida e sem sobreposição */
 @media(max-width:600px){
-  #delivery.delivery-v46{padding:10px 12px 0}
-  #delivery .page-title{font-size:36px!important;text-align:center}
-  #delivery .brand small{font-size:14px!important;line-height:1.2}
-  #delivery .delivery-intro{grid-template-columns:58px 1fr;padding:14px;gap:12px}
-  #delivery .delivery-intro-icon{width:52px;height:52px;font-size:28px}
-  #delivery .delivery-intro h2{font-size:21px}
-  #delivery .delivery-intro p{font-size:15px}
-
-  #delivery .delivery-v46-card{grid-template-columns:42% 58%;border-radius:18px}
-  #delivery .delivery-v46-card>img{min-height:220px}
-  #delivery .delivery-v46-body{padding:14px 12px}
-  #delivery .delivery-v46-body h3{font-size:21px;line-height:1.1;margin-bottom:7px}
-  #delivery .delivery-v46-body p{font-size:13.5px;line-height:1.32;margin:4px 0}
-  #delivery .delivery-kind{margin-bottom:9px!important}
-  #delivery .delivery-bottom{grid-template-columns:1fr;gap:8px}
-  #delivery .delivery-order{min-width:0;width:100%;padding:10px 8px;font-size:13px}
-
-  #delivery .delivery-ifood{grid-template-columns:110px 1fr;gap:14px;padding:14px}
-  #delivery .ifood-logo{height:110px;font-size:34px}
-  #delivery .ifood-copy h3{font-size:22px}
-  #delivery .ifood-copy p{font-size:13.5px}
-  #delivery .ifood-copy a{float:none;display:inline-block;padding:10px 15px;font-size:13px}
-
-  #delivery .delivery-important{grid-template-columns:52px 1fr;padding:13px;gap:12px}
-  #delivery .important-i{width:45px;height:45px;font-size:25px}
-  #delivery .delivery-important strong{font-size:19px}
-  #delivery .delivery-important p{font-size:13.5px}
-}
-@media(max-width:420px){
-  #delivery .delivery-v46-card{grid-template-columns:40% 60%}
-  #delivery .delivery-v46-card>img{min-height:230px}
-  #delivery .delivery-v46-body h3{font-size:19px}
-  #delivery .delivery-v46-body p{font-size:12.8px}
+  #delivery .restaurant-card img,
+  #delivery .delivery-card img,
+  #delivery .place-card img,
+  #delivery .food-card img,
+  #delivery .restaurant img,
+  #delivery .delivery-item img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+    object-position:center center !important;
+  }
 }
 
 </style></head>
@@ -1179,94 +1145,16 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
 <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
 <a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
 </div></section>
-
-<section class="screen delivery-v46" id="delivery">
-  <div class="topbar delivery-head">
-    <a class="top-back" href="#home" aria-label="Voltar">←</a>
-    <div class="brand">
-      <div>
-        <h1 class="page-title">Delivery na Cabana</h1>
-        <small>Opções que costumam entregar até a propriedade</small>
-      </div>
-    </div>
-    <div></div>
-  </div>
-
-  <div class="delivery-intro">
-    <div class="delivery-intro-icon">⌂</div>
-    <div>
-      <h2>Mais comodidade para você!</h2>
-      <p>Selecionamos algumas opções que costumam entregar até a cabana.</p>
-    </div>
-  </div>
-
-  <div class="delivery-v46-list">
-    <article class="delivery-v46-card">
-      <img src="assets/crops/born.jpg" alt="Born In Smoke">
-      <div class="delivery-v46-body">
-        <h3>Born In Smoke</h3>
-        <p class="delivery-kind">🍴 Carnes e opções defumadas</p>
-        <p>◷ Horário: Consulte</p>
-        <div class="delivery-bottom">
-          <p>📍 Estrada do Vinho, km 3<br>São Roque - SP</p>
-          <a class="delivery-order" href="https://wa.me/5511970621424" target="_blank" rel="noopener">◉ Fazer pedido</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="delivery-v46-card">
-      <img src="assets/crops/itacolomy.jpg" alt="Restaurante Itacolomy">
-      <div class="delivery-v46-body">
-        <h3>Restaurante Itacolomy</h3>
-        <p class="delivery-kind">🍴 Pizzas e comidas</p>
-        <p>◷ Horário: Consulte</p>
-        <div class="delivery-bottom">
-          <p>📍 Rua das Palmeiras, 57<br>São Roque - SP</p>
-          <a class="delivery-order" href="https://wa.me/5515997140192" target="_blank" rel="noopener">◉ Fazer pedido</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="delivery-v46-card">
-      <img src="assets/crops/dipomodoro.jpg" alt="Pizzaria Di Pomodoro">
-      <div class="delivery-v46-body">
-        <h3>Pizzaria Di Pomodoro</h3>
-        <p class="delivery-kind">🍴 Pizzas</p>
-        <p>◷ Horário: Consulte</p>
-        <div class="delivery-bottom">
-          <p>📍 Av. Antonino Dias Bastos, 1260<br>São Roque - SP</p>
-          <a class="delivery-order" href="https://wa.me/5511937769975" target="_blank" rel="noopener">◉ Fazer pedido</a>
-        </div>
-      </div>
-    </article>
-  </div>
-
-  <div class="delivery-ifood">
-    <div class="ifood-logo">iFood</div>
-    <div class="ifood-copy">
-      <h3>iFood</h3>
-      <p>Alguns hóspedes também conseguem fazer pedidos pelo iFood. Confira no aplicativo quais estabelecimentos estão entregando na região no momento.</p>
-      <a href="https://www.ifood.com.br/" target="_blank" rel="noopener">Abrir iFood</a>
-    </div>
-  </div>
-
-  <div class="delivery-important">
-    <div class="important-i">i</div>
-    <div><strong>Importante</strong><p>O tempo de entrega pode variar conforme o trânsito e a disponibilidade dos estabelecimentos.</p></div>
-  </div>
-
-  <a class="btn back-menu" href="#home">
-    <span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span>
-    <span>Voltar para o menu</span>
-  </a>
-
-  <div class="footer-actions">
-    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span>Instagram</span></a>
-    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span>Site</span></a>
-    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span>Outras dúvidas</span></a>
-  </div>
-</section>
-
+<section class="screen" id="delivery"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
+    <div class="brand"><div><h1 class="page-title">Delivery na Cabana</h1><small>Opções que costumam entregar até a propriedade</small></div></div><div></div></div>
+<div class="notice"><strong>Mais comodidade para você!</strong><p>Selecionamos algumas opções que costumam entregar até a cabana.</p></div>
+<div class="delivery-list"><div class="delivery-card"><img src="assets/crops/born.jpg" alt="Born In Smoke"><div class="body"><h3>Born In Smoke</h3><p>Carnes e opções defumadas</p><a class="btn" href="https://wa.me/5511970621424" target="_blank">WhatsApp • Fazer pedido</a></div></div><div class="delivery-card"><img src="assets/crops/itacolomy.jpg" alt="Restaurante Itacolomy"><div class="body"><h3>Restaurante Itacolomy</h3><p>Pizzas e comidas</p><a class="btn" href="https://wa.me/5515997140192" target="_blank">WhatsApp • Fazer pedido</a></div></div><div class="delivery-card"><img src="assets/crops/dipomodoro.jpg" alt="Pizzaria Di Pomodoro"><div class="body"><h3>Pizzaria Di Pomodoro</h3><p>Pizzas</p><a class="btn" href="https://wa.me/5511937769975" target="_blank">WhatsApp • Fazer pedido</a></div></div></div>
+<div class="card"><h2>iFood</h2><p>Confira no aplicativo quais estabelecimentos estão entregando na região no momento.</p><a class="btn" href="https://www.ifood.com.br/" target="_blank">Abrir iFood</a></div>
+<div class="notice"><strong>Importante</strong><p>O tempo de entrega pode variar conforme o trânsito e a disponibilidade dos estabelecimentos.</p></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+</div></section>
 <section class="screen" id="casaAzul"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
     <div class="brand"><div><h1 class="page-title">Casa Azul</h1><small>Ateliê & Conveniência</small></div></div><div></div></div>
 <img class="feature-image" src="assets/crops/casa-hero.jpg" alt="Casa Azul">
