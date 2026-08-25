@@ -311,6 +311,21 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
   .ar-v24 .footer-actions{margin:0 -12px}
 }
 
+
+/* V30 — ajuste fino do alinhamento dos passos do Ar no mobile */
+@media(max-width:600px){
+  .ar-v24 .ar-steps-v29 > div{
+    grid-template-columns:42px 1fr !important;
+    column-gap:8px !important;
+  }
+  .ar-v24 .ar-steps-v29 > div > span{
+    transform:translateX(-10px);
+  }
+  .ar-v24 .ar-steps-v29 > div > p{
+    margin-left:-8px !important;
+  }
+}
+
 </style></head>
 <body><section class="screen" id="home">
 <div class="topbar"><div></div><div class="brand"><img src="assets/crops/logo.jpg" alt="Logo"><div><h1>Cabana</h1><small>Rota do Vinho</small></div></div><div></div></div>
