@@ -581,7 +581,7 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
 }
 
 
-/* V41 — Rota do Vinho: fotos dos parceiros corrigidas */
+/* V42 — Rota do Vinho: ajuste exclusivo do card Dream Car */
 #rota .partner-grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -601,16 +601,20 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
   object-fit:cover;
   object-position:center center;
   margin:0;
-  border:0;
 }
 #rota .partner .body{
   flex:1;
   display:flex;
   flex-direction:column;
-  padding:12px;
 }
 #rota .partner .actions{
   margin-top:auto;
+}
+/* Dream Car: mantém o banner inteiro visível dentro do quadro */
+#rota .partner:nth-child(2) > img{
+  object-fit:contain;
+  object-position:center center;
+  background:#f4eee2;
 }
 @media(max-width:600px){
   #rota .partner-grid{
@@ -619,6 +623,9 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
   }
   #rota .partner > img{
     height:190px;
+  }
+  #rota .partner:nth-child(2) > img{
+    object-fit:contain;
   }
 }
 
@@ -975,8 +982,8 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
 <img class="feature-image" src="assets/crops/rota-hero.jpg" alt="Rota do Vinho">
 <div class="card"><h2>Parceiros da Cabana</h2><p>Aproveite benefícios exclusivos com nossos parceiros.</p></div>
 <div class="partner-grid">
-<div class="partner"><img src="assets/v41/hockenheim-photo.jpg"><div class="body"><h3>Choperia Hockenheim</h3><p>Parceiro Cabana Rota do Vinho</p><div class="actions"><span class="btn-small">Benefício em breve</span><a class="btn-small" href="https://maps.app.goo.gl/RYzwLAWStjWCSCwy5" target="_blank">Como chegar</a></div></div></div>
-<div class="partner"><img src="assets/v41/dreamcar-photo.jpg"><div class="body"><h3>Dream Car Museum</h3><p>Parceiro Cabana Rota do Vinho</p><div class="actions"><a class="btn-small" href="assets/extras/dream-car-beneficio.png" target="_blank">Benefício</a><a class="btn-small" href="https://maps.app.goo.gl/72qbr9jjbKpXwU26A" target="_blank">Como chegar</a></div></div></div>
+<div class="partner"><img src="assets/crops/hockenheim.jpg"><div class="body"><h3>Choperia Hockenheim</h3><p>Parceiro Cabana Rota do Vinho</p><div class="actions"><span class="btn-small">Benefício em breve</span><a class="btn-small" href="https://maps.app.goo.gl/RYzwLAWStjWCSCwy5" target="_blank">Como chegar</a></div></div></div>
+<div class="partner"><img src="assets/v42/dream-car-card.jpg"><div class="body"><h3>Dream Car Museum</h3><p>Parceiro Cabana Rota do Vinho</p><div class="actions"><a class="btn-small" href="assets/extras/dream-car-beneficio.png" target="_blank">Benefício</a><a class="btn-small" href="https://maps.app.goo.gl/72qbr9jjbKpXwU26A" target="_blank">Como chegar</a></div></div></div>
 </div>
 <h2 class="section-title">Explore São Roque</h2><div class="card"><div class="info-row"><a class="btn" href="https://maps.app.goo.gl/GU4ZuEZ3PqC5dJuc6" target="_blank">Abrir Rota no mapa</a><a class="btn-outline" href="assets/extras/mapa-roteiro.png" target="_blank">Mapa do Roteiro do Vinho</a></div></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
 <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
