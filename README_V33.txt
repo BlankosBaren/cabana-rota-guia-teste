@@ -1,0 +1,1 @@
+V33 baseada na V32. Ajustes somente na TV: ícones redesenhados em SVG/CSS para não deformar e título centralizado no mobile. Regras e demais telas preservadas.
