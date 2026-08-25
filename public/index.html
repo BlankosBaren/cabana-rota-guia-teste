@@ -785,6 +785,23 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
   }
 }
 
+/* V48 — Delivery: cards padronizados e conteúdo atualizado */
+#delivery .delivery-card{grid-template-columns:180px minmax(0,1fr)!important;min-height:190px!important}
+#delivery .delivery-media{width:180px!important;height:190px!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important;background:#f7f1e6!important}
+#delivery .delivery-media img{width:100%!important;height:100%!important;display:block!important;margin:0!important;position:static!important;transform:none!important}
+#delivery .delivery-card.born .delivery-media img{object-fit:contain!important;background:#000!important}
+#delivery .delivery-card.itacolomy .delivery-media img{object-fit:cover!important;object-position:center center!important}
+#delivery .delivery-card.ifood .delivery-media img{object-fit:cover!important;object-position:center center!important}
+#delivery .delivery-card .body{min-width:0!important;padding:14px!important}
+#delivery .delivery-meta{margin:5px 0 10px!important;line-height:1.35!important}
+@media(max-width:600px){
+ #delivery .delivery-card{grid-template-columns:112px minmax(0,1fr)!important;min-height:170px!important}
+ #delivery .delivery-media{width:112px!important;height:170px!important}
+ #delivery .delivery-card h3{font-size:19px!important}
+ #delivery .delivery-card .body{padding:12px!important}
+ #delivery .delivery-card .btn{font-size:13px!important;padding:10px 8px!important}
+}
+
 </style></head>
 <body><section class="screen" id="home">
 <div class="topbar"><div></div><div class="brand"><img src="assets/crops/logo.jpg" alt="Logo"><div><h1>Cabana</h1><small>Rota do Vinho</small></div></div><div></div></div>
@@ -1148,9 +1165,12 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
 <section class="screen" id="delivery"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
     <div class="brand"><div><h1 class="page-title">Delivery na Cabana</h1><small>Opções que costumam entregar até a propriedade</small></div></div><div></div></div>
 <div class="notice"><strong>Mais comodidade para você!</strong><p>Selecionamos algumas opções que costumam entregar até a cabana.</p></div>
-<div class="delivery-list"><div class="delivery-card"><img src="assets/crops/born.jpg" alt="Born In Smoke"><div class="body"><h3>Born In Smoke</h3><p>Carnes e opções defumadas</p><a class="btn" href="https://wa.me/5511970621424" target="_blank">WhatsApp • Fazer pedido</a></div></div><div class="delivery-card"><img src="assets/crops/itacolomy.jpg" alt="Restaurante Itacolomy"><div class="body"><h3>Restaurante Itacolomy</h3><p>Pizzas e comidas</p><a class="btn" href="https://wa.me/5515997140192" target="_blank">WhatsApp • Fazer pedido</a></div></div><div class="delivery-card"><img src="assets/crops/dipomodoro.jpg" alt="Pizzaria Di Pomodoro"><div class="body"><h3>Pizzaria Di Pomodoro</h3><p>Pizzas</p><a class="btn" href="https://wa.me/5511937769975" target="_blank">WhatsApp • Fazer pedido</a></div></div></div>
-<div class="card"><h2>iFood</h2><p>Confira no aplicativo quais estabelecimentos estão entregando na região no momento.</p><a class="btn" href="https://www.ifood.com.br/" target="_blank">Abrir iFood</a></div>
-<div class="notice"><strong>Importante</strong><p>O tempo de entrega pode variar conforme o trânsito e a disponibilidade dos estabelecimentos.</p></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
+<div class="delivery-list">
+<div class="delivery-card born"><div class="delivery-media"><img src="assets/crops/born-v48.png" alt="Born In Smoke"></div><div class="body"><h3>Born In Smoke</h3><p>Carnes e opções defumadas</p><p class="delivery-meta">Consulte horários de funcionamento no Google.</p><p class="delivery-meta">Estrada do Vinho, km 3<br>São Roque - SP</p><a class="btn" href="https://wa.me/5511970621424" target="_blank">WhatsApp • Fazer pedido</a></div></div>
+<div class="delivery-card itacolomy"><div class="delivery-media"><img src="assets/crops/itacolomy-v48.png" alt="Restaurante Itacolomy"></div><div class="body"><h3>Restaurante Itacolomy</h3><p>Pizzas e comidas</p><p class="delivery-meta">Consulte horários de funcionamento no Google.</p><p class="delivery-meta">Rua das Palmeiras, 57<br>São Roque - SP</p><a class="btn" href="https://wa.me/5515997140192" target="_blank">WhatsApp • Fazer pedido</a></div></div>
+<div class="delivery-card ifood"><div class="delivery-media"><img src="assets/crops/ifood-v48.jpg" alt="iFood"></div><div class="body"><h3>iFood</h3><p>Alguns hóspedes também conseguem fazer pedidos pelo iFood. Confira no aplicativo quais estabelecimentos estão entregando na região no momento.</p><a class="btn" href="https://www.ifood.com.br/" target="_blank">Abrir iFood</a></div></div>
+</div>
+<div class="notice"><strong>Importante</strong><p>Pedidos realizados pelo iFood devem ser retirados pelo hóspede no portão do condomínio.</p></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
 <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
 <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
 <a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
