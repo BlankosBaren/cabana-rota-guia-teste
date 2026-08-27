@@ -835,6 +835,347 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
     text-align:center;
   }
 }
+
+/* V50 — Casa Azul baseada na arte aprovada */
+#casaAzul.casa-v50{
+  max-width:760px;
+  padding:12px 18px 0;
+  background:#fbf6ed;
+}
+#casaAzul .casa-head{
+  display:grid;
+  grid-template-columns:48px minmax(0,1fr) 48px;
+  align-items:start;
+  margin-bottom:14px;
+}
+#casaAzul .casa-brand{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  text-align:center;
+}
+#casaAzul .casa-title-icon{
+  width:54px;height:54px;display:inline-flex;flex:0 0 54px;color:#1b5e73
+}
+#casaAzul .casa-title-icon svg,
+#casaAzul .casa-intro-icon svg{
+  width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round
+}
+#casaAzul .page-title{
+  margin:0;
+  line-height:.95;
+}
+#casaAzul .brand small{
+  display:block;
+  margin-top:4px;
+  font-size:18px;
+  line-height:1.1;
+}
+#casaAzul .casa-leaf{
+  color:#07543e;
+  font-size:34px;
+  line-height:1;
+  text-align:right;
+}
+
+#casaAzul .casa-hero{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  object-position:center;
+  border-radius:24px;
+  display:block;
+  margin-bottom:18px;
+}
+
+#casaAzul .casa-intro{
+  display:grid;
+  grid-template-columns:110px 1fr;
+  gap:18px;
+  align-items:center;
+  padding:20px 24px;
+  border-radius:24px;
+  background:linear-gradient(90deg,#eef3f9 0%,#f8f5f0 100%);
+  margin-bottom:20px;
+}
+#casaAzul .casa-intro-icon{
+  width:82px;height:82px;color:#18392f;justify-self:center
+}
+#casaAzul .casa-intro h2{
+  margin:0 0 8px;
+  font:700 24px/1.25 Georgia,serif;
+  color:#111;
+}
+#casaAzul .casa-intro p{
+  margin:0;
+  font-size:16px;
+  line-height:1.35;
+}
+
+#casaAzul .casa-section-title{
+  display:grid;
+  grid-template-columns:58px auto 1fr;
+  gap:14px;
+  align-items:center;
+  margin:2px 0 14px;
+}
+#casaAzul .casa-basket{
+  width:54px;height:54px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:#eef1f7;
+  font-size:27px;
+}
+#casaAzul .casa-section-title h2{
+  margin:0;
+  color:#07543e;
+  font:700 26px Georgia,serif;
+  white-space:nowrap;
+}
+#casaAzul .casa-rule{
+  height:1px;
+  background:#ddcdb8;
+}
+
+#casaAzul .casa-products{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+}
+#casaAzul .casa-product{
+  min-width:0;
+  background:#fffaf3;
+  border:1px solid #ebdfd0;
+  border-radius:20px;
+  padding:14px 12px 16px;
+  display:flex;
+  flex-direction:column;
+}
+#casaAzul .casa-product-title{
+  min-height:58px;
+  display:grid;
+  grid-template-columns:38px 1fr;
+  gap:8px;
+  align-items:start;
+}
+#casaAzul .casa-product-icon{
+  width:38px;height:38px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:31px;
+  line-height:1;
+  color:#07543e;
+  flex:0 0 38px;
+}
+#casaAzul .casa-fire{color:#ae8950}
+#casaAzul .casa-gift{color:#9b7b45}
+#casaAzul .casa-product h3{
+  margin:0;
+  font:700 17px/1.15 Georgia,serif;
+  color:#101010;
+}
+#casaAzul .casa-product img{
+  width:100%;
+  aspect-ratio:1/1.03;
+  object-fit:cover;
+  object-position:center;
+  border-radius:14px;
+  display:block;
+  margin:8px 0 12px;
+}
+#casaAzul .casa-product p{
+  margin:0;
+  font-size:14px;
+  line-height:1.45;
+  color:#111;
+}
+
+#casaAzul .casa-view{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:72px 1fr 210px;
+  gap:16px;
+  align-items:center;
+  padding:14px 18px;
+  border-radius:20px;
+  background:#fffaf3;
+  border:1px solid #ebdfd0;
+}
+#casaAzul .casa-view-icon{
+  width:58px;height:58px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:#eef1f7;
+  color:#07543e;
+  font-size:34px;
+}
+#casaAzul .casa-view p{
+  margin:0;
+  font:700 16px/1.45 Georgia,serif;
+}
+#casaAzul .casa-view img{
+  width:100%;
+  height:92px;
+  object-fit:cover;
+  border-radius:14px;
+}
+
+#casaAzul .casa-route{
+  width:min(390px,80%);
+  margin:20px auto 14px;
+  padding:14px 20px;
+  border:1.5px solid #0b5c49;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  color:#124d3d;
+  text-decoration:none;
+  font:700 22px Georgia,serif;
+  background:#fffaf3;
+}
+#casaAzul .casa-back{
+  position:relative;
+  max-width:500px;
+  margin:0 auto;
+  min-height:58px;
+  font-size:21px;
+}
+#casaAzul .casa-arrow{
+  position:absolute;
+  right:18px;
+  font-size:35px;
+  line-height:1;
+}
+
+@media(max-width:600px){
+  #casaAzul.casa-v50{padding:10px 12px 0}
+  #casaAzul .casa-head{
+    grid-template-columns:38px minmax(0,1fr) 38px;
+    margin-bottom:10px;
+  }
+  #casaAzul .casa-brand{gap:7px}
+  #casaAzul .casa-title-icon{
+    width:42px;height:42px;flex-basis:42px
+  }
+  #casaAzul .page-title{
+    font-size:36px!important;
+    line-height:1!important;
+    white-space:nowrap;
+  }
+  #casaAzul .brand small{
+    font-size:15px!important;
+    margin-top:2px;
+  }
+  #casaAzul .casa-leaf{
+    font-size:26px;
+  }
+
+  #casaAzul .casa-hero{
+    height:235px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+
+  #casaAzul .casa-intro{
+    grid-template-columns:72px 1fr;
+    gap:12px;
+    padding:16px;
+    border-radius:18px;
+    margin-bottom:16px;
+  }
+  #casaAzul .casa-intro-icon{width:58px;height:58px}
+  #casaAzul .casa-intro h2{
+    font-size:19px;
+    line-height:1.25;
+  }
+  #casaAzul .casa-intro p{
+    font-size:13.5px;
+  }
+
+  #casaAzul .casa-section-title{
+    grid-template-columns:46px auto 1fr;
+    gap:10px;
+    margin-bottom:12px;
+  }
+  #casaAzul .casa-basket{
+    width:44px;height:44px;font-size:22px;
+  }
+  #casaAzul .casa-section-title h2{
+    font-size:21px;
+  }
+
+  #casaAzul .casa-products{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+  #casaAzul .casa-product{
+    border-radius:16px;
+    padding:11px 10px 13px;
+  }
+  #casaAzul .casa-product-title{
+    min-height:50px;
+    grid-template-columns:30px 1fr;
+    gap:6px;
+  }
+  #casaAzul .casa-product-icon{
+    width:30px;height:30px;flex-basis:30px;
+    font-size:25px;
+  }
+  #casaAzul .casa-product h3{
+    font-size:15px;
+    line-height:1.12;
+  }
+  #casaAzul .casa-product img{
+    aspect-ratio:1/1;
+    margin:7px 0 9px;
+    border-radius:11px;
+  }
+  #casaAzul .casa-product p{
+    font-size:12.7px;
+    line-height:1.35;
+  }
+
+  #casaAzul .casa-view{
+    grid-template-columns:54px 1fr;
+    gap:10px;
+    padding:12px;
+    border-radius:16px;
+  }
+  #casaAzul .casa-view-icon{
+    width:46px;height:46px;font-size:28px;
+  }
+  #casaAzul .casa-view p{
+    font-size:13.5px;
+    line-height:1.35;
+  }
+  #casaAzul .casa-view img{
+    grid-column:1/-1;
+    width:100%;
+    height:110px;
+    margin-top:4px;
+  }
+
+  #casaAzul .casa-route{
+    width:78%;
+    margin:16px auto 12px;
+    padding:12px 14px;
+    border-radius:15px;
+    font-size:18px;
+  }
+  #casaAzul .casa-back{
+    max-width:88%;
+    min-height:54px;
+    font-size:18px;
+  }
+}
+
+@media(max-width:390px){
+  #casaAzul .page-title{font-size:33px!important}
+  #casaAzul .brand small{font-size:14px!important}
+  #casaAzul .casa-product h3{font-size:14px}
+  #casaAzul .casa-product p{font-size:12px}
+}
+
 </style></head>
 <body><section class="screen" id="home">
 <div class="topbar"><div></div><div class="brand"><img src="assets/crops/logo.jpg" alt="Logo"><div><h1>Cabana</h1><small>Rota do Vinho</small></div></div><div></div></div>
@@ -1208,21 +1549,102 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
 <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
 <a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
 </div></section>
-<section class="screen" id="casaAzul"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
-    <div class="brand"><div><h1 class="page-title">Casa Azul</h1><small>Ateliê & Conveniência</small></div></div><div></div></div>
-<img class="feature-image" src="assets/crops/casa-hero.jpg" alt="Casa Azul">
-<div class="card"><h2>Aqui você compra lembranças da viagem e ainda consegue apreciar a linda vista da nossa varanda!</h2><p>Produtos selecionados para sua comodidade e momentos especiais.</p></div>
-<div class="home-grid">
-<div class="home-card"><strong>Bebidas Geladas</strong><span>Cervejas, vinhos, refrigerantes e águas.</span></div>
-<div class="home-card"><strong>Salgadinhos</strong><span>Salgadinhos para sua comodidade.</span></div>
-<div class="home-card"><strong>Lenha</strong><span>Para fogueira e lareira.</span></div>
-<div class="home-card"><strong>Artesanatos e Presentes</strong><span>Peças artesanais e lembranças.</span></div>
-</div>
-<div class="card" style="margin-top:14px"><a class="btn" href="assets/extras/casa-azul-fachada.png" target="_blank">Como chegar</a><p class="static-note">Olhando do portão da cabana, esta é a Casa Azul. Para chegar, suba a rua à esquerda. Senha da porta: 2381. Feche a porta ao sair.</p></div><a class="btn back-menu" href="#home"><span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span><span>Voltar para o menu</span></a><div class="footer-actions">
-<a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
-<a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
-<a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
-</div></section>
+
+<section class="screen casa-v50" id="casaAzul">
+  <div class="topbar casa-head">
+    <a class="top-back" href="#home" aria-label="Voltar">←</a>
+    <div class="brand casa-brand">
+      <span class="casa-title-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><path d="M11 29 32 11l21 18v25H40V38H24v16H11z"></path><path d="M25 25h14v10H25z"></path></svg>
+      </span>
+      <div>
+        <h1 class="page-title">Casa Azul</h1>
+        <small>Ateliê &amp; Conveniência</small>
+      </div>
+    </div>
+    <div class="casa-leaf" aria-hidden="true">❧</div>
+  </div>
+
+  <img class="feature-image casa-hero" src="assets/crops/casa-hero.jpg" alt="Interior da Casa Azul">
+
+  <div class="casa-intro">
+    <div class="casa-intro-icon" aria-hidden="true">
+      <svg viewBox="0 0 64 64"><path d="M10 31 32 12l22 19v23H39V39H25v15H10z"></path><path d="M25 25h14v10H25z"></path></svg>
+    </div>
+    <div>
+      <h2>Aqui você compra lembranças da viagem e ainda consegue apreciar a linda vista da nossa varanda!</h2>
+      <p>Produtos selecionados para sua comodidade e momentos especiais.</p>
+    </div>
+  </div>
+
+  <div class="casa-section-title">
+    <span class="casa-basket" aria-hidden="true">🛒</span>
+    <h2>O que você encontra</h2>
+    <span class="casa-rule"></span>
+  </div>
+
+  <div class="casa-products">
+    <article class="casa-product">
+      <div class="casa-product-title">
+        <span class="casa-product-icon" aria-hidden="true">❄</span>
+        <h3>Bebidas<br>Geladas</h3>
+      </div>
+      <img src="assets/v50/bebidas.jpg" alt="Bebidas geladas">
+      <p>Cervejas, vinhos, refrigerantes, águas e muito mais.</p>
+    </article>
+
+    <article class="casa-product">
+      <div class="casa-product-title">
+        <span class="casa-product-icon" aria-hidden="true">▱</span>
+        <h3>Salgadinhos</h3>
+      </div>
+      <img src="assets/v50/salgadinhos.jpg" alt="Salgadinhos">
+      <p>Diversos salgadinhos para curtir.</p>
+    </article>
+
+    <article class="casa-product">
+      <div class="casa-product-title">
+        <span class="casa-product-icon casa-fire" aria-hidden="true">♨</span>
+        <h3>Lenha para<br>fogueira e lareira</h3>
+      </div>
+      <img src="assets/v50/lenha.jpg" alt="Lenha para fogueira e lareira">
+      <p>Lenha seca e selecionada para momentos especiais.</p>
+    </article>
+
+    <article class="casa-product">
+      <div class="casa-product-title">
+        <span class="casa-product-icon casa-gift" aria-hidden="true">◆</span>
+        <h3>Artesanatos e<br>Presentes</h3>
+      </div>
+      <img src="assets/v50/artesanatos.jpg" alt="Artesanatos e presentes">
+      <p>Peças artesanais, lembranças e presentes únicos.</p>
+    </article>
+  </div>
+
+  <div class="casa-view">
+    <div class="casa-view-icon" aria-hidden="true">⌁</div>
+    <p>Aproveite a vista da nossa varanda enquanto escolhe produtos especiais para levar boas lembranças com você!</p>
+    <img src="assets/v50/varanda.jpg" alt="Vista da varanda da Casa Azul">
+  </div>
+
+  <a class="casa-route" href="assets/extras/casa-azul-fachada.png" target="_blank" rel="noopener">
+    <span aria-hidden="true">⌖</span>
+    <span>Como chegar</span>
+  </a>
+
+  <a class="btn back-menu casa-back" href="#home">
+    <span class="btn-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-6v-5h-4v5H4z"></path></svg></span>
+    <span>Voltar para o menu</span>
+    <span class="casa-arrow" aria-hidden="true">›</span>
+  </a>
+
+  <div class="footer-actions">
+    <a href="https://www.instagram.com/cabanarotadovinho/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="1"></circle></svg></span><span>Instagram</span></a>
+    <a href="https://www.cabananaserra.com.br/" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.8 3 4.2 6 4.2 9s-1.4 6-4.2 9c-2.8-3-4.2-6-4.2-9S9.2 6 12 3z"></path></svg></span><span>Site</span></a>
+    <a href="https://wa.me/5511973053777" target="_blank" rel="noopener"><span class="footer-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.8 9a2.4 2.4 0 0 1 4.6.9c0 1.8-2.4 2.1-2.4 4"></path><circle cx="12" cy="17.3" r=".7" fill="currentColor" stroke="none"></circle></svg></span><span>Outras dúvidas</span></a>
+  </div>
+</section>
+
 <section class="screen" id="checkout"><div class="topbar"><a class="top-back" href="#home" aria-label="Voltar">←</a>
     <div class="brand"><div><h1 class="page-title">Check out</h1><small>Sua saída tranquila</small></div></div><div></div></div>
 <div class="card"><h2>Esperamos que você tenha aproveitado sua estadia!</h2><p>Para que tudo fique perfeito até o final, siga as orientações abaixo.</p></div>
