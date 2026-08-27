@@ -802,6 +802,39 @@ a.btn,a.btn-outline,a.btn-small{cursor:pointer}
  #delivery .delivery-card .btn{font-size:13px!important;padding:10px 8px!important}
 }
 
+
+/* V49 — ajuste exclusivo do cabeçalho Delivery no mobile */
+@media (max-width:600px){
+  #delivery .topbar{
+    grid-template-columns:38px minmax(0,1fr) 38px;
+    align-items:start;
+    margin-bottom:14px;
+  }
+  #delivery .topbar .top-back{
+    align-self:start;
+    margin-top:4px;
+  }
+  #delivery .topbar .brand{
+    width:100%;
+    min-width:0;
+    justify-content:center;
+    text-align:center;
+  }
+  #delivery .page-title{
+    font-size:29px!important;
+    line-height:1.05!important;
+    white-space:nowrap;
+    text-align:center;
+  }
+  #delivery .brand small{
+    display:block;
+    margin:5px auto 0;
+    max-width:280px;
+    font-size:15px!important;
+    line-height:1.15;
+    text-align:center;
+  }
+}
 </style></head>
 <body><section class="screen" id="home">
 <div class="topbar"><div></div><div class="brand"><img src="assets/crops/logo.jpg" alt="Logo"><div><h1>Cabana</h1><small>Rota do Vinho</small></div></div><div></div></div>
